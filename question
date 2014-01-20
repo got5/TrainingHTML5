@@ -1,0 +1,14 @@
+Bonjour à tous 
+
+Travaillant sur les formations HTML5, CSS3 et jQuery, voici quelques questions qu'Angela pourra sûrement me répondre. Je préfère les poser maintenant, afin de définir les meilleures pratiques. 
+
+Quelles sont les bonnes pratiques concernant le redimensionnent des images ? Si je ne me trompe pas nous avons plusieurs possibilités : 
+- redimensionnement via les attributs width et height d'HTML
+- redimensionnement via JavaScript
+- redimensionnement côté serveur
+- peut-être également en CSS ? 
+Pour ma part, la solution de l'HTML est à interdire. l'HTML est juste utilisé pour structurer une page. Donc rien à voir avec le design d'une page. 
+L'intérêt du redimensionnement côté serveur, c'est la limitation de la bande passante, notamment pour améliorer l'expérience utilisateur pour les terminaux mobiles. Mais pour cela, il est nécessaire de connaître la taille désirée...
+Si c'est possible de le faire en CSS, cela est préférable d'utiliser du code natif. Si c'est pas possible pour certains navigateurs, on utilisera un plugin javascript pour réaliser la tâche. 
+
+Concernant les media queries, quelle la meilleure pratique ? Définir les point de ruptures dans la feuille de style ? ou dans l'HTML lors de l'import de la feuille de style ? La 2e solution a pour intérêt la quantité de CSS à télécharger par le browser. 
