@@ -1,0 +1,26 @@
+<div class="bloc-content text-content">
+
+	<editor show-preview="false" height="200"> 	
+		<file type="js" name="script.js">
+
+jQuery(document).ready(function(){
+    
+    jQuery.fn.hideplugin = function(){
+
+    	return this.each(function(){
+    		
+           <span class="text-red"> $(this).hide()
+                    .html("Hello jQuery")
+                    .css({"font-size", "100px"})
+                    .slideDown();</span>
+    	});
+    } 
+    
+    jQuery("h1").hideplugin();
+});
+
+		</file>	
+	</editor>	
+
+
+</div>

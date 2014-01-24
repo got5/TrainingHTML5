@@ -7,13 +7,297 @@
     "content":"contents"
   }, 
   {
+    "title":"JavaScript",
+    "content":"javascript/javascript_basis"
+  }, 
+  {
+    "title":"Utility of a Framework", 
+    "content": "javascript/utility"
+  },
+  {
+    "title":"Import Javascript", 
+    "content": "javascript/javascript_import"
+  }, 
+  {
+    "title":"Import Javascript, The bad way", 
+    "content": "javascript/javascript_inline"
+  }, 
+  {
   	"title":"jQuery", 
   	"content": "jqueryui/jquery_plan"
   }, 
   {
+    "title":"jQuery", 
+    "content": "jquery/presentation"
+  }, 
+  {
+    "title":"jQuery : The Stack", 
+    "content": "jquery/jquery_stack"
+  }, 
+  {
+    "title":"Display a hidden field without jQuery", 
+    "content": "jquery/display_hidden_field_without_jquery"
+  }, 
+  {
+    "title":"Display a hidden field with jQuery", 
+    "content": "jquery/display_hidden_field_with_jquery"
+  }, 
+  {
+    "title":"History", 
+    "content": "jquery/history"
+  }, 
+  {
+    "title":"Who's using jQuery", 
+    "content": "jquery/who"
+  },
+  {
+    "title":"Functionnalities", 
+    "content": "jquery/functionnalities"
+  },
+  {
+    "title":"How to use jQuery", 
+    "content": "jquery/how_to_use"
+  },
+  {
+    "title":"How to use jQuery", 
+    "content": "jquery/how_to_use_1"
+  },
+  {
+    "title":"Selectors (element, id and class)", 
+    "content": "jquery/selectors_element_id_class"
+  },
+  {
+    "title":"Restricted Selectors", 
+    "content": "jquery/restricted_selectors"
+  },
+  {
+    "title":"Descendant Selectors", 
+    "content": "jquery/descendant_selectors"
+  },
+  {
+    "title":"Pseudo Selectors", 
+    "content": "jquery/pseudo_selectors_intro"
+  },
+  {
+    "title":"Pseudo Selectors : :even and :odd", 
+    "content": "jquery/pseudo_selectors_even"
+  },
+  {
+    "title":"Pseudo Selectors : :first-child, :last-child", 
+    "content": "jquery/pseudo_selectors_first-child"
+  },
+  {
+    "title":"Pseudo Selectors : :first, :last", 
+    "content": "jquery/pseudo_selectors_first"
+  },
+  {
+    "title":"Pseudo Selectors : :only-child", 
+    "content": "jquery/pseudo_selectors_only-child"
+  },
+  {
+    "title":"Attribute Selectors", 
+    "content": "jquery/attribute_selectors"
+  },
+  {
+    "title":"Concept : Callback", 
+    "content": "jquery/concept_callback"
+  },
+  {
+    "title":"Concept : Iterating over jQuer elements", 
+    "content": "jquery/concept_iterating"
+  },
+  {
+    "title":"Concept : Chaining", 
+    "content": "jquery/concept_chaining"
+  },
+  {
+    "title":"jQuery methods", 
+    "content": "jquery/jquery_methods"
+  },
+  {
+    "title":"DOM Insertion : append, prepend", 
+    "content": "jquery/jquery_methods_append"
+  },
+  {
+    "title":"DOM Insertion : appendTo, prependTo", 
+    "content": "jquery/jquery_methods_appendto"
+  },
+  {
+    "title":"DOM Insertion : Others methods", 
+    "content": "jquery/dom_insertion_other"
+  },
+  {
+    "title":"Attribute Maniplation", 
+    "content": "jquery/attribute_manipulation_1"
+  },
+  {
+    "title":"Attribute Maniplation", 
+    "content": "jquery/attribute_manipulation_2"
+  },
+  {
+    "title":"Attribute Maniplation", 
+    "content": "jquery/attribute_manipulation_3"
+  },
+  {
+    "title":"Attribute Maniplation : CSS", 
+    "content": "jquery/attribute_manipulation_4"
+  },
+  {
+    "title":"AJAX Requests", 
+    "content": "jquery/ajax/ajax_1"
+  },
+  {
+    "title":"AJAX Requests", 
+    "content": "jquery/ajax/ajax_2"
+  },
+  {
+    "title":"AJAX Requests : Data Format", 
+    "content": "jquery/ajax/ajax_3"  
+  },
+  {
+    "title":"AJAX Requests : jQuery.ajax", 
+    "content": "jquery/ajax/ajax_4"
+  },
+  {
+    "title":"AJAX Requests : jQuery.get", 
+    "content": "jquery/ajax/ajax_5"
+  },
+  {
+    "title":"AJAX Requests : jQuery.get", 
+    "content": "jquery/ajax/ajax_6"
+  },
+  {
+    "title":"AJAX Requests : jQuery.getJSON", 
+    "content": "jquery/ajax/ajax_7"
+  },
+  {
+    "title":"Events : Event Listener", 
+    "content": "jquery/events/events_1"
+  },
+  {
+    "title":"Events : List of available events", 
+    "content": "jquery/events/events_2"
+  },
+  {
+    "title":"Events : Other events", 
+    "content": "jquery/events/events_3"
+  },
+  {
+    "title":"Events : Custom events", 
+    "content": "jquery/events/events_4"
+  },
+  {
+    "title":"Events : Prevent the default behavior", 
+    "content": "jquery/events/events_5"
+  },
+  {
     "title":"Pratical Works", 
     "content": "jquery/tp_event"
   }, 
+  {
+    "title":"jQuery Effects", 
+    "content": "jquery/effects/effects_1"
+  }, 
+  {
+    "title":"jQuery Effects", 
+    "content": "jquery/effects/effects_2"
+  }, 
+  {
+    "title":"jQuery Effects : Predefined speed", 
+    "content": "jquery/effects/effects_3"
+  }, 
+  {
+    "title":"jQuery Effects : Callback", 
+    "content": "jquery/effects/effects_4"
+  }, 
+  {
+    "title":"jQuery Effects : animate() method", 
+    "content": "jquery/effects/effects_5"
+  }, 
+  {
+    "title":"Pratical Works", 
+    "content": "jquery/effects/effects_tp"
+  }, 
+  {
+    "title":"DOM Traversal", 
+    "content": "jquery/dom_traversal/dom_traversal_1"
+  }, 
+  {
+    "title":"DOM Traversal : children()", 
+    "content": "jquery/dom_traversal/dom_traversal_2"
+  }, 
+  {
+    "title":"DOM Traversal : parent()", 
+    "content": "jquery/dom_traversal/dom_traversal_3"
+  }, 
+  {
+    "title":"DOM Traversal : parents()", 
+    "content": "jquery/dom_traversal/dom_traversal_4"
+  }, 
+  {
+    "title":"DOM Traversal : siblings()", 
+    "content": "jquery/dom_traversal/dom_traversal_5"
+  }, 
+  {
+    "title":"DOM Traversal : prev() and prevAll()", 
+    "content": "jquery/dom_traversal/dom_traversal_6"
+  }, 
+  {
+    "title":"DOM Traversal : next() and nextAll()", 
+    "content": "jquery/dom_traversal/dom_traversal_7"
+  }, 
+  {
+    "title":"DOM Traversal : closest()", 
+    "content": "jquery/dom_traversal/dom_traversal_8"
+  }, 
+  {
+    "title":"DOM Traversal : find()", 
+    "content": "jquery/dom_traversal/dom_traversal_9"
+  }, 
+  {
+    "title":"Integration with other Frameworks", 
+    "content": "jquery/integration_with_frameworks_1"
+  }, 
+  {
+    "title":"Integration with other Frameworks", 
+    "content": "jquery/integration_with_frameworks_2"
+  }, 
+  {
+    "title":"Integration with other Frameworks", 
+    "content": "jquery/integration_with_frameworks_3"
+  }, 
+  {
+    "title":"Plugin : Creation", 
+    "content": "jquery/plugin/plugin_1"
+  },
+  {
+    "title":"Plugin : Creation", 
+    "content": "jquery/plugin/plugin_2"
+  },
+  {
+    "title":"Plugin : Creation", 
+    "content": "jquery/plugin/plugin_3"
+  },
+  {
+    "title":"Plugin : Creation", 
+    "content": "jquery/plugin/plugin_4"
+  },
+  {
+    "title":"Plugin : Creation", 
+    "content": "jquery/plugin/plugin_5"
+  },
+  {
+    "title":"Plugin : Creation", 
+    "content": "jquery/plugin/plugin_6"
+  },
+  {
+    "title":"Plugin : Creation", 
+    "content": "jquery/plugin/plugin_7"
+  },
+  {
+    "title":"Plugin : Large ecosytem", 
+    "content": "jquery/plugin/plugin_8"
+  },
   {
   	"title":"Pratical Works", 
   	"content": "jquery/tp_jquery_plugin"
@@ -31,6 +315,30 @@
     "content": "html5/apis"
   }, 
   {
+    "title":"Animation API", 
+    "content": "html5/animation/demo"
+  }, 
+  {
+    "title":"Animation Essentials", 
+    "content": "html5/animation/essentials"
+  },
+  {
+    "title":"Practical Works", 
+    "content": "html5/animation/tp"
+  },
+  {
+    "title":"ApplicationCache API", 
+    "content": "html5/applicationcache/demo"
+  }, 
+  {
+    "title":"ApplicationCache Essentials", 
+    "content": "html5/applicationcache/essentials"
+  },
+  {
+    "title":"Practical Works", 
+    "content": "html5/sessionstorage/tp"
+  },
+  {
     "title":"Canvas API", 
     "content": "html5/canvas/index"
   }, 
@@ -39,11 +347,79 @@
     "content": "html5/canvas/tp_canvas"
   },
   {
+    "title":"ClassList API", 
+    "content": "html5/classlist/essentials_1"
+  }, 
+  {
+    "title":"ClassList API", 
+    "content": "html5/classlist/essentials_2"
+  }, 
+  {
+    "title":"ClassList API", 
+    "content": "html5/classlist/essentials_3"
+  }, 
+  {
+    "title":"Practical Works", 
+    "content": "html5/classlist/tp_classlist"
+  },
+  {
     "title":"Drag&Drop API", 
     "content": "html5/dragdrop/index"
   }, 
   {
     "title":"Practical Works", 
     "content": "html5/dragdrop/tp_dragdrop"
+  }, 
+  {
+    "title":"Why we need local storage", 
+    "content": "html5/webstorage/essentials_1"
+  },
+  {
+    "title":"LocalStorage : Saving Data", 
+    "content": "html5/webstorage/essentials_2"
+  },
+  {
+    "title":"LocalStorage : Getting Data", 
+    "content": "html5/webstorage/essentials_3"
+  },
+  {
+    "title":"LocalStorage : Only Strings supported", 
+    "content": "html5/webstorage/essentials_4"
+  },
+  {
+    "title":"LocalStorage : Iterating through Storage", 
+    "content": "html5/webstorage/essentials_5"
+  },
+  {
+    "title":"LocalStorage : Cleaning up Storage", 
+    "content": "html5/webstorage/essentials_6"
+  },
+  {
+    "title":"LocalStorage : Storage Events", 
+    "content": "html5/webstorage/essentials_7"
+  },
+  {
+    "title":"LocalStorage : Can I Use ? ", 
+    "content": "html5/webstorage/essentials_8"
+  },
+  {
+    "title":"LocalStorage : Things to Consider ", 
+    "content": "html5/webstorage/essentials_9"
+  },
+  {
+    "title":"Practical Works", 
+    "content": "html5/webstorage/tp"
+  },
+  {
+    "title":"Selectors API", 
+    "content": "html5/selectors/demo"
+  }, 
+  {
+    "title":"Selectors Essentials", 
+    "content": "html5/selectors/essentials"
+  },
+  {
+    "title":"Practical Works", 
+    "content": "html5/selectors/tp"
   }
 ]

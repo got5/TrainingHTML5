@@ -7,51 +7,143 @@
     "content":"contents"
   }, 
   {
-  	"title":"HTML5 History"
+    "title":"Dev Workstation : Browser",
+    "content":"html5/browser"
+  },
+  {
+    "title":"Dev Workstation : IDE",
+    "content":"html5/ide"
+  },
+  {
+    "title":"Standards",
+    "content":"html5/standards"
+  },
+  {
+  	"title":"HTML5 History",
   	"content":"html5/html5_history"
   }, 
   {
-  	"title":"Notion : Code Sémantique"
+    "title":"HTML5 Doctype",
+    "content":"html5/html5_doctype"
+  }, 
+  {
+    "title":"HTML5-based XML",
+    "content":"html5/html5_based_xml"
+  }, 
+  {
+    "title":"HTML5-based XML",
+    "content":"html5/html5_based_xml_2"
+  }, 
+  {
+    "title":"Parts of a tag",
+    "content":"html5/html5_based_xml_3"
+  }, 
+  {
+  	"title":"Notion : Code Sémantique",
   	"content":"html5/code_semantique"
   }, 
   {
-  	"title":"Pratical Works"
-  	"content":"html5/tp_structuration_page"
+    "title":"Page Structure",
+    "content":"html5/structure_page/index"
+  },
+  {
+    "title":"Header",
+    "content":"html5/structure_page/header"
+  },
+  {
+    "title":"Header",
+    "content":"html5/structure_page/header_example"
+  },
+  {
+    "title":"Footer",
+    "content":"html5/structure_page/footer"
+  },
+  {
+    "title":"Footer",
+    "content":"html5/structure_page/footer_example"
+  },
+  {
+    "title":"Main",
+    "content":"html5/structure_page/main"
+  },
+  {
+    "title":"Main",
+    "content":"html5/structure_page/main_example"
+  },
+  {
+    "title":"Nav",
+    "content":"html5/structure_page/nav"
+  },
+  {
+    "title":"Nav",
+    "content":"html5/structure_page/nav_example"
+  },
+  {
+    "title":"Section",
+    "content":"html5/structure_page/section"
+  },
+  {
+    "title":"Section",
+    "content":"html5/structure_page/section_example"
+  },
+  {
+    "title":"Article",
+    "content":"html5/structure_page/article"
+  },
+  {
+    "title":"Article",
+    "content":"html5/structure_page/article_example"
+  },
+  {
+    "title":"Aside",
+    "content":"html5/structure_page/aside"
+  },
+  {
+    "title":"Aside",
+    "content":"html5/structure_page/aside_example"
+  },
+  {
+  	"title":"Pratical Works",
+  	"content":"html5/structure_page/tp_structuration_page"
   }, 
   {
-  	"title":"Notion : Accessibilité"
+  	"title":"Notion : Accessibilité",
   	"content":"html5/code_accessible"
   }, 
   {
-  	"title":"Inputs"
+  	"title":"Inputs",
   	"content":"html5/input"
   }, 
   {
-  	"title":"Inputs"
+  	"title":"Inputs",
   	"content":"html5/tp_input"
   },
   {
-    "title":"Notion : Import CSS stylesheets"
+    "title":"Notion : Import CSS stylesheets : the bad way",
+    "content":"css3/css_inline"
+  },
+  {
+    "title":"Notion : Import CSS stylesheets",
     "content":"css3/css_import"
   },
   {
-    "title":"Commentaires conditionnels"
+    "title":"Commentaires conditionnels",
     "content":"css3/condiational_comment"
   },
   {
-    "title":"CSS selectors : by class and by ID"
+    "title":"CSS selectors : by class and by ID",
     "content":"css3/class_id_selectors"
   },
   {
-    "title":"Pseudo Classes"
+    "title":"Pseudo Classes",
     "content":"css3/pseudo_classes"
   }, 
   {
-    "title":"Practical Works"
+    "title":"Practical Works",
     "content":"css3/tp_pseudo_classes"
   }, 
   {
-  	"title":"Responsive Web Designe"
+  	"title":"Responsive Web Design",
   	"content":"css3/rwd/index.html"
   }
 

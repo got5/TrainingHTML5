@@ -12,7 +12,7 @@
   "keywords": [
     "AngularJS"
   ],
-  "author": "Laurent Wroblewski",
+  "author": "Emmanuel Demey",
   "readmeFilename": "README.md",
   "dependencies": {
     "express": "latest"
