@@ -1,0 +1,25 @@
+<div class="bloc-content text-content">
+	<ul>
+		<li>JavaScript API to maximise the window (as the F11 shortcut)</li>
+		<li>The FullScreen API is a permission-based API</li>
+		<li>Not for all applications</li>
+		<li>Video contents, Image Galleries, HTML5-based slide presentations, Games</li>
+		<li>Your content must be optimized for a fullscreen application</li>
+	</ul>
+
+	<editor show-preview="false" show-tabs="false" height="300"> 	
+		<file type="javascript" name="script.js">
+partial interface Element {
+	void requestFullscreen();
+}
+
+partial interface Document {
+	readonly attribute boolean fullscreenEnabled;
+	readonly attribute Element? fullscreenElement;
+
+	void exitFullscreen();
+}
+
+		</file>	
+	</editor>	
+</div>

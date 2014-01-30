@@ -351,7 +351,7 @@
     "content": "html5/classlist/essentials_1"
   }, 
   {
-    "title":"ClassList API", 
+    "title":"ClassList API : Can I Use ?", 
     "content": "html5/classlist/essentials_2"
   }, 
   {
@@ -370,6 +370,38 @@
     "title":"Practical Works", 
     "content": "html5/dragdrop/tp_dragdrop"
   }, 
+  {
+    "title":"Fullscreen API", 
+    "content": "html5/fullscreen/fullscreen_1"
+  },
+  {
+    "title":"Fullscreen API : Can I Use ?", 
+    "content": "html5/fullscreen/fullscreen_4"
+  },
+  {
+    "title":"Fullscreen API : The Vendor Prefix Catastrophe", 
+    "content": "html5/fullscreen/fullscreen_2"
+  },
+  {
+    "title":"Fullscreen API : The requestFullscreen method", 
+    "content": "html5/fullscreen/fullscreen_3"
+  },
+  {
+    "title":"Fullscreen API : The document.fullscreenEnabled attribute", 
+    "content": "html5/fullscreen/fullscreen_5"
+  },
+  {
+    "title":"Fullscreen API : Exit the FullScreen mode", 
+    "content": "html5/fullscreen/fullscreen_6"
+  },
+  {
+    "title":"Fullscreen API : Styling your Fullscreen App", 
+    "content": "html5/fullscreen/fullscreen_7"
+  },
+  {
+    "title":"Fullscreen API : Play with Events", 
+    "content": "html5/fullscreen/fullscreen_8"
+  },
   {
     "title":"Why we need local storage", 
     "content": "html5/webstorage/essentials_1"
@@ -411,12 +443,36 @@
     "content": "html5/webstorage/tp"
   },
   {
-    "title":"Selectors API", 
-    "content": "html5/selectors/demo"
-  }, 
+    "title":"Selectors Essentials : The historic API", 
+    "content": "html5/selectors/essentials_4"
+  },
   {
     "title":"Selectors Essentials", 
     "content": "html5/selectors/essentials"
+  },
+  {
+    "title":"Selectors : The Old Way", 
+    "content": "html5/selectors/essentials_1"
+  },
+  {
+    "title":"Selectors : The Easiest Way", 
+    "content": "html5/selectors/essentials_2"
+  },
+  {
+    "title":"Selectors : querySelector versus querySelectorAll", 
+    "content": "html5/selectors/essentials_3"
+  },
+  {
+    "title":"Selectors : getElementBy* methods versus querySelector[All]", 
+    "content": "html5/selectors/essentials_5"
+  },
+  {
+    "title":"Selectors : getElementBy* methods versus querySelector[All]", 
+    "content": "html5/selectors/essentials_7"
+  },
+  {
+    "title":"Selectors : Can I Use ? ", 
+    "content": "html5/selectors/essentials_6"
   },
   {
     "title":"Practical Works", 

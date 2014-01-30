@@ -1,0 +1,36 @@
+<style>
+	.text-content:-webkit-full-screen {
+		background-color: #CCCCCC;
+	}
+	.text-content:-webkit-full-screen button {
+		background:#ccc;
+	}	
+</style>
+
+<div class="bloc-content text-content">
+	<button id="open"> Open in a FullScreen Mode</button>
+	
+
+	<editor show-preview="false" show-tabs="true" height="400"> 	
+		<file type="javascript" name="script.js">
+var open = document.querySelector("#open");
+
+open.removeEventListener("click");
+
+open.addEventListener("click", function(e){
+	if(document.webkitFullscreenEnabled)
+		document.querySelector("div.text-content").webkitRequestFullscreen();
+});
+
+		</file>
+		<file type="css" name="style.css">
+.text-content:-webkit-full-screen {
+	background-color: #CCCCCC;
+}
+.text-content:-webkit-full-screen button {
+	background:#ccc;
+}	
+
+		</file>		
+	</editor>	
+</div>
