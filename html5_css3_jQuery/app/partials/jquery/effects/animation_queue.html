@@ -1,0 +1,29 @@
+<div class="bloc-content text-content">
+	<ul>
+		<li>Multiple animation on a single element are not all run at the same time</li>
+		<li>jQuery add animation into a FIFO queue</li>
+		<li>Once an animation ends, it will trigger the next animation in the queue</li>
+		<li>jQuery use a series of Timeout() calls</li>
+	</ul>
+
+	<div class="animated">Animated div</div>
+	<button id="anime">Animate it the snippet block!</button>
+
+	<editor show-preview="false" height="320" show-tabs="false"> 	
+		<file type="javascript" name="myscript.js">
+jQuery(document).ready(function(){
+     jQuery("#anime").off("click");
+
+     jQuery("#anime").on("click", function(event){
+     		event.preventDefault();
+     		jQuery(".animated")
+     			.animate({"height": 300})
+     			.fadeOut()
+     			.show(500)
+     			.animate({"width": 100})
+     			.css("background", "red");
+	  });
+});
+		</file>	
+	</editor>	
+</div>

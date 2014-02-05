@@ -223,24 +223,36 @@
     "content": "jquery/tp_event"
   }, 
   {
-    "title":"jQuery Effects", 
-    "content": "jquery/effects/effects_1"
+    "title":"jQuery Effects : Animate function", 
+    "content": "jquery/effects/animate_function"
+  }, 
+  {  
+    "title":"jQuery Effects : Animate Shortcuts", 
+    "content": "jquery/effects/animate_function_1"
   }, 
   {
-    "title":"jQuery Effects", 
-    "content": "jquery/effects/effects_2"
+    "title":"jQuery Effects : Easing method", 
+    "content": "jquery/effects/animate_function_2"
   }, 
   {
-    "title":"jQuery Effects : Predefined speed", 
-    "content": "jquery/effects/effects_3"
+    "title":"jQuery Effects : Built-in effects", 
+    "content": "jquery/effects/buildinanimation"
   }, 
   {
-    "title":"jQuery Effects : Callback", 
-    "content": "jquery/effects/effects_4"
+    "title":"jQuery Effects : Built-in effects : Fadeing", 
+    "content": "jquery/effects/buildinanimation_1"
   }, 
   {
-    "title":"jQuery Effects : animate() method", 
-    "content": "jquery/effects/effects_5"
+    "title":"jQuery Effects : Built-in effects : Sliding", 
+    "content": "jquery/effects/buildinanimation_2"
+  }, 
+  {
+    "title":"jQuery Effects : Built-in effects : The Animation Queue", 
+    "content": "jquery/effects/animation_queue"
+  }, 
+  {
+    "title":"jQuery Effects : Built-in effects : Common Problem", 
+    "content": "jquery/effects/common_problem"
   }, 
   {
     "title":"Pratical Works", 

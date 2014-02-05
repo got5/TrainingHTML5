@@ -1,0 +1,25 @@
+<div class="bloc-content text-content">
+	<ul>
+		<li>show(), hide() or toggle()</li>
+	</ul>
+
+	
+	<button id="anime">Animate it the snippet block!</button>
+
+	<editor show-preview="false" height="300" show-tabs="false"> 	
+		<file type="javascript" name="myscript.js">
+jQuery(document).ready(function(){
+     jQuery("#anime").off("click");
+
+     jQuery("#anime").on("click", function(event){
+     		event.preventDefault();
+     		jQuery("pre#editor").hide();
+     		//jQuery("pre#editor").show();
+     		//jQuery("pre#editor").toggle();
+	  });
+     
+     
+});
+		</file>	
+	</editor>	
+</div>
