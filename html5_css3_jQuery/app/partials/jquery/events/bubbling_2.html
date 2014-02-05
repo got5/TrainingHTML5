@@ -1,0 +1,44 @@
+<div class="bloc-content text-content">
+
+	<ul>
+		<li>After an event triggers on the deepest possible element, it then triggers on parents in nesting orders</li>
+		<li>The order is called a <span class="text-red">bubbling order</span></li>
+	</ul>
+
+	<style>
+		.d1 {
+			background-color: green;
+		}
+		.d2 {
+			background-color: blue;
+		}
+		.d3 {
+			background-color: red;
+		}
+	</style>
+
+<div class="d1">1
+    <div class="d2">2
+        <div class="d3">3
+        </div>
+    </div>
+</div>
+	<editor show-preview="false" height="300" show-tabs="true"> 	
+		<file type="html" name="index.html">
+&lt;div class="d1"&gt;1
+    &lt;div class="d2"&gt;2
+        &lt;div class="d3"&gt;3
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+		</file>	
+		<file type="javascript" name="script.js">
+document.querySelector(".d1").addEventListener('click', function(){alert("d1");}, false);
+document.querySelector(".d2").addEventListener('click', function(){alert("d2");}, false);
+document.querySelector(".d3").addEventListener('click', function(){alert("d3");}, false);
+		</file>
+	</editor>	
+
+
+</div>

@@ -1,0 +1,32 @@
+<div class="bloc-content text-content">
+
+	<ul>
+		<li>Possibility to manually trigger an event</li>
+		<li>Can pass extra datas to Event Handlers</li>
+		<li>Creation of custom events</li>
+	</ul>
+	<p>
+		<a href="#" id="trigger">Trigger Custom Event</a>
+	</p>
+	<editor show-preview="false" height="400"> 	
+		<file type="javascript" name="myscript.js">
+jQuery(document).ready(function(){
+     jQuery("#trigger").off("my_event");
+     jQuery("#trigger").off("click");
+
+     jQuery("#trigger").on("my_event", function(e, param1, param2){
+     	e.preventDefault();
+     	alert(param1 + " " + param2);
+     });	
+
+     jQuery("#trigger").on("click", function(e, param1, param2){
+     	e.preventDefault();
+     	jQuery("#trigger").trigger("my_event", ["Custom", "Event"]);
+     });	
+
+     
+     
+});
+		</file>	
+	</editor>	
+</div>$

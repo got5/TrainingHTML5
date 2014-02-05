@@ -171,24 +171,52 @@
     "content": "jquery/ajax/ajax_7"
   },
   {
-    "title":"Events : Event Listener", 
-    "content": "jquery/events/events_1"
+    "title":"Events : Event Bases", 
+    "content": "jquery/events/event_bases"
   },
   {
-    "title":"Events : List of available events", 
-    "content": "jquery/events/events_2"
+    "title":"Events : Event Model", 
+    "content": "jquery/events/event_models"
   },
   {
-    "title":"Events : Other events", 
-    "content": "jquery/events/events_3"
+    "title":"Events : Bubbling", 
+    "content": "jquery/events/bubbling_2"
   },
   {
-    "title":"Events : Custom events", 
-    "content": "jquery/events/events_4"
+    "title":"Events : Capture", 
+    "content": "jquery/events/capture"
   },
   {
-    "title":"Events : Prevent the default behavior", 
-    "content": "jquery/events/events_5"
+    "title":"Events : this and event.target", 
+    "content": "jquery/events/thisandeventtarget"
+  },
+  {
+    "title":"Events : this and event.target", 
+    "content": "jquery/events/thisandeventtarget_1"
+  },
+  {
+    "title":"Events : Stopping Propagation", 
+    "content": "jquery/events/stopingpropagation"
+  },
+  {
+    "title":"Events : jQuery on and off functions", 
+    "content": "jquery/events/jqueryonandoff"
+  },
+  {
+    "title":"Events : jQuery on and off functions", 
+    "content": "jquery/events/jqueryonandoff_1"
+  },
+  {
+    "title":"Events : jQuery on and off functions with Forms", 
+    "content": "jquery/events/jqueryonandoff_2"
+  },
+  {
+    "title":"Events : Event Delegation", 
+    "content": "jquery/events/delegate"
+  },
+  {
+    "title":"Events : Custom Events", 
+    "content": "jquery/events/customevent"
   },
   {
     "title":"Pratical Works", 

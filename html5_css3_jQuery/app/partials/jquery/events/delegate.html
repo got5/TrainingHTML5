@@ -1,0 +1,36 @@
+<div class="bloc-content text-content">
+	<style>
+		.d1 {
+			background-color: green;
+		}
+		.d2 {
+			background-color: blue;
+		}
+		.d3 {
+			background-color: red;
+		}
+	</style>
+
+	<ul>
+		<li>Efficient way to bind handlers on multiple elements</li>
+		<li>Can manage events triggered by not-yet-existing element</li>
+	</ul>
+
+	<div class="d1">1</div>
+    <div class="d2">2</div>
+    <div class="d3">3</div>
+
+	<editor show-preview="false" height="300" show-tabs="false"> 	
+		<file type="javascript" name="myscript.js">
+jQuery(document).ready(function(){
+     jQuery(".bloc-content").off("click", ".d1, .d2, .d3");
+
+     jQuery(".bloc-content").on("click", ".d1, .d2, .d3", function(event){
+     		alert(event.target.className);
+	  });
+     
+     
+});
+		</file>	
+	</editor>	
+</div>
