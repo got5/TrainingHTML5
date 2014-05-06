@@ -1,0 +1,30 @@
+<div class="bloc-content text-content">
+	<ul>
+		<li>Give the ability to find DOM elements using CSS selectors</li>
+		<li>Unify the complicated process of traversing/processing elements under a simple unified interface. </li>
+		<li>Similar to the jQuery Selector API</li>
+		<li>Provide only 2 methods : querySelector and querySelectorAll</li>
+		<li>The Efficiency of your selectors depends of the CSS3 support by the browser</li>
+		<li>Return a Static NodeList collection</li>
+	</ul>
+
+		<editor>
+		<file type="javascript" name="script.js">
+partial interface Document {
+	Element? querySelector(DOMString selectors);
+	NodeList querySelectorAll(DOMString selectors);
+}
+
+partial interface DocumentFragment {
+	Element? querySelector(DOMString selectors);
+	NodeList querySelectorAll(DOMString selectors);
+}
+
+partial interface Element {
+	Element? querySelector(DOMString selectors);
+	NodeList querySelectorAll(DOMString selectors);
+}
+
+		</file>	
+	</editor>	
+</div>

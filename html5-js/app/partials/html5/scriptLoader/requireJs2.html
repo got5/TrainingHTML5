@@ -1,0 +1,19 @@
+<div class="bloc-content text-content">
+   <ul> <li>The <span class="text-red">require</span> function take 2 parameters</li>
+    <ul>
+        <li>The dependencies as an array</li>
+        <li>The callback function (executed when all the dependencies are loaded)</li>
+        <ul>
+            <li>Notice the difference with Yepnope</li>
+        </ul>
+        <li>Each dependency is the relative path to the file without the extension</li>
+    </ul>
+       </ul>
+    <editor>
+        <file type="javascript" name="main.js">require(['module', 'path/to/otherModule'], function(module1ref, module2ref){
+    var module1 = new module1ref(),
+    module2 = new module2ref();
+    //...
+});</file>
+    </editor>
+</div>

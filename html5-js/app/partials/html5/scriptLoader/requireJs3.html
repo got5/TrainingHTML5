@@ -1,0 +1,21 @@
+<div class="bloc-content text-content">
+   <ul> <li>The <span class="text-red">define</span> works like require()</li>
+       <ul>
+           <li>can have an extra param (first position). The name of the module.</li>
+       </ul>
+    <li>We use the define function to create a new module.</li>
+    <li>It has to return something, which will be injected to the callback function</li>
+       <li>Usually, we will be returning a function that exposes variables and/or methods</li>
+       </ul>
+    <editor editor-options="{showPreview:false,showTabs:true,height:230,compileCode:false,angular:false}">
+<file type="javascript" name="module.js">define(["jquery"], function($){
+    var module = function(){
+       this.oneFunction = function(){
+            //...
+        }
+        //...
+    };
+    return module;
+});</file>
+    </editor>
+</div>

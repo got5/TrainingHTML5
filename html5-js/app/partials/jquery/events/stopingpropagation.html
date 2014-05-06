@@ -1,0 +1,60 @@
+<!--
+	Il n'y a pas de préconisations sur l'endroit ou appeler la méthode stopPropagation. 
+	Nous pouvons par exemple avoir besoin du handler associé à l'élément parent si le handler
+	actuellement exécuté n'arrive pas à réaliser le traitement. 
+-->
+
+<div class="bloc-content text-content">
+	<ul>
+		<li>A Handler may decide that event is fully processed and stop the bubbling</li>
+		<li>Two different ways :</li>
+		<ul>
+			<li>W3C-compliant browers : event.stopPropagation()</li>
+		</ul>
+		<li>Can disable the default behavior : event.preventDefault()</li>
+	</ul>
+
+
+	<editor editor-options="{showPreview:true,height:300,showTabs:true,angular:false}">
+        <file type="html" name="index.html">
+&lt;div class="d1"&gt;1
+    &lt;div class="d2"&gt;2
+        &lt;div class="d3"&gt;3
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+        </file>
+        <file type="javascript" name="script.js">
+jQuery(document).ready(function(){
+	jQuery(".d1").on("click", function(event){
+     	event.stopPropagation();
+     	alert("target = "+event.target.className+", this="+this.className);
+     });
+     
+     jQuery(".d2").on("click", function(event){
+     	event.stopPropagation();
+     	alert("target = "+event.target.className+", this="+this.className);
+     });
+
+     jQuery(".d3").on("click", function(event){
+     	event.stopPropagation();
+     	alert("target = "+event.target.className+", this="+this.className);
+     });
+     
+});
+		</file>
+
+        <file type="css" name="style.css">
+.d1 {
+    background-color: green;
+}
+.d2 {
+    background-color: blue;
+}
+.d3 {
+    background-color: red;
+}
+        </file>
+	</editor>	
+
+</div>

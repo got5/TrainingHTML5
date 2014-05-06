@@ -1,0 +1,19 @@
+<div class="bloc-content text-content">
+	<div id="z1">
+		<button> Open in a FullScreen Mode</button>
+		<p>This is the zone 1</p>
+	</div>
+
+	<editor>
+		<file type="javascript" name="script.js">
+var button = document.querySelector("#z1 button");
+
+button.removeEventListener("click");
+
+button.addEventListener("click", function(e){
+	document.querySelector("div.text-content").requestFullscreen();	
+});
+
+		</file>	
+	</editor>	
+</div>

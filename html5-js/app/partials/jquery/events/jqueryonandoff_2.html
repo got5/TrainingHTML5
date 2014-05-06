@@ -1,0 +1,29 @@
+<!--
+	L'une des bonnes pratiques est d'appeler la méthode preventDefault() à la fin du handler. 
+	Ainsi, si le code JavaScript exécuté tombe en erreur, le fonctionnement normal sera exécuté. 
+-->
+
+<div class="bloc-content text-content">
+
+
+    <editor editor-options="{showPreview:true,height:300,showTabs:true,angular:false}">
+        <file type="html" name="index.html">
+&lt;form&gt;
+    &lt;input type="text" /&gt;
+    &lt;input type="submit" /&gt;
+&lt;/form&gt;
+        </file>
+        <file type="javascript" name="myscript.js">
+jQuery(document).ready(function(){
+    jQuery("form").off("submit");
+
+    jQuery("form").on("submit", function(event){
+        alert(jQuery("input[type='text']").val());
+        event.preventDefault();
+    });
+});
+        </file>
+
+    </editor>
+
+</div>

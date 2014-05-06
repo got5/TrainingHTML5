@@ -1,0 +1,32 @@
+<!--
+	Il est intéressant de mettre la variable juery.fx.off à true notamment pour les tests, qui ne nécessitent pas les animations pour fonctionner. On accélère ainsi le temps d'exécution des tests. 
+-->
+
+<div class="bloc-content text-content">
+	<ul>
+		<li>The <span class="text-red">animate()</span> method is used to animate a number of properties on an element over a period of time</li>
+		<li>Most properties that are non-numeric cannot be animated</li>
+		<li>Speed in millisecond (or slow, normal, fast)</li>
+		<li>Can override/create speed : jQuery.fx.speeds.slow = 500;</li>
+		<li>Possibility to execute a callback when the animation is finished</li>
+		<li>All jQuery effects can be turned off globally by setting jQuery.fx.off = true</li>
+	</ul>
+
+	
+	<button id="anime">Animate it the snippet block!</button>
+
+	<editor>
+		<file type="javascript" name="myscript.js">
+jQuery(document).ready(function(){
+     jQuery("#anime").off("click");
+
+     jQuery("#anime").on("click", function(event){
+     		event.preventDefault();
+     		jQuery("pre#editor").animate({
+     			"height": 500
+     		}, 500, function(){alert("the animation is finished!")});
+	  });
+});
+		</file>	
+	</editor>	
+</div>

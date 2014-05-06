@@ -1,0 +1,22 @@
+<div class="bloc-content text-content">
+   <ul>
+       <li>We can configure Require in the main.js with require.config() function</li>
+       <li>Librairies like JQuery run as a module (use module name and not path) when they are detecting Require.</li>
+       <li>We can configure global variable.</li>
+       </ul>
+    <editor editor-options="{showPreview:false,showTabs:true,height:230,compileCode:false,angular:false}">
+<file type="javascript" name="main.js">require.config({
+    baseUrl: "js/lib",
+    "paths": {
+        "app": "../app",
+        "jquery": "//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min"
+    },
+    "shim": {
+        "jquery":{
+            "exports": "$"
+        }
+    }
+});
+require(["app"]);</file>
+    </editor>
+</div>

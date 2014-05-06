@@ -1,0 +1,28 @@
+<div class="bloc-content text-content">
+
+	<editor editor-options="{showPreview:false,height:300,showTabs:true,compileCode:false,angular:false}">
+		<file type="javascript" name="myscript.js">
+jQuery(document).ready(function(){
+     
+     jQuery.get("/datas", {
+     	data: {param: "value"}, 
+     	dataType: "html"
+     }, function(data){ /*...*/ });
+     
+});
+		</file>
+        <file type="javascript" name="myscript.js">
+            jQuery(document).ready(function(){
+
+            jQuery.ajax({
+            type: "GET",
+            url: "/datas",
+            data: {param: "value"},
+            success: function(data){ /*...*/ },
+            dataType: "html"
+            });
+
+        });</file>
+    </editor>
+
+</div>

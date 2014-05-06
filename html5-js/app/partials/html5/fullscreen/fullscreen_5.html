@@ -1,0 +1,27 @@
+<div class="bloc-content text-content">
+	<ul>
+		<li>Before activating the Fullscreen mode, you should test if possible</li>
+		<li>The browser may be  in a state incompatible with the FullScreen API</li>
+		<ul>
+			<li>Loading content</li>
+			<li>A Browser preference pane may be focused</li>
+		</ul>
+	</ul>
+
+	<editor>
+		<file type="javascript" name="script.js">
+if(document.fullscreenenabled) {
+    
+	var myNode = document.querySelector("#z1");
+    
+	myNode.requestFullscreen();
+
+} 
+else {
+	
+	//dont()
+
+}
+		</file>	
+	</editor>	
+</div>

@@ -1,0 +1,12 @@
+<div class="bloc-content text-content">
+    <editor>
+<file type="javascript" name="module.js">define(['modernizr','jquery'], function (Modernizr) {
+    if (!Modernizr.input.placeholder) {
+        require(['jquery', 'placeholder'], function ($) {
+            $('#input').placeholder();
+        });
+    }
+    //...
+});</file>
+    </editor>
+</div>

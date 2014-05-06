@@ -1,0 +1,16 @@
+<component name="libraryTable">
+  <library name="Jasmine" type="javaScript">
+    <properties>
+      <sourceFilesUrls>
+        <item url="file://$PROJECT_DIR$/../../angular-workspace/trainingDemos/demoFinished/node_modules/karma-jasmine/lib/jasmine.js" />
+      </sourceFilesUrls>
+    </properties>
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/../../angular-workspace/trainingDemos/demoFinished/node_modules/karma-jasmine/lib/jasmine.js" />
+    </CLASSES>
+    <DOCUMENTATION>
+      <root url="http://jasmine.github.io/2.0/introduction.html" />
+    </DOCUMENTATION>
+    <SOURCES />
+  </library>
+</component>

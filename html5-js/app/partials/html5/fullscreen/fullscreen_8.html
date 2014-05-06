@@ -1,0 +1,31 @@
+<div class="bloc-content text-content">
+	<button id="open"> Open in a FullScreen Mode</button>
+	
+
+	<editor editor-options="{height:400,angular:false}">
+		<file type="javascript" name="script.js">
+var open = document.querySelector("#open");
+
+open.removeEventListener("click");
+
+open.addEventListener("click", function(e){
+	if(document.webkitFullscreenEnabled) {
+
+		document.onwebkitfullscreenchange = function(event) {
+	
+			if(document.querySelector(".text-content:-webkit-full-screen"))
+				document.querySelector("button").innerHTML = "Fullscreen Mode";
+			else document.querySelector("button").innerHTML = "Normal Mode";
+		}
+
+		document.onwebkitfullscreenerror = function(event) {
+			//Error!
+		}
+
+		document.querySelector("div.text-content").webkitRequestFullscreen();
+	}
+});
+
+		</file>	
+	</editor>	
+</div>

@@ -1,0 +1,32 @@
+<div class="bloc-content text-content">
+    <ul>
+        <li>Don't include it in every projects. Use it only when you have no choice</li>
+        <li>Sometimes, simple CSS fallback is sufficient</li>
+        <ul>
+            <li>if a browser doesn't recognize (support) a CSS rule, it simply ignore it</li>
+        </ul>
+    </ul>
+    <editor editor-options="{showPreview:false,showTabs:true,height:300,compileCode:false,angular:false}">
+
+<file name="bad-use.css" type="css">#test{
+    color: white;
+}
+.rgba #test {
+    background: rgba(0,0,0,.8);
+}
+
+.no-rgba #test {
+    background: #333;
+}</file>
+<file name="better-use.css" type="css">#test{
+    color: white;
+    background: #333;
+    background: rgba(0,0,0,.8);
+}</file>
+
+    </editor>
+
+
+
+</div>
+

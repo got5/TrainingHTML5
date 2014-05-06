@@ -1,0 +1,19 @@
+<div class="bloc-content text-content">
+
+	<editor editor-options="{showPreview:false,height:300,compileCode:false,angular:false}">
+		<file type="javascript" name="myscript.js">
+jQuery(document).ready(function(){
+
+     jQuery.ajax({
+     	type: "POST",
+     	url: "/datas",
+     	data: {param: "value"},
+     	success: function(data){ /*...*/ },
+     	error : function(xhr, textStatus, thrownError){ /*...*/ },
+     	dataType: "html"
+     });
+
+});
+		</file>
+	</editor>
+</div>

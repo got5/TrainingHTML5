@@ -1,0 +1,30 @@
+<div class="bloc-content text-content">
+
+	<ol>
+		<li>classList : attribute (DOMTokenList) of an Element object </li>
+		<li>Provide developers methods by which to add, remove and toggle CSS nodes</li>
+		<li>Allows to check if a CSS class has been asigned to a given node</li>
+		<li>For older browser, use these polyfills : <a href="https://github.com/eligrey/classList.js">classList.js</a> and <a href="https://gist.github.com/devongovett/1381839">classList shim</a></li>
+	</ol>
+
+	<editor >
+		<file type="javascript" name="script.js">
+interface DOMTokenList (DOMTokenList) {
+	readonly attribute unsigned long length;
+  	
+  	getter DOMString item(unsigned long index);
+  	
+  	boolean contains(DOMString token);
+  	
+  	void add(DOMString... tokens);
+  	
+  	void remove(DOMString... tokens);
+  	
+  	boolean toggle(DOMString token, optional boolean force);
+  	
+  	stringifier;
+}
+
+		</file>	
+	</editor>	
+</div>

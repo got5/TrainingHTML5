@@ -1,0 +1,38 @@
+<div class="bloc-content text-content">
+
+	<ul>
+		<li>You can iterate through Storage like other JS bjects</li>
+	</ul>
+
+	
+	<button id="storage">Get Storage</button>
+	<p>
+		Value from the localStorage
+	</p>
+
+	<editor editor-options="{height:400,angular:false}">
+		<file type="javascript" name="script.js">
+var button = document.getElementById("storage");
+
+button.removeEventListener("click");
+
+button.addEventListener("click", function(){
+
+	localStorage.setItem("test", "value");
+    localStorage.setItem("test2", "value2");
+
+   	document.querySelector("#storage ~ p").innerHTML = '';
+
+	for(var key in localStorage){
+	console.log(key);
+		document.querySelector("#storage ~ p").innerHTML += localStorage[key] + ", ";
+	}   
+
+});
+
+		</file>	
+	</editor>	
+
+
+
+</div>
