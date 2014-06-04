@@ -371,6 +371,10 @@ td {
 	cursor: pointer;
 }
 
+li img, li p{
+    display: inline;
+}
+
 /* Ratings */
 p.rating {font-size: 0.75em;}
 .rating {

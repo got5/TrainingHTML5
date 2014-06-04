@@ -1,6 +1,6 @@
 'use strict';
 
-var application = angular.module('html5JsTrainingApp',
+var application = angular.module('trainingApp',
         [ 'ngRoute', 'ngAnimate', 'ui.bootstrap', 'training.editor' ])
     .config(['$routeProvider','$locationProvider','$compileProvider','$injector',
         function ($routeProvider, $locationProvider, $compileProvider, $injector) {

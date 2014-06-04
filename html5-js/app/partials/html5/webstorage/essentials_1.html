@@ -1,15 +1,10 @@
 <div class="bloc-content text-content">
-
-	<ol>
-		<li>Performance</li>
-		<li>Speed</li>
-		<li>Reduce waiting times</li>
-		<li>Launch while offline</li>
-	</ol>
-
+    <p>A key-value database aka <span class="text-red">DOM Storage</span></p>
+    <p class="small"><span class="text-red">localStorage</span> : store data (indefinitely) on the client.</p>
+    <p class="small"><span class="text-red">sessionStorage</span>: stored data (for the lifecycle of one tab) on the client.</p>
+    <p>Both extends the Storage interface</p>
 	<editor editor-options="{height:400,angular:false}">
-		<file type="javascript" name="script.js">
-interface Storage {
+<file type="oop">interface Storage {
 	readonly attribute unsigned long length;
 
 	DOMString key(in unsigned long index);
@@ -21,8 +16,6 @@ interface Storage {
 	deleter void removeItem(in DOMString key);
 
 	void clear();
-}
-
-		</file>	
+}</file>
 	</editor>	
 </div>

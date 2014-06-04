@@ -75,11 +75,16 @@ directives.directive('compile',['$compile','$controller','$timeout', function ($
 directives.value('escape', function (text) {
     return text.replace(/\&/g, '&amp;').replace(/\</g, '&lt;').replace(/\>/g, '&gt;').replace(/"/g, '&quot;');
 }).factory('script', function () {
-    var version = '1.2.13';
+    var version = {
+        angular:'1.2.16',
+        jquery:'1.11.1',
+        uiBootstrap:'0.10.0'
+    }
 
     return {
-        angular: '<script src="https://ajax.googleapis.com/ajax/libs/angularjs/' + version + '/angular.min.js"></script>\n',
-        uiBootstrap: '<script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.10.0/ui-bootstrap-tpls.min.js"></script>\n'
+        jquery:'<script src="//ajax.googleapis.com/ajax/libs/jquery/' + version.jquery + '/jquery.min.js"></script>',
+        angular: '<script src="https://ajax.googleapis.com/ajax/libs/angularjs/' + version.angular + '/angular.min.js"></script>\n',
+        uiBootstrap: '<script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/' + version.uiBootstrap + '/ui-bootstrap-tpls.min.js"></script>\n'
     };
 });
 
@@ -473,8 +478,8 @@ var EditorConstructor = function ($timeout, $location, editorConfig, saveService
                     stylesheet = '<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">\n',
                     fields = {
                         html: '',
-                        css: scope.code.css,
-                        js: scope.code.js
+                        css: scope.code.css ? scope.code.css : '',
+                        js: scope.code.js ? scope.code.js : ''
                     };
 
                 fields.html +=
@@ -494,7 +499,7 @@ var EditorConstructor = function ($timeout, $location, editorConfig, saveService
                     hiddenField('js', fields.js) +
                     'JsFiddle: <button class="btn">' +
                     '<i class="icon-white icon-pencil"></i> ' +
-                    '<img src="../../images/play.png"/>' +
+                    '<img src="images/play.png"/>' +
                     '</button>' +
                     '</form></div></div>');
                 elm.parent().after(jf);

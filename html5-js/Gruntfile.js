@@ -4,15 +4,22 @@ module.exports = function(grunt){
 
     grunt.initConfig({
 
+        yeoman: {
+            // configurable paths
+            app:  'app',
+            tmp: 'tmp',
+            dist: 'prod'
+        },
+
         pkg: grunt.file.readJSON("package.json"),
 
         html2js:{
             directives:{
                 options:{
-                    base:'app'
+                    base:'<%= yeoman.app %>'
                 },
-                src:['app/editor/templates/*.html'],
-                dest: 'app/editor/templates.js',
+                src:['<%= yeoman.app %>/editor/templates/*.html'],
+                dest: '<%= yeoman.app %>/editor/templates.js',
                 module:false
             }
         },
@@ -24,47 +31,43 @@ module.exports = function(grunt){
                 stripBanners:true
             },
             editor:{
-                src:['app/editor/templates.js','app/editor/training-editor.js','app/editor/js/**/*.js'],
-                dest:'temp/editor.js'
+                src:['<%= yeoman.app %>/editor/templates.js','app/editor/training-editor.js','app/editor/js/**/*.js'],
+                dest:'<%= yeoman.tmp %>/editor.js'
             },
 
             app: {
-                src: [ 'app/js/**/*.js'],
-                dest: 'temp/app.js'
+                src: [ '<%= yeoman.app %>/js/**/*.js'],
+                dest: '<%= yeoman.tmp %>/app.js'
             },
-            /*css: {
-                src: ['app/styles/animation.css','app/styles/bootstrap.css','app/styles/main.css'],
-                dest: 'prod/styles/styles.css'
-            },*/
             dep: {
                 src: [
-                    'app/vendor/modernizr/modernizr.js',
-                    'app/vendor/jquery/dist/jquery.min.js',
-                    'app/vendor/ace-builds/src-min/ace.js',
-                    'app/vendor/ace-builds/src-min/ext-language_tools.js',
-                    'app/vendor/angular/angular.min.js',
-                    'app/vendor/angular-route/angular-route.min.js',
-                    'app/vendor/angular-animate/angular-animate.min.js',
-                    'app/vendor/angular-ui-bootstrap-bower/ui-bootstrap-tpls.min.js'
+                    '<%= yeoman.app %>/vendor/modernizr/modernizr.js',
+                    '<%= yeoman.app %>/vendor/jquery/dist/jquery.min.js',
+                    '<%= yeoman.app %>/vendor/ace-builds/src-min/ace.js',
+                    '<%= yeoman.app %>/vendor/ace-builds/src-min/ext-language_tools.js',
+                    '<%= yeoman.app %>/vendor/angular/angular.min.js',
+                    '<%= yeoman.app %>/vendor/angular-route/angular-route.min.js',
+                    '<%= yeoman.app %>/vendor/angular-animate/angular-animate.min.js',
+                    '<%= yeoman.app %>/vendor/angular-ui-bootstrap-bower/ui-bootstrap-tpls.min.js'
                 ],
-                dest: 'temp/dep.js'
+                dest: '<%= yeoman.tmp %>/dep.js'
             },
             prod:{
-                src:['temp/dep.js','temp/editor.js','temp/app.js'],
-                dest: 'prod/js/script.js'
+                src:['<%= yeoman.tmp %>/dep.js','<%= yeoman.tmp %>/editor.js','<%= yeoman.tmp %>/app.js'],
+                dest: '<%= yeoman.dist %>/js/script.js'
             }
         },
 
         watch: {
             js: {
-                files: ['app/js/**/*.js', 'test/unit/**/*.js'],
+                files: ['<%= yeoman.app %>/js/**/*.js', 'test/unit/**/*.js'],
                 tasks: ['karma:unit:run'],
                 options: {
                     livereload: true
                 }
             },
             css: {
-                files: ['app/style/**/*.css'],
+                files: ['<%= yeoman.app %>/style/**/*.css'],
                 tasks: [],
                 options: {
                     livereload: true
@@ -74,16 +77,25 @@ module.exports = function(grunt){
 
         copy: {
             prod: {
-                cwd: 'app/',
+                cwd: '<%= yeoman.app %>/',
                 expand: true,
-                src: ['data/**','images/**','styles/**','partials/**','favicon.ico','index.html'],
-                dest: 'prod/'
+                src: [
+                    'data/**',
+                    'styles/**',
+                    '*.{ico,png,txt}',
+                    '.htaccess',
+                    '*.html',
+                    'partials/**/*.html',
+                    'images/{,*/}*.{webp}',
+                    'fonts/*'
+                ],
+                dest: '<%= yeoman.dist %>/'
             },
             ace:{
                 cwd:'app/vendor/ace-builds/src-min/',
                 expand:true,
                 src:['**'],
-                dest: 'prod/'
+                dest: '<%= yeoman.dist %>/'
 
             }
         },
@@ -93,54 +105,105 @@ module.exports = function(grunt){
             prod: {
                 files: [{
                     expand: true,
-                    cwd: 'prod/js',
+                    cwd: '<%= yeoman.dist %>/js',
                     src: '**/*.js',
-                    dest: 'prod/js'
+                    dest: '<%= yeoman.dist %>/js'
                 }],
                 options: {
                     mangle: true
                 }
             }
         },
-
         cssmin: {
             combine: {
                 options: {
                     banner: '/* CSS Minified stylesheet */'
                 },
                 files: {
-                    'prod/styles/styles.css': ['prod/styles/styles.css']
+                    'prod/styles/styles.css': ['<%= yeoman.dist %>/styles/styles.css']
                 }
             }
         },
 
         htmlmin: {
-            prod: {
-                options: {                                 // Target options
-                    removeComments: true,
-                    collapseWhitespace: true
+            dist: {
+                options: {
+                    collapseWhitespace: true,
+                    collapseBooleanAttributes: true,
+                    removeCommentsFromCDATA: true,
+                    removeOptionalTags: true
                 },
                 files: [{
                     expand: true,
-                    cwd: 'prod/',
-                    src: ['index.html'],
-                    dest: 'prod/'
-                }
-                ]
+                    cwd: '<%= yeoman.dist %>',
+                    src: ['*.html'],
+                    dest: '<%= yeoman.dist %>'
+                }]
             }
         },
-
+        imagemin: {
+            dist: {
+                files: [{
+                    expand: true,
+                    cwd: '<%= yeoman.app %>/images',
+                    src: '{,*/}*.{png,jpg,jpeg,gif}',
+                    dest: '<%= yeoman.dist %>/images'
+                }]
+            }
+        },
+        svgmin: {
+            dist: {
+                files: [{
+                    expand: true,
+                    cwd: '<%= yeoman.app %>/images',
+                    src: '{,*/}*.svg',
+                    dest: '<%= yeoman.dist %>/images'
+                }]
+            }
+        },
+        useminPrepare: {
+            html: '<%= yeoman.app %>/index.html',
+            options: {
+                dest: '<%= yeoman.dist %>',
+                flow: {
+                    html: {
+                        steps: {
+                            js: ['concat', 'uglifyjs'],
+                            css: ['cssmin']
+                        },
+                        post: {}
+                    }
+                }
+            }
+        },
+        // Performs rewrites based on rev and the useminPrepare configuration
+        usemin: {
+            html: ['<%= yeoman.dist %>/index.html','<%= yeoman.dist %>/partials/**/*.html'],
+            css: ['<%= yeoman.dist %>/styles/{,*/}*.css'],
+            options: {
+                assetsDirs: ['<%= yeoman.dist %>']
+            }
+        },
+        rev: {
+            dist: {
+                files: {
+                    src: [
+                        '<%= yeoman.dist %>/js/{,*/}*.js',
+                        '<%= yeoman.dist %>/styles/{,*/}*.css',
+                        '<%= yeoman.dist %>/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}',
+                        '<%= yeoman.dist %>/styles/fonts/*'
+                    ]
+                }
+            }
+        },
         clean: {
             prodpre: {
-                src: ["prod/*"]
+                src: ["<%= yeoman.dist %>/*"]
             },
             temp:{
-                src:['temp/*']
+                src:['<%= yeoman.tmp %>/*']
             }
         }
-
-
-
     });
 
     require('matchdep').filterDev('grunt-contrib-*').forEach(grunt.loadNpmTasks);
@@ -149,13 +212,17 @@ module.exports = function(grunt){
     grunt.registerTask("build", [
         "clean:prodpre",
         "html2js",
+        'useminPrepare',
         "concat",
         "copy:prod",
+        "imagemin",
         //"cssmin",
         "uglify:prod",
+        "rev",
         "clean:temp",
         "copy:ace",
-        "htmlmin:prod"
+        "usemin",
+        "htmlmin"
     ]);
 
 };

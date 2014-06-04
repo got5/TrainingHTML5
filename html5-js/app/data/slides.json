@@ -428,16 +428,148 @@
         "content": "html5/animation/tp"
     },
     {
-        "title": "ApplicationCache API",
-        "content": "html5/applicationcache/demo"
+        "title": "Why we need caching ?",
+        "content": "html5/applicationcache/essentials"
     },
     {
-        "title": "ApplicationCache Essentials",
-        "content": "html5/applicationcache/essentials"
+        "title": "Application Cache Introduction",
+        "content": "html5/applicationcache/essentials2"
+    },
+    {
+        "title": "Application Cache: Manifest file",
+        "content": "html5/applicationcache/essentials3"
+    },
+    {
+        "title": "Application Cache: Invalidation",
+        "content": "html5/applicationcache/essentials4"
+    },
+    {
+        "title": "Application Cache: Javascript api",
+        "content": "html5/applicationcache/essentials5"
     },
     {
         "title": "Practical Works",
         "content": "html5/applicationcache/tp"
+    },
+    {
+        "title": "WebStorage",
+        "content": "html5/webstorage/essentials_1"
+    },
+    {
+        "title": "LocalStorage : Saving Data",
+        "content": "html5/webstorage/essentials_2"
+    },
+    {
+        "title": "LocalStorage : Getting Data",
+        "content": "html5/webstorage/essentials_3"
+    },
+    {
+        "title": "LocalStorage : Only Strings supported",
+        "content": "html5/webstorage/essentials_4"
+    },
+    {
+        "title": "LocalStorage : Iterating through Storage",
+        "content": "html5/webstorage/essentials_5"
+    },
+    {
+        "title": "LocalStorage : Cleaning up Storage",
+        "content": "html5/webstorage/essentials_6"
+    },
+    {
+        "title": "LocalStorage : Storage Events",
+        "content": "html5/webstorage/essentials_7"
+    },
+    {
+        "title": "LocalStorage : Can I Use ? ",
+        "content": "html5/webstorage/essentials_8"
+    },
+    {
+        "title": "LocalStorage : Things to Consider ",
+        "content": "html5/webstorage/essentials_9"
+    },
+
+    {
+        "title": "Practical Works",
+        "content": "html5/webstorage/tp"
+    },
+    {
+        "title": "IndexedDB",
+        "content": "html5/indexedDB/intro"
+    },
+    {
+        "title": "IndexedDB - features",
+        "content": "html5/indexedDB/features"
+    },
+
+    {
+        "title": "IndexedDB - Browser support",
+        "content": "html5/indexedDB/browser-support"
+    },
+    {
+        "title": "construction & Destruction",
+        "content": "html5/indexedDB/construction-destruction"
+    },
+    {
+        "title": "IndexDB - CRUD",
+        "content": "html5/indexedDB/CRUD"
+    },
+
+    {
+        "title": "IndexDB - Cursor",
+        "content": "html5/indexedDB/cursor"
+    },
+    {
+        "title": "IndexDB - index",
+        "content": "html5/indexedDB/index"
+    },
+    {
+        "title": "IndexDB - range",
+        "content": "html5/indexedDB/range"
+    },
+    {
+        "title": "IndexDB - range 2",
+        "content": "html5/indexedDB/range2"
+    },
+
+    {
+        "title": "IndexDB - when does the task is complete ?",
+        "content": "html5/indexedDB/complete"
+    },
+    {
+        "title": "IndexDB - Abstraction layer",
+        "content": "html5/indexedDB/abstraction"
+    },
+    {
+        "title": "IndexDB - Abstraction layer 2",
+        "content": "html5/indexedDB/abstraction2"
+    },
+    {
+        "title": "File System",
+        "content": "html5/filesystem/intro"
+    },
+     {
+        "title": "File System - features",
+        "content": "html5/filesystem/features"
+    },
+    {
+        "title": "File System - browser support",
+        "content": "html5/filesystem/browser-support"
+    },
+    {
+        "title": "File System - temporary and persistent",
+        "content": "html5/filesystem/temporary_persistent"
+    },
+    {
+        "title": "File System - Initialization",
+        "content": "html5/filesystem/init"
+    },
+    {
+        "title": "File System - Initialization - Wrapper",
+        "content": "html5/filesystem/wrapper"
+    },
+    {
+        "title": "File System - Directories",
+        "content": "html5/filesystem/directories"
     },
     {
         "title": "Canvas API",
@@ -503,46 +635,7 @@
         "title": "Fullscreen API : Play with Events",
         "content": "html5/fullscreen/fullscreen_8"
     },
-    {
-        "title": "Why we need local storage",
-        "content": "html5/webstorage/essentials_1"
-    },
-    {
-        "title": "LocalStorage : Saving Data",
-        "content": "html5/webstorage/essentials_2"
-    },
-    {
-        "title": "LocalStorage : Getting Data",
-        "content": "html5/webstorage/essentials_3"
-    },
-    {
-        "title": "LocalStorage : Only Strings supported",
-        "content": "html5/webstorage/essentials_4"
-    },
-    {
-        "title": "LocalStorage : Iterating through Storage",
-        "content": "html5/webstorage/essentials_5"
-    },
-    {
-        "title": "LocalStorage : Cleaning up Storage",
-        "content": "html5/webstorage/essentials_6"
-    },
-    {
-        "title": "LocalStorage : Storage Events",
-        "content": "html5/webstorage/essentials_7"
-    },
-    {
-        "title": "LocalStorage : Can I Use ? ",
-        "content": "html5/webstorage/essentials_8"
-    },
-    {
-        "title": "LocalStorage : Things to Consider ",
-        "content": "html5/webstorage/essentials_9"
-    },
-    {
-        "title": "Practical Works",
-        "content": "html5/webstorage/tp"
-    },
+
     {
         "title": "Selectors Essentials : The historic API",
         "content": "html5/selectors/essentials_4"
