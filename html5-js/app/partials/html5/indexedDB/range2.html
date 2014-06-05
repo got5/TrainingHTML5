@@ -1,0 +1,26 @@
+<div class="bloc-content text-content">
+<ul>
+	<li>Using Range to add constraint to the result :</li>
+	<ul>
+		<li>only(String)  : only the result that respect this condition (on String)</li>
+		<li>next, prev, nextunique, prevunique : order and restrict result</li>
+	</ul>
+</ul>		
+<editor editor-options="{height:400}">
+<file type="javascript" name="range.js">//...
+ var name = "Johnson",
+ 	transaction = db.instance.transaction(['people'],'readonly'),
+	index = transaction.objectStore('people').index('lastName'),
+	range = IDBKeyRange.only(name);
+	//range = IDBKeyRange.lowerBound(name,true); //works with string too
+	
+
+var getRequest = index.openCursor(range,'prev'); //reverse the order of the result
+//var getRequest = index.openCursor(range,'next'); //default
+var getRequest = index.openCursor(range,'prevunique'); //same as above but restrict to a single result
+var getRequest = index.openCursor(range,'nextunique'); 
+//...
+</file>
+</editor>
+
+</div>

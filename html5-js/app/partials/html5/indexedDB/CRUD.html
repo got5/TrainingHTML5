@@ -1,0 +1,133 @@
+<div class="bloc-content text-content">
+
+
+<editor editor editor-options="{showPreview:true,showTabs:true,height:450,compileCode:true,angular:true}">
+<file type="javascript" name="db.js">var db = {
+    name:'CrudDB',
+    version: 1,
+    instance: {},
+    storeNames: {
+        books: 'books'
+    },
+    defaultErrorHandler: function(e){
+        console.log(e);
+    },
+    setDefaultErrorHandler: function(request){
+        if('onerror' in request){
+            request.onerror = db.defaultErrorHandler;
+        }
+        if('onblocked' in request){
+            request.onblocked = db.defaultErrorHandler;
+        }
+    }
+}
+//What follows is the same as previous slide
+var openDatabase = function(){
+    var openRequest = window.indexedDB.open(db.name,db.version);
+    openRequest.onupgradeneeded = function(e){ 
+        var newVersion = e.target.result;
+
+        if(!newVersion.objectStoreNames.contains(db.storeNames.books)){
+            newVersion.createObjectStore(db.storeNames.books,{ autoIncrement:true});
+        }
+    };
+    db.setDefaultErrorHandler(openRequest);
+    openRequest.onsuccess = function(e){
+        db.instance = e.target.result;
+    };
+};
+openDatabase();</file>
+<file type="javascript" name="create.js">function add(){
+    var dt = new Date();
+    var book = {
+        name:'Fall of Giant',
+        author:'Ken Follet',
+        bookId: 'fall-of-giant',
+        insertD: dt,
+        modifiedD:dt
+    };
+
+    var transaction = db.instance.transaction([db.storeNames.books],'readwrite'); //or readonly
+    var
+        store = transaction.objectStore(db.storeNames.books),
+        addRequest = store.add(book);
+
+    db.setDefaultErrorHandler(addRequest);
+
+    addRequest.onsuccess = function(e){
+        console.log("Book is added");
+        console.log(e.target.result);
+    };
+}</file>
+<file type="javascript" name="read.js">function read(){
+    var transaction = db.instance.transaction([db.storeNames.books],'readonly'); //or readonly
+    var
+        store = transaction.objectStore(db.storeNames.books),
+        key = 1; //just for simplicity and for the purpose of the example.
+        getRequest = store.get(key);
+    
+    db.setDefaultErrorHandler(getRequest);
+
+    getRequest.onsuccess = function(e){
+        var book = e.target.result;
+        if(book !== undefined){
+            console.log(e.target.result);    
+        }else{
+            console.log("Doh")
+        }
+    };
+}</file>
+<file type="javascript" name="update.js">function update(){
+    var transaction = db.instance.transaction([db.storeNames.books],'readwrite'); //or readonly
+    var
+        store = transaction.objectStore(db.storeNames.books),
+        key = 1; //just for simplicity and for the purpose of the example.
+        getRequest = store.get(key);
+    
+    db.setDefaultErrorHandler(getRequest);
+
+    getRequest.onsuccess = function(e){
+        var book = e.target.result;
+        if(book !== undefined){
+            book.modifiedD = new Date();
+            var putRequest = store.put(book,key);
+            db.setDefaultErrorHandler(putRequest); 
+            putRequest.onsuccess = function(e){
+                console.log("Book updated");
+            } 
+        }else{
+            console.log("Doh")
+        }
+    };
+}</file>
+<file type="javascript" name="delete.js">function del(){
+    var transaction = db.instance.transaction([db.storeNames.books],'readwrite'); //or readonly
+    var
+        store = transaction.objectStore(db.storeNames.books),
+        key = 1; //just for simplicity and for the purpose of the example.
+        deleteRequest = store.delete(key);
+    
+    db.setDefaultErrorHandler(deleteRequest);
+
+    deleteRequest.onsuccess = function(e){
+        console.log("Book is deleted");
+    };
+}
+//ignore this
+var indexedDBCtrl = function(){
+        this.add = add;
+        this.read = read;
+        this.update = update;
+        this.del = del;
+};</file>
+<file type="html" name="index.html">&lt;!--This use the AngularJS framework. You don't need to understand what's in here. --&gt;
+&lt;p class="small" ng-controller="indexedDBCtrl as iDC"&gt;
+    &lt;a  class="btn" ng-click="iDC.add()"&gt;Call add() function&lt;/a&gt;
+    &lt;a class="btn" ng-click="iDC.read()"&gt;Call read() function&lt;/a&gt;
+    &lt;a class="btn" ng-click="iDC.update()"&gt;Call update() function&lt;/a&gt;
+    &lt;a class="btn" ng-click="iDC.del()"&gt;Call del() function&lt;/a&gt;
+&lt;/p&gt;
+</file>
+</editor>
+</div>
+

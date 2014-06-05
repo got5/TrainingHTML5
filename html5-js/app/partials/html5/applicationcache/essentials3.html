@@ -1,0 +1,38 @@
+<div class="bloc-content text-content">
+    <p>You have to set the correct mime type for the manifest file</p>
+    <ul class="small">
+        <li>In the request header, you can add : </li>
+        <ul>
+            <li><span class="text-red">"Content-Type":"text/cache-manifest"</span> it depends on your server</li>
+        </ul>
+    </ul>
+    <p>No wildcard are allowed in the cache section !</p>
+    <editor editor-options="{showPreview:false,showTabs:true,height:200,compileCode:false,angular:false}">
+
+<file type="html" name="index.html">&lt;!doctype html&gt;
+&lt;html lang="en" manifest="/offline.appcache"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;Document&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;</file>
+<file type="cpp" name="offline.appcache">CACHE MANIFEST
+
+#Version 00
+
+CACHE:
+/js/jquery.min.js
+/js/app.min.js
+
+/styles/main.css
+
+/images/logo.png
+
+NETWORK
+*
+</file>
+</editor>
+</div>

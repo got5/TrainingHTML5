@@ -1,0 +1,27 @@
+<div class="bloc-content text-content">
+    <ul>
+        <li>Asynchronous API</li>
+        <ul>
+            <li>Used with <span class="text-red">Web Workers</span></li>
+            <li>Don't forget that the data are stored in the specific browser</li>
+            <ul><li>You have to assume that you will not find the data you are expecting</li></ul>
+        </ul>
+        <li>Capacity : </li>
+        <ul>
+            <li>W3C : no recommendation</li>
+            <li>Chrome : no limit defined</li>
+            <li>IE : Prompt user for exceed limit of 50mb or so </li>
+            <li>Safari...well</li>
+        </ul>
+        <li>Performance</li>
+        <ul>
+            <li>Can store 5k simple objects and get good performance</li>
+            <li>But there is no good reason to want to store as much data in the local client</li>
+            <li>You can but you maybe shouldn't</li>
+        </ul>
+        <li>Browser support : <a href="http://html5please.com/#indexedDB" target="_blank">Html 5 please</a></li>
+    </ul>
+</div>
+<div data-side-button url="http://caniuse.com/indexeddb" title="Can I Use"
+     image="images/html5-api/html5-logo.png"></div>
+

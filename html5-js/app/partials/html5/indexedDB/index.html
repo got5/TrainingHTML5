@@ -1,0 +1,20 @@
+<div class="bloc-content text-content">
+<ul>
+	<li>I want to search for a specific object</li>
+	<ul>
+		<li>I'll have to use an index</li>
+		<li>If the index is not unique you will get multiple objects in return</li>
+	</ul>
+</ul>		
+<editor>
+<file type="javascript" name="index.js">//...
+var lastName = $('#lastNameInput');
+var transaction = db.instance.transaction(['people'],'readonly');
+var index = transaction.objectStore('people').index('lastName');
+
+var getRequest = index.get(lastName)
+//...
+</file>
+</editor>
+
+</div>

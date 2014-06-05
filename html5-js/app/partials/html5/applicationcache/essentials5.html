@@ -1,0 +1,65 @@
+<div class="bloc-content text-content">
+<p> <a href="http://www.whatwg.org/specs/web-apps/current-work/multipage/offline.html#appcacheevents" target="_blank">Brower Cache API</a></p>
+  <style>.online:before{
+      content:'\2713\0020'; color:green; font-weight:bold;
+  }
+  </style>
+
+    <section id="rates">
+    <span>Loading</span>
+        <progress><bar value="50"></bar></progress>
+    </section>
+    <section id="converter">
+    <p id="network-status" class="online">Online</p>
+    </section>
+
+   <editor editor-options="{showPreview:false,showTabs:true,height:400,compileCode:false,angular:false}">
+<file type="html" name="index.html">&lt;section id="rates"&gt;
+    &lt;span&gt;Loading&lt;/span&gt;
+    &lt;progress min="0" max="100" value="50"&gt;&lt;/progress&gt;
+&lt;/section&gt;
+&lt;section id="converter"&gt;
+    &lt;p id="network-status" class="online"&gt;Online&lt;/p&gt;
+&lt;/section&gt;</file>
+<file type="javascript" name="offline.js">$(function(){
+    if(!!window.applicationCache){
+        var cache = window.applicationCache;
+        cache.addEventListener("downloading",function(){
+            $("#rates progress").css('display', 'block');
+        },false);
+
+        cache.addEventListener("progress",function(progressEvent){
+            var percentage = progressEvent.loaded / progressEvent.total * 100;
+            $("#rates progress").val(percentage);
+        },false);
+
+        var complete = function(){
+            $("#rates progress").hide();
+        };
+        appCache.addEventListener("cached", complete, false);
+        appCache.addEventListener("updateready", complete, false);
+        appCache.addEventListener("error", complete, false);
+        appCache.addEventListener("obsolete", complete, false);
+
+        var offline = function(){
+            $("#network-status").removeClass("online").addClass("offline");
+        }
+    window.addEventListener("offline",offline,false);
+    if(!navigator.onLine) offline();
+
+    window.addEventListener("online",function(){
+        $("#network-status").removeClass("offline").addClass("online");
+    },false);
+
+    }
+
+});</file>
+<file type="css" name="style.css">.online:before{
+    content:'\2713\0020'; color:green; font-weight:bold;
+}
+.online:before{
+    content:'\2715\0020'; color:red; font-weight:bold;
+}</file>
+   </editor>
+</div>
+<div data-side-button url="http://caniuse.com/offline-apps" title="Can I Use" image="images/html5-api/html5-logo.png"></div>

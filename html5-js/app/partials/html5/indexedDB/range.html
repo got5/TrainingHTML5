@@ -1,0 +1,26 @@
+<div class="bloc-content text-content">
+<ul>
+	<li>Using Range to add constraint to the result :</li>
+	<ul>
+		<li>upperBound(NUMBER/STRING,Boolean) : the boolean is for exclude</li>
+		<li>lowerBound(18,true)</li>
+		<li>bound(NUMBER/STRING,NUMBER/STRING,Boolean,Boolean)</li>
+		<ul><li>ex : bound(18,26,true,false): 18 < result <= 26 </li></ul>
+	</ul>
+</ul>		
+<editor editor-options="{height:300}">
+<file type="javascript" name="range.js">//...
+var 
+	startAt = 18,
+    endAt = 26,
+ 	transaction = db.instance.transaction(['people'],'readonly'),
+	index = transaction.objectStore('people').index('age'),
+	range = IDBKeyRange.bound(startAt,endAt);
+	//range = IDBKeyRange.lowerBound(startAt,true);
+
+var getRequest = index.openCursor(range);
+//...
+</file>
+</editor>
+
+</div>
