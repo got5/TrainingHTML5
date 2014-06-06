@@ -572,6 +572,18 @@
         "content": "html5/filesystem/directories"
     },
     {
+        "title": "File System - Sub Directories",
+        "content": "html5/filesystem/sub"
+    },
+    {
+        "title": "File System - Files",
+        "content": "html5/filesystem/files"
+    },
+    {
+        "title": "File System - Files - CRUD",
+        "content": "html5/filesystem/crud"
+    },
+    {
         "title": "Canvas API",
         "content": "html5/canvas/index"
     },

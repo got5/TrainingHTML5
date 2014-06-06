@@ -25,7 +25,12 @@
                 case FileError.ABORT_ERR: //3
                     msg += 'Abort error. ';
                     break;
-                // Other cases ... See FileError.prototype for complete list
+
+            // Other cases ... See FileError.prototype for complete list
+
+                default:
+                    msg +='Unknown error. ';
+
             }
             console.error(msg);
         },
@@ -60,45 +65,41 @@
     }
 
 })();</file>
-<file type="javascript" name="directory.js">var createDirectory = function(){
+<file type="javascript" name="file.js">var createFile = function(){
     this.create = function(name){
         localFileSystem.request(function(fileSystem){
-            fileSystem.root.getDirectory(
+            fileSystem.root.getFile(
                 name,
-
                 {create:true},
-              //{create:true,exclusive:true},
+                //{create:true, exclusive: true},
 
-                function(directory){
-                    console.log(name + ' created');
-                    console.log(directory);
-                },
-
-                localFileSystem.defaultErrorHandler);
+                function(fileEntry){
+                    console.log(fileEntry);
+                },localFileSystem.defaultErrorHandler);
         });
   }
 
     this.read = function(name){
         localFileSystem.request(function(fileSystem){
-            fileSystem.root.getDirectory(
+            fileSystem.root.getFile(
                 name,
 
                 {},
 
-                function(directory){
+                function(file){
                     console.log(name + ' created');
-                    console.log(directory);
+                    console.log(file);
                 },
 
-                localFileSystem.defaultErrorHandler);
+                fileSystem.defaultErrorHandler);
         });
 
     }
 }</file>
-<file type="html" name="create.html">&lt;div ng-controller="createDirectory as cd"&gt;
+<file type="html" name="create.html">&lt;div ng-controller="createFile as cf"&gt;
     &lt;input type="text" ng-model="name"/&gt;
-    &lt;button type="button" class="btn btn-mini btn-default" ng-click="cd.create(name)"&gt;Create Directory&lt;/button&gt;
-    &lt;button type="button" class="btn btn-mini btn-success" ng-click="cd.create(name)"&gt;Read Directory&lt;/button&gt;
+    &lt;button type="button" class="btn btn-mini btn-default" ng-click="cf.create(name)"&gt;Create File&lt;/button&gt;
+    &lt;button type="button" class="btn btn-mini btn-success" ng-click="cf.create(name)"&gt;Read File&lt;/button&gt;
 &lt;/div&gt;
 </file>
     </editor>

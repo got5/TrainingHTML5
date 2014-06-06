@@ -2,7 +2,7 @@ node_modules/
 prod/
 app/vendor/
 dist/
-idea/
+.idea/
 .tmp/
 temp/
 tmp/
