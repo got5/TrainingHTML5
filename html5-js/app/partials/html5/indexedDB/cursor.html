@@ -36,6 +36,7 @@ var openDatabase = function(){
             store.createIndex('age','age',{unique: false});
 
             //generate some data with mockJSON
+            //http://experiments.mennovanslooten.nl/2010/mockjson/
             var people = $.mockJSON.generateFromTemplate({
             	'people|200-200':[{
             		'firstName':'@MALE_FIRST_NAME',
@@ -89,5 +90,18 @@ var indexedDBCtrl = function(){
     &lt;a class="btn" ng-click="iDC.cursor()"&gt;Call cursor() function&lt;/a&gt;
 &lt;/p&gt;</file>
 </editor>
+<ol>
+    <li>We can create index via store.createIndex(name,property,option)</li>
+    <li>Cursor allow to get multiple result of a query</li>
+    <ol>
+        <li>Create a request with store.openCursor()</li>
+        <li>Observe event onsuccess on request</li>
+        <li>Data are in event first argument of the callback (e). We have  e.target.result.value</li>
+        <li>Call the e.result.continue() method to get the next result and trigger the onsuccess callback again</li>
+
+
+    </ol>
+
+</ol>
 </div>
 

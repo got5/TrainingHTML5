@@ -79,7 +79,7 @@ directives.value('escape', function (text) {
         angular:'1.2.16',
         jquery:'1.11.1',
         uiBootstrap:'0.10.0'
-    }
+    };
 
     return {
         jquery:'<script src="//ajax.googleapis.com/ajax/libs/jquery/' + version.jquery + '/jquery.min.js"></script>',

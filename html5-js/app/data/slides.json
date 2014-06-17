@@ -428,6 +428,10 @@
         "content": "html5/animation/tp"
     },
     {
+        "title": "ContentEditable",
+        "content": "html5/contenteditable/content"
+    },
+    {
         "title": "Why we need caching ?",
         "content": "html5/applicationcache/essentials"
     },
@@ -506,6 +510,14 @@
         "content": "html5/indexedDB/browser-support"
     },
     {
+        "title": "Events",
+        "content": "html5/indexedDB/events"
+    },
+    {
+        "title": "Transaction Type",
+        "content": "html5/indexedDB/transactiontype"
+    },
+    {
         "title": "construction & Destruction",
         "content": "html5/indexedDB/construction-destruction"
     },
@@ -547,7 +559,7 @@
         "title": "File System",
         "content": "html5/filesystem/intro"
     },
-     {
+    {
         "title": "File System - features",
         "content": "html5/filesystem/features"
     },

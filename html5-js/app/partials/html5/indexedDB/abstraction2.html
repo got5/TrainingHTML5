@@ -116,7 +116,7 @@
   		_err.publishError(e);
   	},
   	getFailHandler: function(fail){
-  		return (fail ==== undefined) ? _err.defaultErrorHandler : fail;
+  		return (fail === undefined) ? _err.defaultErrorHandler : fail;
   	},
   	setDefaultErrorHandler: function(request,customFailHandler){
   		customFailHandler = _err.getFailHandler(customFailHandler);
@@ -335,7 +335,9 @@
   };
 
 }());</file>
-<file type="javascript" name="homeCtrl.js">angular.module('app',[]);
+<file type="javascript" name="homeCtrl.js">//Don't pay attention to the $scope.$apply called.
+//It's a code specific to AngularJS Framework to force the refresh of the view
+angular.module('app',[]);
 var homeCtrl = function($scope){
 	var masterHome = {};
 	$scope.newHome = {};
@@ -419,6 +421,11 @@ var homeCtrl = function($scope){
 homeCtrl['$inject'] = ['$scope'];</file>
 
 </editor>
+<li>Same code as before</li>
+<li>We just added some utils function that you might need and put some structure in localDatabase.js</li>
+<li>You can reuse the localDatabase.js and dbModel.js file in your project as is.</li>
+<li>See HomeCtrl.js for an example of use case</li>
+<li>You can play it on jsFiddle too</li>
 
 </div>
 
