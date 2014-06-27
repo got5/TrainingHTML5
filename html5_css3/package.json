@@ -15,6 +15,9 @@
   "author": "Emmanuel Demey",
   "readmeFilename": "README.md",
   "dependencies": {
-    "express": "latest"
+    "express": "latest",
+    "compression": "~1.0.8",
+    "body-parser": "~1.4.3",
+    "method-override": "~2.0.2"
   }
 }

@@ -1,10 +1,14 @@
 var express = require('express');
+var compression = require('compression');
+var bodyParser= require('body-parser');
+var methodOverride = require('method-override');
+
 var app     = express();
 var maxAge  = 31557600000;
 
-app.use(express.compress());
-app.use(express.bodyParser());
-app.use(express.methodOverride());
+app.use(compression());
+//app.use(bodyParser.json());
+//app.use(express.methodOverride());
 app.use(express.static(__dirname + '/app' ));
 
 app.get('/*', function(req,res)
