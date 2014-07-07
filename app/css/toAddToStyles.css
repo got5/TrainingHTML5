@@ -1,0 +1,53 @@
+.saving {
+    background-color: orangered;
+    color: white;
+    border-radius: 0.3rem;
+}
+
+.saved{
+    background-color: green;
+    color: #ffffff;
+    border-radius: 0.3rem;
+}
+
+.navigation-status{
+	float: right;
+	overflow: hidden;
+	height: 23px;
+	line-height: 23px;
+	font-size: 0.7em;
+	text-transform: uppercase;
+	color: white;
+	background-repeat: no-repeat;
+	margin: 0.5rem 0 0 1rem;
+}
+
+/* Override form styles */
+#add-pin-form{
+	max-width: 100%;
+}
+
+#form-container{
+max-width: 55em;
+}
+
+/* Geolocation */
+
+#map{
+	width: 400px;
+	max-width: 400px; 
+	height: 400px; 
+	overflow: hidden; 
+	float: left;
+	margin: 40px;
+}
+
+
+.locationInfos{
+	margin: 50px;
+	padding:  20px;
+	max-width: 500px; 
+	float: right;
+	color: red; 
+	box-shadow: rgb(85, 85, 85) 1px 1px 12px; 
+}
