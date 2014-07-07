@@ -1,0 +1,695 @@
+/*----------------------------------------------------------------------------- 
+ 
+ 	PinIt
+ 	Main style-sheet
+ 	April, 2014
+ 	 
+ ------------------------------------------------------------------------------ */
+
+/* ----------------------------- RESET --------------------------------------- */
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center, main,
+dl, dt, dd, ol, ul, li,
+fieldset, figure, figcaption, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+html {overflow-y: scroll;}
+
+body {
+	-webkit-text-size-adjust: 100%;
+	-webkit-font-smoothing: antialiased;
+}
+
+header, footer, main, nav, aside, article, section, figure {display: block;}
+
+
+/* ----------------------------- DEFAULTS --------------------------------------- */
+
+@font-face {
+    font-family: 'open_sansbold';
+    src: url('opensans-bold-webfont.eot');
+    src: url('opensans-bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('opensans-bold-webfont.woff') format('woff'),
+         url('opensans-bold-webfont.ttf') format('truetype'),
+         url('opensans-bold-webfont.svg#open_sansbold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'open_sansitalic';
+    src: url('opensans-italic-webfont.eot');
+    src: url('opensans-italic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('opensans-italic-webfont.woff') format('woff'),
+         url('opensans-italic-webfont.ttf') format('truetype'),
+         url('opensans-italic-webfont.svg#open_sansitalic') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'open_sansregular';
+    src: url('opensans-regular-webfont.eot');
+    src: url('opensans-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('opensans-regular-webfont.woff') format('woff'),
+         url('opensans-regular-webfont.ttf') format('truetype'),
+         url('opensans-regular-webfont.svg#open_sansregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+	font: 100%/1.2 open_sansregular, "Helvetica Neue", Helvetica, Arial, sans-serif;
+	color: #444;
+	background: #FFF;
+}
+
+h1 {float: left; width: 25%;}
+h2 {font: 2em open_sansbold, "Helvetica Neue", Helvetica, Arial, sans-serif;}
+
+a, a:link {color: #444; background: transparent;}
+a:visited {opactiy: .8;}
+a:hover {text-decoration: none;}
+
+p, li, dt, dd {font-size: 0.8em;}
+
+img {max-width: 100%;}
+
+hr {display: none;}
+
+strong {font-family: open_sansbold, "Helvetica Neue", Helvetica, Arial, sans-serif; font-weight: 600;}
+
+
+/* --- FORMS --- */
+
+form p {font-size: 0.85em; margin: 0.5rem 0;}
+input, select, textarea {
+	border: 2px solid #CCC;
+	border-radius: 0.3rem;
+	-webkit-transition: box-shadow;
+	transition: box-shadow .5s;
+}
+
+p.main-field {background: #EFEFEF; padding: 1rem; border-radius: 10px;}
+
+input[type=range] {vertical-align: bottom; border: none;}
+
+input:not([type=range]):focus, select:focus, textarea:focus {box-shadow: 0 0 5px #069;}
+
+label {
+	display: block;
+	font-family: open_sansbold, "Helvetica Neue", Helvetica, Arial, sans-serif;
+	margin-bottom: 0.3rem;
+}
+
+legend {
+	font-family: open_sansbold, "Helvetica Neue", Helvetica, Arial, sans-serif;
+	color: #069;
+	margin-bottom: 0.5rem;
+}
+
+fieldset {padding-bottom: 1rem; margin-bottom: 1rem; border-bottom: 1px dashed #CCC;}
+
+button {
+	font-family: open_sansregular, "Helvetica Neue", Helvetica, Arial, sans-serif;
+	border-radius: 0.3rem;
+	cursor: pointer;
+}
+
+fieldset.k-check label, label.k-check  {
+	display: inline;
+	font-family: open_sansregular, "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+/* Buttons bar for inputs */
+.k-buttons-bar {
+    clear: both;
+    text-align: left;
+    padding: 0;
+    margin: 2rem 0;
+    border: none;
+}
+	
+	/* Buttons bar for links */
+	.k-buttons-bar li {
+		display: inline;
+		font-size: 0.95em;
+		list-style-type: none;
+	}
+
+/* Valid actions - must duplicate declarations for IE6!!*/
+input[type=button], input[type=submit] {
+	font: 100% open_sansregular, "Helvetica Neue", Helvetica, Arial, sans-serif;
+	text-transform: uppercase;
+	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.5);
+	color: #333;
+	background: #FEAF04;
+	padding: 0.3em 1em;
+	margin: 0 5px 8px;
+	border: none;
+	border-radius: 3px;
+	box-shadow: 0 1px 1px rgba(0,0,0,.5);
+	cursor: pointer;
+}
+.k-button, a.k-button, a.k-button:link, a.k-button:visited {
+	display: inline-block;
+	font: 100% open_sansregular, "Helvetica Neue", Helvetica, Arial, sans-serif;
+	text-decoration: none;
+	text-transform: uppercase;
+	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.5);
+	color: #333;
+	background: #FEAF04;
+	padding: 0.4em 1.3em;
+	margin: 0 5px 8px;
+	border-radius: 3px;
+	box-shadow: 0 1px 1px rgba(0,0,0,.5);
+	cursor: pointer;
+}
+	/*hover*/
+	input[type=button]:hover, input[type=submit]:hover, a.k-button:hover {
+		color: #FFF;
+		background: #000;
+	}
+	/*focus*/
+	input[type=button]:focus, input[type=submit]:focus, a.k-button:focus {
+		color: #FFF;
+		background: #000;
+	}
+
+/* Disabled actions */
+
+	input[type=submit]:disabled, input[type=button]:disabled {
+		text-shadow: none;
+		color: #999;
+		background: #CCC;
+		box-shadow: none;
+		cursor: default;
+	}
+	.k-disabled {
+		display: inline-block;
+		font: 100% open_sansregular, "Helvetica Neue", Helvetica, Arial, sans-serif;
+		text-transform: uppercase;
+		text-shadow: none;
+		color: #999;
+		background: #CCC;
+		padding: 0.4em 1.3em;
+		margin: 0 5px 8px;
+		border-radius: 3px;
+	}
+		
+/* Optional actions */
+input[type=button].optional, input[type=submit].optional {
+	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.8);
+	color: #FFF;
+	background: #3E3E3E;
+}
+a.k-button.optional, a.k-button.optional:link, a.k-button.optional:visited {
+	color: #FFF;
+	background: #3E3E3E;
+}
+	/*hover*/
+	input[type=button].optional:hover, input[type=submit].optional:hover, a.k-button.optional:hover {
+		color: #FFF;
+		background: #000;
+	}
+	/*focus*/
+	input[type=button].optional:focus, input[type=submit].optional:focus, a.k-button.optional:focus {
+		color: #FFF;
+		background: #000;
+	}
+	
+/* Reset Actions */
+input[type=button].reset, input[type=reset] {
+	font: 100% open_sansregular, "Helvetica Neue", Helvetica, Arial, sans-serif;
+	text-transform: uppercase;
+	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.5);
+	color: #FFF;
+	background: #3E3E3E;
+	padding: 0.3em 1em;
+	margin: 0 5px 8px;
+	border: none;
+	border-radius: 3px;
+	box-shadow: 0 1px 1px rgba(0,0,0,.5);
+	cursor: pointer;
+}
+a.k-button.reset, a.k-button.reset:link, a.k-button.reset:visited {
+	color: #FFF;
+	background: #3E3E3E;
+}
+	
+	/* Hover/Focus */
+	input[type=button].reset:hover, input[type=reset]:hover, a.k-button.reset:hover {
+		color: #FFF;
+		background: #000;
+	}
+	input[type=button]:focus, input[type=reset]:focus, a.k-button.reset:focus {
+		color: #FFF;
+		background: #000;
+	}	
+
+
+/* ----------------------------- PAGE STRUCTURE --------------------------------------- */
+
+/* ---- HEADER ---- */
+
+header[role=banner] {
+	position: relative;
+	overflow: auto;
+	color: #FFF;
+	background: #333;
+	padding: 0.5rem 2.5%;
+	box-shadow: 0 1px 3px rgba(0,0,0,.7);
+}
+
+.k-tools {float: right; width: 60%; text-align: right; margin-top: 0.5em;}
+.k-tools li {
+	display: inline;
+	text-transform: uppercase;
+	list-style-type: none;
+	padding-right: 0.5rem;
+}
+.k-tools li a, .k-tools li a:visited {
+	display: inline-block;
+	text-decoration: none;
+	color: #FFF;
+	background: #333;
+	padding: 0.3rem 0.5rem;
+	border: 1px solid rgba(255,255,255, .7); 
+	border-radius: 0.3rem;
+}
+.k-tools li a:hover, .k-tools li:first-of-type a:hover {
+	color: #333;
+	background: #FFF;
+	border: 1px solid #FFF;
+}
+.k-tools li:first-of-type a, .k-tools li:first-of-type a:visited {
+	color: #333;
+	background: #feaf04;
+	border: 1px solid #feaf04;
+}
+
+/* On-Off indication */
+
+p.connection-status {
+	float: right;
+	overflow: hidden;
+	width: 1px;
+	height: 23px;
+	line-height: 23px;
+	font-size: 0.7em;
+	text-transform: uppercase;
+	color: #333;
+	background-image: url(../imgs/sprite_onoff.svg);
+	background-repeat: no-repeat;
+	padding-left: 25px;
+	margin: 0.5rem 0 0 1rem;
+}
+
+.online {background-position: 0 -61px;}
+.offline {background-position: 0 0;}
+
+
+/* ------ COLUMNS ----- */
+
+#wrapper {padding: 2.5%;}
+
+main, aside[role=complementary] {}
+main {min-height: 500px; padding-bottom: 1rem;}
+
+main h2 {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	overflow: hidden;
+	top: auto;
+	left: -9000px;
+}
+
+aside[role=complementary] {
+	background: #EFEFEF;
+	padding: 1rem;
+	margin-bottom: 2rem;
+	border-radius: 0.3rem;
+}
+	aside[role=complementary] h2 {
+		position: absolute;
+		left: -9000px;
+		font-size: 1px;
+	}
+	aside[role=complementary] p {
+		font-size: 0.9em;
+		text-align: center;
+		margin-bottom: 1rem;
+	}
+
+
+/* ------ FOOTER ----- */
+
+footer[role=contentinfo] {
+	clear: both;
+	text-align: center;
+	color: #FEFEFE;
+	background: #333;
+	padding: 1rem 2.5%;
+}
+
+footer[role=contentinfo] a {
+	color: #FFF;
+	background: #333; 
+}
+
+footer[role=contentinfo] ul {margin-bottom: 0.5rem;}
+	
+footer[role=contentinfo] li {
+	display: inline-block;
+	list-style-type: none; 
+}
+
+footer[role=contentinfo] li::before {
+	content: "\2600";
+	padding: 0 0.5rem 0 0.3rem;
+}
+footer[role=contentinfo] li:first-child::before {content: none;}
+
+
+/* -------------------------------------- SEARCH -------------------------------- */
+
+form.k-search {text-align: center;}
+
+#search-tag {width: 70%; max-width: 25em; font-size: 110%; padding: 0.3rem;}
+
+form.k-search input[type=submit] {
+	 font: 0.9em open_sansbold, "Helvetica Neue", Helvetica, Arial, sans-serif;
+	 text-transform: uppercase;
+	 color: #333;
+	 background: #FEAF04;
+	 padding: 0.3em 0.5em;
+	 vertical-align: top;
+	 cursor: pointer;
+}
+
+
+/* -------------------------------------- NAVIGATION -------------------------------- */
+
+/* --- SKIP LINK --- */
+
+.k-skip {
+  display: inline;
+  font-size: 1em;
+}
+.k-skip a, .k-skip a:link, .k-skip a:visited {
+  position: absolute;
+  overflow: hidden;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+}
+.k-skip a:focus {
+  position: static;
+  width: auto;
+  height: auto;
+}
+
+
+/* ---- MAIN NAVIGATION ---- */
+
+/* Navigation control */
+nav.k-main-nav {clear: both; background: #069; padding: 0.5rem 2.5%;}
+
+nav.k-main-nav p.control {
+  display: none;
+  position: absolute;
+  top: 5px;
+  right: 0;
+  width: 45px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  z-index: 100;
+}
+
+nav.k-main-nav a {color: #FFF;}
+
+
+ul.k-navbar > li {
+  display: inline-block;
+  font: 1em/1 open_sansbold, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  list-style-type: none;
+  text-transform: uppercase;
+}
+
+ul.k-navbar > li::after {
+	display: inline-block;
+	content: "\229A";
+	font-size: 14px;
+	color: #FFF;
+	vertical-align: 1px;
+	padding-left: 0.2em;
+}
+
+
+ul.k-navbar a, ul.k-navbar a:link, ul.k-navbar a:visited {
+	position: relative;
+	display: inline-block;
+	text-decoration: none;
+	color: #FFF;
+	background: transparent;
+	padding: 0.5em;
+}
+
+
+ul.k-navbar li.active strong {
+	position: relative;
+	display: inline-block;
+	font-weight: normal;
+	text-transform: uppercase;
+	color: #FFF;
+	background: transparent;
+	padding: 0.5em;
+}
+
+ul.k-navbar li.active a::after, ul.k-navbar li.active strong::after, ul.k-navbar a:hover::after {
+	position: absolute;
+	bottom: 5px;
+	display: block;
+	content: "";
+	width: 100%;
+	height: 2px;
+	background: #feaf04;
+	transform: rotate(-3deg);
+	-webkit-transform: rotate(-3deg);
+}
+
+
+/* -------------------------------------- UTILITIES -------------------------------- */
+
+/* --- ACTIONS LIST --- */
+
+div.k-actions-block {
+	clear: both;
+}
+
+ul.k-actions {text-align: center; padding: 0; margin: 2rem auto;}
+
+	ul.k-actions li {
+		display: inline-block;
+		list-style-type: none;
+		font-size: 0.9em;
+		text-align: center;
+	}
+	ul.k-actions li + li {margin-left: 1rem;}
+	
+	ul.k-actions a, ul.k-actions a:link, ul.k-actions a:visited, ul.k-actions button {
+		overflow: hidden;
+		display: inline-block;
+		text-decoration: none;
+		text-transform: uppercase;
+		color: #FFF;
+		background: #333;
+		margin: 0.5em;
+		padding: 0.3rem 0.5rem;
+		border-radius: 0.5rem;
+		box-shadow: 0 1px 1px rgba(0,0,0,.5);
+	}
+	/*hover*/
+	ul.k-actions a:hover, ul.k-actions button:hover {
+		color: #000;
+		background-color: #FEAF04;
+		box-shadow: none;
+	}
+	
+	/* active */
+	ul.k-actions strong {
+		display: inline-block;
+		height: 2em;
+		line-height: 2em;
+		text-decoration: none;
+		color: #000;
+		background: #FFF url(../img/k-theme0/sprites-trans.png) no-repeat 4px 30px;
+		margin: 0.5em;
+		padding: 0 10px;
+		border: 1px #000 solid;
+	}
+	
+/* --- ADD PIN --- */
+
+ul.k-actions li:last-child a {
+	width: 121px;
+	font-family: open_sansbold, "Helvetica Neue", Helvetica, Arial, sans-serif;
+	text-align: center;
+	color: #333;
+	background: #FEAF04 url(../imgs/addpin.svg) top left no-repeat;
+	padding-top: 134px;
+}
+	
+/* --- DRAG N DROP ZONE --- */
+
+li.dnd-zone {
+	width: 121px;
+	font-family: open_sansbold, "Helvetica Neue", Helvetica, Arial, sans-serif;
+	text-align: center;
+	text-transform: uppercase;
+	background: url(../imgs/trash.svg) top left no-repeat;
+	padding-top: 134px;
+	opacity: .5;
+}
+
+
+
+/* -------------------------------------- PIN BLOCK -------------------------------- */
+
+
+#pins-wrapper {}
+
+article.the-pin {
+	position: relative;
+	max-width: 300px;
+	background: #FFF;
+	padding-bottom: 0.5rem;
+	margin: 0 auto 1rem;
+	border-radius: 0.3rem;
+	box-shadow: 0 1px 3px rgba(0,0,0,.6);
+}
+
+
+article.the-pin .e-content {margin: 0 2.5% 0.5rem;}
+
+article.the-pin h3 {
+	font-size: 1em;
+	padding: 0.5rem 2.5% 0.3rem;
+}
+
+.e-content p {font-size: 0.8em; line-height: 1.4;}
+.e-content button {margin-top: 0.3rem; border: 1px solid #999;}
+
+[contenteditable]:hover:not(:focus) {outline: 1px dotted #999;}
+
+.k-picture {
+	overflow: hidden;
+	max-height: 200px;
+}
+
+.k-picture img {
+	border-top-left-radius: 0.3rem;
+	border-top-right-radius: 0.3rem;
+}
+
+article.the-pin footer {
+	width: 95%;
+	padding-top: 0.5rem;
+	margin: auto 2.5% 0;/* stick to the bottom */
+	border-top: 1px dotted #CCC;
+	border-bottom-left-radius: 0.3rem;
+	border-bottom-right-radius: 0.3rem;
+}
+
+.entry-info {float: left; width: 45%;}
+.entry-info li {list-style-type: none; font-size: 0.65em; padding-bottom: 0.3rem;}
+
+article.the-pin .k-tools-list {text-align: right;}
+article.the-pin .k-tools-list li {display: inline-block; list-style-type: none;}
+article.the-pin .k-tools-list a {
+	display: inline-block;
+	text-decoration: none;
+	color: #FFF;
+	background: #333;
+	padding: 5px 7px;
+	border-radius: 0.3rem;
+}
+article.the-pin .k-tools-list button {
+	color: #FFF;
+	background: #FEAF04;
+	padding: 5px;
+	border: none;
+	border-radius: 0.3rem;
+	cursor: pointer;
+}
+
+/* ---------------------------- ADD PIN -------------------------------- */
+
+#add-pin-form {max-width: 55em;}
+.image-zone {
+	height: 200px;
+	text-align: center;
+	background-image: -moz-repeating-linear-gradient(-45deg, transparent, transparent 5px, #EFEFEF 5px, #EFEFEF 20px);
+	background-image: -webkit-repeating-linear-gradient(-45deg, transparent, transparent 5px, #EFEFEF 5px, #EFEFEF 20px);
+	background-image: -ms-repeating-linear-gradient(-45deg, transparent, transparent 5px, #EFEFEF 5px, #EFEFEF 20px);
+	background-image: -o-repeating-linear-gradient(-45deg, transparent, transparent 5px, #EFEFEF 5px, #EFEFEF 20px);
+	background-image: repeating-linear-gradient(-45deg, transparent, transparent 5px, #EFEFEF 5px, #EFEFEF 20px);
+	margin: 1rem 0;
+	border: 2px dashed #CCC;
+	border-radius: 10px;
+}
+
+#pin-desc {width: 250px;}
+#pin-title {width: 250px;}
+
+/* ---------------------------- MEDIA QUERIES -------------------------------- */
+
+@media screen and (min-width: 640px) {
+	
+	p.connection-status {
+		width: auto;
+		color: #FFF;
+	}
+	
+	aside[role=complementary] p {font-size: 1.2em;}
+	
+	#pins-wrapper {
+		display: -webkit-flex;
+		display: flex;
+		-webkit-align-items: left;
+		align-items: left;
+		-webkit-flex-flow: row wrap;
+		flex-flow: row wrap;
+	}
+	
+	article.the-pin {
+		display: flex;
+		display: -webkit-flex;
+		flex-direction: column;
+		-webkit-flex-direction: column;
+	}
+}
+
+@media screen and (min-width: 850px) {
+	label {display: inline-block; width: 7em;}
+	.pin-options {float: right; width: 45%; margin-top: 1rem;}
+	.image-zone {float: left; width: 50%;}
+}
+
+@media screen and (min-width: 1500px) {
+	aside[role=complementary] {float: right; width: 20%;}
+	main {float: left; width: 75%;}
+	#search-tag {width: 65%;}
+}
