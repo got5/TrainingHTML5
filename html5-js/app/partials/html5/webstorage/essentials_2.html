@@ -4,16 +4,13 @@
 		<li>Call the setItem method of the localStorage object</li>
         <li>Store Strings only</li>
         <li>Capacity : W3C recommend 5MB per origin</li>
-        <ul>
-            <li class="small">In fact, the real capacity is the half. Indeed, in JS, to store 1 character, we need 2 bytes</li>
-        </ul>
         <li>Sandboxed data</li>
 
     </ul>
 
 	<button id="storage">Save Storage</button>
 
-	<editor editor-options="{height:300}">
+	<editor editor-options="{height:300,compileCode:true}">
 		<file type="javascript" name="script.js">
 
 var button = document.getElementById("storage");

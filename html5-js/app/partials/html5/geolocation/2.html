@@ -1,0 +1,47 @@
+<div class="bloc-content text-content">
+
+	<ul>
+		<li>Is the API available? Check if the geolocation field is available</li>
+
+		<li>Get the position?
+			<ul>
+				<li>At a specific time: <b>geolocation.getCurrentPosition</b></li>
+				<li>Continuously: <b>geolocation.watchPosition</b></li>
+				<li>Stop to check: <b>geolocation.clearWatch</b></li>
+			</ul>
+		</li>
+	</ul>
+
+	<editor editor-options="{compileCode:false, height: 220, showTabs: true}">	
+		<file type="javascript" name="apiAvailable.js">
+//Is the API available
+if(navigator.geolocation) {...}
+		</file>	
+		<file type="javascript" name="specificTime.js">
+//Get position at a time, use getCurrentPosition()
+
+var myCallback= function(position){
+	console.log('latitude:' + position.coords.latitude);
+	console.log('longitude:' + position.coords.longitude);
+	console.log('accuracy:' + position.coords.accuracy);
+}
+
+geolocation.getCurrentPosition(myCallback);
+		</file>
+		<file type="javascript" name="continuouslyAndStop.js">
+//Watch position continuously, use watchPosition()
+
+var myCallback= function(position){
+	console.log('latitude:' + position.coords.latitude);
+	console.log('longitude:' + position.coords.longitude);
+	console.log('accuracy:' + position.coords.accuracy);
+}
+
+//Start watching
+var watchId= geolocation.watchPosition(myCallback);
+
+//Stop watching
+geolocation.clearWatch(watchId);
+		</file>
+	</editor>
+</div>

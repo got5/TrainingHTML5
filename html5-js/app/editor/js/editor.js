@@ -14,7 +14,8 @@ directives.directive('compile',['$compile','$controller','$timeout', function ($
                     console.error(currentError.message);
                 }
             };
-            scope.$watch(function (scope) {
+            scope.$watch(
+                function (scope) {
                     // watch the 'compile' expression for changes
                     return scope.$eval(attrs.compile);
                 },
@@ -515,7 +516,10 @@ var EditorConstructor = function ($timeout, $location, editorConfig, saveService
 };
 
 /** Editor (with preview/tabs options) directive */
-directives.directive('editor', ['$timeout', '$location', 'editorConfig', 'saveService', 'escape', 'script', function ($timeout, $location, editorConfig, saveService, escape, script) {
+directives.directive('editor', 
+    ['$timeout', '$location', 'editorConfig', 'saveService', 'escape', 'script', 
+    function ($timeout, $location, editorConfig, saveService, escape, script) 
+{
     var editor = new EditorConstructor($timeout, $location, editorConfig, saveService, escape, script);
     editor.templateUrl = "editor/templates/editor-horizontal.html";
     return editor;

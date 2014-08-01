@@ -1,27 +1,21 @@
 <div class="bloc-content text-content">
     <ul>
-        <li>To activate it, you have to add the <span class="text-red">manifest</span> attribute on the html tag and the relative url to the file as value</li>
-        <li>You have to set the correct mime type for the manifest file</li>
-        <ul class="small">
-            <li>In the request header, you can add :</li>
+        <li>To activate it, you have to use the <span class="text-red">manifest</span> attribute on the html tag to point to the url file</li>
+        <li>The server has to answer to the request with the mime type: "text/cache-manifest"</li>
+
+        <li>No wildcard/regexp are allowed in the cache section, so how to say "I want to cache all images"? 
             <ul>
-                <li><span class="text-red">"Content-Type":"text/cache-manifest"</span> it depends on your server</li>
+                <li>Just generate the manifest dynamically on the server side</li>
             </ul>
-        </ul>
-        <li>No wildcard are allowed in the cache section !</li>
+        </li>
+        <li>Use the <span class="text-red">manifest</span> makes this html page to be automatically cached</li>
     </ul>
-    <editor editor-options="{showPreview:false,showTabs:true,height:200,compileCode:false,angular:false}">
+
+    <editor editor-options="{showPreview:false,showTabs:true,height:100,compileCode:false,angular:false}">
 
         <file type="html" name="index.html">&lt;!doctype html&gt;
             &lt;html lang="en" manifest="/offline.appcache"&gt;
-            &lt;head&gt;
-            &lt;meta charset="UTF-8"&gt;
-            &lt;title&gt;Document&lt;/title&gt;
-            &lt;/head&gt;
-            &lt;body&gt;
-
-            &lt;/body&gt;
-            &lt;/html&gt;</file>
+            ...
         <file type="cpp" name="offline.appcache">CACHE MANIFEST
 
             #Version 00

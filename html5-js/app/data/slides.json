@@ -10,7 +10,7 @@
         "title": "JavaScript",
         "content": "javascript/javascript_basis"
     },
-    {
+    {   
         "title": "Utility of a Framework",
         "content": "javascript/utility"
     },
@@ -19,7 +19,11 @@
         "content": "javascript/javascript_import"
     },
     {
-        "title": "Import Javascript, The bad way",
+        "title": "Import Javascript (...)",
+        "content": "javascript/javascript_import_2"
+    },    
+    {
+        "title": "Import Javascript (...)",
         "content": "javascript/javascript_inline"
     },
     {
@@ -127,11 +131,11 @@
         "content": "jquery/dom_insertion_other"
     },
     {
-        "title": "Attribute Maniplation",
+        "title": "Attribute Maniplation - get data",
         "content": "jquery/attribute_manipulation_1"
     },
     {
-        "title": "Attribute Maniplation",
+        "title": "Attribute Maniplation - set data",
         "content": "jquery/attribute_manipulation_2"
     },
     {
@@ -163,12 +167,8 @@
         "content": "jquery/ajax/ajax_5"
     },
     {
-        "title": "AJAX Requests : jQuery.get",
-        "content": "jquery/ajax/ajax_6"
-    },
-    {
         "title": "AJAX Requests : jQuery.getJSON",
-        "content": "jquery/ajax/ajax_7"
+        "content": "jquery/ajax/ajax_6"
     },
     {
         "title": "Events : Event Bases",
@@ -331,12 +331,8 @@
         "content": "jquery/plugin/plugin_6"
     },
     {
-        "title": "Plugin : Creation",
-        "content": "jquery/plugin/plugin_7"
-    },
-    {
         "title": "Plugin : Large ecosytem",
-        "content": "jquery/plugin/plugin_8"
+        "content": "jquery/plugin/plugin_7"
     },
     {
         "title": "Pratical Works",
@@ -432,23 +428,35 @@
         "content": "html5/contenteditable/content"
     },
     {
-        "title": "Why we need caching ?",
+        "title": "FormData - Intro",
+        "content": "html5/formdata/1"
+    },
+    {
+        "title": "FormData - Content",
+        "content": "html5/formdata/2"
+    },
+    {
+        "title": "FormData - PW",
+        "content": "html5/formdata/3"
+    },    
+    {
+        "title": "Cache API - Why?",
         "content": "html5/applicationcache/essentials"
     },
     {
-        "title": "Application Cache Introduction",
+        "title": "Cache API - Introduction",
         "content": "html5/applicationcache/essentials2"
     },
     {
-        "title": "Application Cache: Manifest file",
+        "title": "Cache API - Manifest file",
         "content": "html5/applicationcache/essentials3"
     },
     {
-        "title": "Application Cache: Invalidation",
+        "title": "Cache API - Invalidation",
         "content": "html5/applicationcache/essentials4"
     },
     {
-        "title": "Application Cache: Javascript api",
+        "title": "Cache API - Javascript api",
         "content": "html5/applicationcache/essentials5"
     },
     {
@@ -596,14 +604,6 @@
         "content": "html5/filesystem/crud"
     },
     {
-        "title": "Canvas API",
-        "content": "html5/canvas/index"
-    },
-    {
-        "title": "Practical Works",
-        "content": "html5/canvas/tp_canvas"
-    },
-    {
         "title": "ClassList API",
         "content": "html5/classlist/essentials_1"
     },
@@ -695,5 +695,21 @@
     {
         "title": "Practical Works",
         "content": "html5/selectors/tp"
-    }
+    },
+    {
+        "title": "Geolocation - Intro",
+        "content": "html5/geolocation/1"
+    },
+    {
+        "title": "Geolocation - Content -basics",
+        "content": "html5/geolocation/2"
+    },
+    {
+        "title": "Geolocation - Content - errors and options",
+        "content": "html5/geolocation/3"
+    },
+    {
+        "title": "Geolocation - PW",
+        "content": "html5/geolocation/4"
+    }     
 ]

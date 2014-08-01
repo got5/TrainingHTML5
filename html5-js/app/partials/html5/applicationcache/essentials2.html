@@ -1,23 +1,23 @@
 <div class="bloc-content text-content">
-    <p>A manifest that tells the browser what files to store locally</p>
-    <editor>
+    <p>A manifest specify cache rules through 3 parts</p>
+
+<editor  editor-options="{height:200}">
 <file name="api.cpp">CACHE MANIFEST
 CACHE:
 /styles/main.css
 NETWORK:
-*</file>
+*
+FALLBACK:
+/ /offline.html
+</file>
+
 </editor>
-    <ul><li>The manifest is split in two parts: </li>
     <ul>
-        <li>The cache</li>
-        <ul>
-            <li>list all assets that will be cached in the browser</li>
-        </ul>
-        <li>The Network</li>
-        <ul>
-            <li>list all assets that will be retrieved from the server</li>
-        </ul></ul>
+        <li><i>cache</i> list all resources that will be cached in the browser</li>
+        <li><i>network</i> specifies which resources need a connection (here, everything but the cache ones)</li>
+        <li><i>fallback</i> replace an unavailable resource by another one</li>
     </ul>
+
     <p>A possible problem :</p>
     <ul>
         <li> Some Browsers for mobile don't cache javascript library  because it exceeds the maximum size defined</li>
