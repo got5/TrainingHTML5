@@ -1,0 +1,27 @@
+<div class="bloc-content text-content">
+	<ul>
+		<li>available if <i>navigator.onLine</i> attribute is defined </li>
+		<li>When defined, its value is <i>true</i> if the navigator is online and <i>false</i> otherwise</li>
+		<li>Listen for <i>online</i> and <i>offline</i> events to make an action
+	</ul>
+
+	<editor editor-options="{compileCode:false, height: 400}">
+		<file type="javascript" name="script.js">
+
+var onlineFunction= function(event){
+	//...
+}
+
+var offlineFunction= function(event){
+	//...
+}
+
+window.addEventListener("online",  onlineFunction);
+window.addEventListener('offline', offlineFunction);
+
+		</file>	
+	</editor>	
+
+
+
+</div>

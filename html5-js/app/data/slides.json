@@ -530,38 +530,41 @@
         "content": "html5/indexedDB/construction-destruction"
     },
     {
-        "title": "IndexDB - CRUD",
+        "title": "IndexedDB - CRUD",
         "content": "html5/indexedDB/CRUD"
     },
 
     {
-        "title": "IndexDB - Cursor",
+        "title": "IndexedDB - Cursor",
         "content": "html5/indexedDB/cursor"
     },
     {
-        "title": "IndexDB - index",
+        "title": "IndexedDB - index",
         "content": "html5/indexedDB/index"
     },
     {
-        "title": "IndexDB - range",
+        "title": "IndexedDB - range",
         "content": "html5/indexedDB/range"
     },
     {
-        "title": "IndexDB - range 2",
+        "title": "IndexedDB - range 2",
         "content": "html5/indexedDB/range2"
     },
-
     {
-        "title": "IndexDB - when does the task is complete ?",
+        "title": "IndexedDB - when does the task is complete ?",
         "content": "html5/indexedDB/complete"
     },
     {
-        "title": "IndexDB - Abstraction layer",
+        "title": "IndexedDB - Abstraction layer",
         "content": "html5/indexedDB/abstraction"
     },
     {
-        "title": "IndexDB - Abstraction layer 2",
+        "title": "IndexedDB - Abstraction layer 2",
         "content": "html5/indexedDB/abstraction2"
+    },
+    {
+        "title": "IndexedDB - Practical Works",
+        "content": "html5/indexedDB/pw"
     },
     {
         "title": "File System",
@@ -616,15 +619,11 @@
         "content": "html5/classlist/essentials_3"
     },
     {
-        "title": "Practical Works",
-        "content": "html5/classlist/tp_classlist"
-    },
-    {
         "title": "Drag&Drop API",
         "content": "html5/dragdrop/index"
     },
     {
-        "title": "Practical Works",
+        "title": "Practical Works - Drag & Drop",
         "content": "html5/dragdrop/tp_dragdrop"
     },
     {
@@ -693,10 +692,6 @@
         "content": "html5/selectors/essentials_6"
     },
     {
-        "title": "Practical Works",
-        "content": "html5/selectors/tp"
-    },
-    {
         "title": "Geolocation - Intro",
         "content": "html5/geolocation/1"
     },
@@ -711,5 +706,14 @@
     {
         "title": "Geolocation - PW",
         "content": "html5/geolocation/4"
-    }     
+    },
+    {
+        "title": "onLine API - Intro",
+        "content": "html5/online/intro"
+    },
+    {
+        "title": "onLine API - PW",
+        "content": "html5/online/pw"
+    }
+
 ]
