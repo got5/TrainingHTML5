@@ -38,13 +38,7 @@
         var pin = {};
 
         //TODO: fulfill with form values
-        pin.name = form.find('#pin-title').val();
-        pin.category = form.find('#pin-cat').val();
-        pin.content = form.find('#pin-desc').val();
-        pin.date = form.find('#pin-date').val();
-        pin.rate = form.find('#pin-rate').val();
-        pin.share = form.find('[type="radio"][name="comms"]:checked').val() || "no";
-        pin.public = form.find(':checkbox:checked').val() || "no";
+
         return pin;
     };
 
@@ -58,13 +52,8 @@
         //TODO call to module.addPinInfo
         module.addPinInfo(formData,
             function success(e){
-                window.location = './index.html';
             },
             function failure(e){
-                console.log('An error occured');
-                if (e){
-                    console.log(e);
-                }
             }
         );
 
