@@ -1,4 +1,5 @@
 node_modules/
 app/vendor/
-app/imgs
+app/imgs/img000*
+app/data/places.json
 .idea/
