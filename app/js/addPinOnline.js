@@ -67,12 +67,13 @@ var addPinOnline = (function($){
         $.indexedDB.queueRequestModule.unqueueRequests(
             function(requests){
 
-                for(var currentRequest in requests){
+                for(var currentIdx in requests){
 
-                   var successCallback= cursor.value.successCallback;
-                    var errorCallback= cursor.value.errorCallback;
+                    var currentRequest= requests[currentIdx];
+                   var successCallback= currentRequest.successCallback;
+                    var errorCallback= currentRequest.errorCallback;
                     module.addPinImage(
-                        module.getFormDataFromData(cursor.value.formData),
+                        module.getFormDataFromData(currentRequest.formData),
                         function(){
                             if (successCallback){
                                 eval(successCallback);
