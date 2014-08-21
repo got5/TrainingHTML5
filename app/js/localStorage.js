@@ -4,6 +4,13 @@
         var layouts= ['horizontal', 'vertical'];
 
 
+        var forceReflow= function(element){
+            element.style.display= 'none';
+            element.offsetHeight;
+            element.style.display= 'flex';
+        }
+
+
         var updateLayout= function(layout){
             localStorage.setItem('currentLayout', layout);
         }
@@ -33,6 +40,11 @@
 
             $(this).removeClass(currentLayout).addClass(opposedLayout);
             $(this).text(opposedLayout);
+
+            $('#pins-wrapper').removeClass(currentLayout).addClass(opposedLayout);
+
+            //workarround for chrome bug
+            forceReflow($('#pins-wrapper')[0]);
         }
 
         var initLayout= function(){
@@ -45,6 +57,11 @@
 
             $(this).addClass(currentLayout);
             $(this).text(currentLayout);
+
+            $('#pins-wrapper')
+            .removeClass('horizontal')
+            .removeClass('vertical')
+            .addClass(currentLayout);
         }
 
 
