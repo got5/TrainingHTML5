@@ -6,8 +6,21 @@
 
 		}
 
-		includePromisesPolyfill();
+		var includeFlexboxCallback= function(){
 
+			$(document).ready(
+				//TODO: here
+				function(){
+					//Include css fallback
+
+				}
+
+			);
+
+		}		
+
+		includePromisesPolyfill();
+		includeFlexboxCallback();
 
 	}
 
