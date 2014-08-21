@@ -664,15 +664,26 @@ article.the-pin .k-tools-list button {
 	}
 	
 	aside[role=complementary] p {font-size: 1.2em;}
-	
+
+
 	#pins-wrapper {
 		display: -webkit-flex;
 		display: flex;
 		-webkit-align-items: left;
 		align-items: left;
+	}	
+	
+	#pins-wrapper.horizontal {
 		-webkit-flex-flow: row wrap;
 		flex-flow: row wrap;
 	}
+
+	#pins-wrapper.vertical {
+		-webkit-flex-flow: column wrap;
+		flex-flow: column wrap;
+		min-height: 70em;
+		max-height: 100em;
+	}	
 	
 	article.the-pin {
 		display: flex;
