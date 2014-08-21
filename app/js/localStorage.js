@@ -4,6 +4,12 @@
 
         var layouts= ['horizontal', 'vertical'];
 
+        var forceReflow= function(element){
+            element.style.display= 'none';
+            element.offsetHeight;
+            element.style.display= 'flex';
+        }        
+
 
         var updateLayout= function(layout){
             //set layout in parameter
@@ -27,6 +33,8 @@
 
             //Update the text of the element: the tewt is the layout name
 
+            //workarround for chrome bug
+            forceReflow($('#pins-wrapper')[0]);            
         }
 
         var initLayout= function(){
