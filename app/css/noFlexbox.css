@@ -1,0 +1,11 @@
+
+#pins-wrapper {
+    display: block;
+}
+
+article.the-pin {
+    display: block;
+    float: left;
+    height: 25em;
+    margin: 1em;
+}
