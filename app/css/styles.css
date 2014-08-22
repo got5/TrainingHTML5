@@ -254,7 +254,11 @@ a.k-button.reset, a.k-button.reset:link, a.k-button.reset:visited {
 	input[type=button]:focus, input[type=reset]:focus, a.k-button.reset:focus {
 		color: #FFF;
 		background: #000;
-	}	
+	}
+
+	#form-container{
+		max-width: 55em;
+	}
 
 
 /* ----------------------------- PAGE STRUCTURE --------------------------------------- */
@@ -316,6 +320,32 @@ p.connection-status {
 
 .online {background-position: 0 -61px;}
 .offline {background-position: 0 0;}
+
+/* layout indication */
+.navigation-status{
+	float: right;
+	line-height: 23px;
+	font-size: 0.7em;
+	text-transform: uppercase;
+	color: white;
+	margin: 0.5rem 0 0 1rem;
+}
+
+/* Saving status indication */
+.saving, .saved{
+	border-radius: 0.3rem;
+}
+
+.saving {
+    background-color: orange;
+    color: white;
+}
+
+.saved{
+    background-color: green;
+    color: #ffffff;
+}
+
 
 
 /* ------ COLUMNS ----- */
@@ -653,6 +683,28 @@ article.the-pin .k-tools-list button {
 
 #pin-desc {width: 250px;}
 #pin-title {width: 250px;}
+
+
+/* ---------------------------- GEOLOCATION -------------------------------- */
+
+#map{
+	width: 400px;
+	height: 400px;
+	float: left;
+	margin: 40px;
+}
+
+
+.locationInfos{
+	margin: 50px;
+	padding:  20px;
+	max-width: 500px; 
+	float: right;
+	color: red; 
+	box-shadow: rgb(85, 85, 85) 1px 1px 12px; 
+}
+
+
 
 /* ---------------------------- MEDIA QUERIES -------------------------------- */
 
