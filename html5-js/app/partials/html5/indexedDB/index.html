@@ -1,19 +1,43 @@
 <div class="bloc-content text-content">
 <ul>
-	<li>I want to search for a specific object</li>
+	<li>I want to get a specific value on an Object Store</li>
 	<ul>
-		<li>I'll have to use an index</li>
-		<li>If the index is not unique you will get multiple objects in return</li>
+		<li>Search with an index</li>
+		<li>Search with the primary key</li>
 	</ul>
 </ul>		
-<editor>
+<editor editor-options="{compileCode:false, height: 400}">
 <file type="javascript" name="index.js">//...
-var lastName = $('#lastNameInput');
-var transaction = db.instance.transaction(['people'],'readonly');
-var index = transaction.objectStore('people').index('lastName');
 
-var getRequest = index.get(lastName)
-//...
+indexedDB.open('CursorDB').onsuccess= function(e0){
+
+	var db= e0.target.result;
+
+	var lastName = 'team';
+	var transaction = db.transaction(['people'],'readonly');
+	var objectStore = transaction.objectStore('people')
+	var index= objectStore.index('lastName');
+
+	//Use an index
+	var indexRequest = index.get(lastName);
+
+	indexRequest.onsuccess= function(e){
+		var currentValue= e.target.result;
+		if (currentValue){
+			console.log('with index : ');
+			console.log(currentValue);
+		}
+	}
+
+	//Use object store
+	var pkRequest= objectStore.get(1);
+	pkRequest.onsuccess= function(e){
+		console.log('with object store: ');
+		console.log(e.target.result);
+	}
+}
+
+
 </file>
 </editor>
 

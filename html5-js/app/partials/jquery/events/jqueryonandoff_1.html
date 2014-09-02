@@ -2,26 +2,32 @@
 
     <editor editor-options="{showPreview:true,height:300,showTabs:true,angular:false}">
         <file type="html" name="index.html">
-&lt;div class="d1"&gt;1
-    &lt;div class="d2"&gt;2
-        &lt;div class="d3"&gt;3
-        &lt;/div&gt;
-    &lt;/div&gt;
-&lt;/div&gt;
+&lt;div class="d1"&gt; 1 &lt;/div&gt;
+&lt;div class="d2"&gt;2 &lt;/div&gt;
+&lt;div class="d3"&gt;3 &lt;/div&gt;
+
         </file>
         <file type="javascript" name="myscript.js">
 jQuery(document).ready(function(){
 
-jQuery(".d1, .d2").on("click ", function(event){
-    alert("Click on d2 or d3");
-});
+    jQuery(".d1").on("click ", function(event){
+        alert("Click on d1");
+    });
 
-jQuery(".d3").on("click, mouseover", function(event){
-    alert("Click or mouseover on d3");
-});
+    //jQuery(".d1").off('click');
 
-//jQuery(".d2").off("click");
-//jQuery(".d2").off();
+    jQuery(".d2, .d3").on("click ", function(event){
+        alert("Click on d2 or d3");
+    });
+
+    //jQuery(".d2").off('click');
+
+    jQuery(".d3").on("click, mouseover", function(event){
+        alert("Click or mouseover on d3");
+    });
+
+    //jQuery(".d3").off();
+
 });
         </file>
         <file type="css" name="style.css">

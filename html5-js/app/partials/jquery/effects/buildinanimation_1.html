@@ -1,24 +1,33 @@
 <div class="bloc-content text-content">
 	<ul>
-		<li>fadeIn(), fadeOut(), fadeToggle() or fadeTo()</li>
+		<li>
+			As well as <code>fadeIn()</code>, 
+			<code>fadeOut()</code>, <code>fadeToggle()</code> or 
+			<code>fadeTo()</code>
+		</li>
 	</ul>
 
 	
-	<button id="anime">Animate it the snippet block!</button>
+	<button id="fadeOut">fade Out</button>
+	<button id="fadeIn">fade in</button>
+	<button id="fadeToggle">fade toggle</button>
+	<button id="fadeTo">fade to</button>
 
-	<editor>
+	<editor editor-options="{height: 400}">
 		<file type="javascript" name="myscript.js">
 jQuery(document).ready(function(){
-     jQuery("#anime").off("click");
-
-     jQuery("#anime").on("click", function(event){
-     		event.preventDefault();
+     jQuery("#fadeOut").off("click").on("click", function(event){
      		jQuery("pre#editor").fadeOut();
-     		//jQuery("pre#editor").fadeIn();
-     		//jQuery("pre#editor").fadeToggle();
-     		//jQuery("pre#editor").fadeTo("slow" , 0.5);
-     		
-	  }); 
+     }); 
+     jQuery("#fadeIn").off("click").on("click", function(event){
+     		jQuery("pre#editor").fadeIn();
+     });
+     jQuery("#fadeToggle").off("click").on("click", function(event){
+     		jQuery("pre#editor").fadeToggle();
+     });
+     jQuery("#fadeTo").off("click").on("click", function(event){
+     		jQuery("pre#editor").fadeTo("slow" , 0.5);
+     });
 });
 		</file>	
 	</editor>	

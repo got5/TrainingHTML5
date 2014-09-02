@@ -1,14 +1,8 @@
 <div class="bloc-content text-content">
 
-<div class="todo">
-Qu'est ce qui se passe si on créé l'élément plus tard?
-Ca veut dire que jQuery scanne le dom à chaque modif?p    
-</div>
-
-	<ul>
-		<li>Efficient way to bind handlers on multiple elements</li>
-		<li>Can manage events triggered by not-yet-existing element</li>
-	</ul>
+	<p> 
+    Event delegation allows us to attach a single event listener, to a parent element, that will fire for all descendants matching a selector, whether those descendants exist now or are added in the future.
+    </p>
 
 
 
@@ -24,9 +18,7 @@ jQuery(document).ready(function(){
 
      jQuery(".bloc-content").on("click", ".d1, .d2, .d3", function(event){
      		alert(event.target.className);
-	  });
-     
-     
+	  }); 
 });
 		</file>
         <file type="css" name="style.css">

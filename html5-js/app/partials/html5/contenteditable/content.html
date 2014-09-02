@@ -1,10 +1,13 @@
 <div class="bloc-content text-content">
-    <p>Allow users to edit HTML content by using an attribute <span class="text-red">contenteditable</span></p>
+<ul>
+	<li>Allow users to edit HTML content by using an attribute <span class="text-red">contenteditable</span></li>
+	<li>Content can then be retrieved through js and then be used dynamically</li>
+</ul>
 
     <editor editor-options="{showPreview:true}">
 <file type="html" name="index.html">
 &lt;p contenteditable&gt;This content id editable&lt;/p&gt;
-&lt;p contenteditable&gt;This content is &lt;span class="text-red"&gt;also&lt;/span&gt; editable&lt;/p&gt;
+&lt;span contenteditable&gt;This content is also editable&lt;/span&gt;
 </file>
     </editor>
 

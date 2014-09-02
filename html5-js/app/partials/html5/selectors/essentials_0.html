@@ -1,0 +1,38 @@
+<div class="bloc-content text-content">
+	<ul>
+		<li>The idea is to give the ability to find DOM elements using CSS selectors</li>
+		<li>Previously, the standard way to access DOM elements was to use specific methods</li>
+		<ul>
+			<li>One based on IDs</li>
+			<li>One based on tag names</li>
+			<li>...</li>
+		</ul>
+	</ul>
+
+	<pre style="max-height: 200px; overflow: scroll">
+partial interface HTMLDocument {
+	Element  getElementById(in DOMString elementId);
+	NodeList getElementsByTagName(in DOMString name);
+	NodeList getElementsByTagNameNS(in DOMString namespaceURI, in DOMString name);
+	NodeList getElementsByClass(in DOMString class);
+	NodeList getElementsByName(in DOMString name);
+}
+
+partial interface HTMLElement {
+	NodeList getElementsByTagName(in DOMString name);
+	NodeList getElementsByTagNameNS(in DOMString namespaceURI, in DOMString name) raises(DOMException);
+	NodeList getElementsByClass(in DOMString class);
+}
+
+//Sample
+var el = document.getElementById("elementId");
+var inputs = el.getElementsByTagName("input");
+	</pre>	
+
+	But thoses selectors are limited, we can do better
+
+
+
+
+
+</div>

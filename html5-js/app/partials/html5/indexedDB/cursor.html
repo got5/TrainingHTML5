@@ -48,6 +48,8 @@ var openDatabase = function(){
 			people.forEach(function (person){
 				store.add(person);
 			});
+            store.add({'firstName': 'dream', 'lastName':'team', 'age':30});
+            store.add({'firstName': 'nightmare', 'lastName':'team', 'age':30});
         }
     };
     db.setDefaultErrorHandler(openRequest);
@@ -57,7 +59,7 @@ var openDatabase = function(){
 };</file>
 
 <file type="javascript" name="cursor.js">function cursor(){
-    var transaction = db.instance.transaction([db.storeNames.people],'readonly'); //or readonly
+    var transaction = db.instance.transaction([db.storeNames.people],'readonly'); //or readwrite!
     var
         i = 0
         store = transaction.objectStore(db.storeNames.people),

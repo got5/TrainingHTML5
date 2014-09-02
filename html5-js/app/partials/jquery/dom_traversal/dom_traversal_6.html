@@ -1,19 +1,66 @@
 <div class="bloc-content text-content">
 
+	<ul class="small">
+		<li>
+			Official API:
+			<ul> 
+				<li>
+					<code>prev()</code>: Get the immediately preceding sibling of each element in the 
+					set of matched elements, optionally filtered by a selector
+				</li>
+				<li>
+					<code>prevAll()</code>: Get all preceding siblings of each element in the set of matched elements, optionally filtered by a selector.
+				</li>
+				<li>
+					<code>next()</code>: Get the immediately preceding sibling of each element in the 
+					set of matched elements, optionally filtered by a selector
+				</li>
+				<li>
+					<code>nextAll()</code>: Get all preceding siblings of each element in the set of matched elements, optionally filtered by a selector.
+				</li>				
+			</ul>
+		</li>
+	</ul>
+
+	<button id="showPrev">show prev</button>
+
+
 	<editor editor-options="{height:300,showTabs:true,angular:false}">
 		<file type="html" name="index.html">
 &lt;div id="contenu"&gt;
 	&lt;p&gt;List&lt;/p&gt;
 	&lt;ul&gt;
 		&lt;li&gt;List 1&lt;/li&gt;
-		&lt;li class="current"&gt;List 2&lt;/li&gt;
+		&lt;li&gt;List 2&lt;/li&gt;
 		&lt;li&gt;List 3&lt;/li&gt;
 	&lt;/ul&gt;
 &lt;/div&gt;
 		</file>	
 
 		<file type="javascript" name="script.js">
-jQuery(".current").prev();
+jQuery('#showPrev').off('click').on('click', function(){
+	
+	console.log('prev from last LI');
+	console.log(jQuery("#contenu li:last").prev().prop('tagName'));
+
+	console.log('-------------------------');
+
+	console.log('prevAll from last LI');
+	jQuery("#contenu li:last").prevAll().each(function(index, element){
+		console.log(element.tagName);
+	});	
+
+	console.log('next from first LI');
+	console.log(jQuery("#contenu li:first").next().prop('tagName'));
+
+	console.log('-------------------------');
+
+	console.log('nextAll from first LI');
+	jQuery("#contenu li:first").nextAll().each(function(index, element){
+		console.log(element.tagName);
+	});		
+
+});	
 		</file>	
 	</editor>	
 

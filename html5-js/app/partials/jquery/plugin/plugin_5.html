@@ -1,30 +1,40 @@
 <div class="bloc-content text-content">
 
 <ul>
-    <li><i>each</i> allows to apply a treatment on each element of an array</li>
-    <li><i>each</i> returns the element on which it is called</li>
-    <li>The first <i>this</i> corresponds to a jQuery objet, ie an array whose elements match the selector (<a href="http://api.jquery.com/Types/#jQuery">definition</a>) </li>
-    <li>The second <i>this</i> (in the function) is mapped to the current element of the array</li>
-    <li>So, in the function, you could do $(this) to get jQuery functionalities on the current element...</li>
+    <li><code>each</code> allows to apply a treatment on each element of an array</li>
+    <li>The first <i>this</i> ( <code>this.each(...)</code> ) corresponds to a jQuery objet, ie an array whose elements match the selector (<a href="http://api.jquery.com/Types/#jQuery"> definition </a>) </li>
+    <li>The second <i>this</i> () <code>this.tagName</code> ) is mapped to the current element of the array</li>
 </ul>
 
-	<editor editor-options="{height:300,angular:false}">
-		<file type="javascript" name="script.js">
+    <button id="sayHello">
+        say hello
+    </button>
 
-jQuery(document).ready(function(){
-    
-    jQuery.fn.hideplugin = function(){
+	<editor editor-options="{height:300,angular:false, showTabs: true}">
+		<file type="javascript" name="plugin.js">
 
-    	return this.each(function(){
-    		// the code of your plugin
-            this.style.visibility='hidden';
-    	});</span>
-    } 
-    
-    //jQuery("h1").hideplugin(); //uncomment
-});
+(
+
+    function($){
+
+        jQuery.fn.sayHello = function(){
+
+            return this.each(function(){
+                // the code of your plugin
+                console.log(this.tagName);
+            });
+        }
+    }
+
+)(jQuery);
 
 		</file>	
+
+        <file type="javascript" name="run.js">
+jQuery('#sayHello').off('click').on('click', function(){
+    $('div').sayHello();
+})
+        </file>
 	</editor>	
 
 

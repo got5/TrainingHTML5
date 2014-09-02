@@ -1,18 +1,46 @@
 <div class="bloc-content text-content">
 
-	<editor editor-options="{height:220,angular:false}">
-		<file type="javascript" name="script.js">
+<ul>
+	<li>Firstly, we have to give a name to our plugin</li>
+	<li>Choose a name specific enough to be sure it will not be replaced by another one (don't name it myPlugin...)</li>
+	<li>
+		Your plugin is just a function and will be executed when the function is called: 
+		you can define it as soon as jQuery is included, you don't need to wait the 'ready' event
+	</li>
+	<li>
+		A good practice is to define it in an auto calling function
+	</li>
+</ul>
 
-jQuery(document).ready(function(){
-    
-   jQuery.fn.hideplugin = function(){
-        //this.hide(); //uncomment me
-    } 
-    
-    jQuery("h1").hideplugin();</span>
+
+<button id="sayHello">
+	say hello
+</button>
+
+	<editor editor-options="{height:220,angular:false}">
+		<file type="javascript" name="plugin.js">
+
+(
+
+	function($){
+
+	   jQuery.fn.sayHello = function(){
+	        console.log('Hey hello');
+	    } 
+	}
+
+ )(jQuery);
+
+		</file>
+		<file type="javascript" name="run.js">
+$('#sayHello')
+.off('click').on('click', function(){
+	$('body').sayHello();
 });
 
+
 		</file>	
+
 	</editor>	
 
 </div>

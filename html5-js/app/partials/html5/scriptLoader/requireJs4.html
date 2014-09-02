@@ -2,21 +2,22 @@
    <ul>
        <li>We can configure Require in the main.js with require.config() function</li>
        <li>Librairies like JQuery run as a module (use module name and not path) when they are detecting Require.</li>
-       <li>We can configure global variable.</li>
-       </ul>
-    <editor editor-options="{showPreview:false,showTabs:true,height:230,compileCode:false,angular:false}">
-<file type="javascript" name="main.js">require.config({
+    </ul>
+    <editor editor-options="{showPreview:false,showTabs:true,height:300,compileCode:false,angular:false}">
+<file type="javascript" name="main.js">
+require.config({
+    //By default load any module IDs from js/lib
     baseUrl: "js/lib",
+    //except, if the module ID starts with "app",
+    //load it from the js/app directory.
     "paths": {
-        "app": "../app",
-        "jquery": "//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min"
-    },
-    "shim": {
-        "jquery":{
-            "exports": "$"
-        }
+        "app": "../app"
     }
 });
-require(["app"]);</file>
+
+require(['jquery', 'app/myApp'], function($, myApp){
+  //do my job here
+});
+</file>
     </editor>
 </div>

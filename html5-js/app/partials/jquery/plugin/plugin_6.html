@@ -1,25 +1,44 @@
 <div class="bloc-content text-content">
 
-	<editor style="margin-top:30px" editor-options="{height:350,angular:false}">
-		<file type="javascript" name="script.js">
+    <ul>
+        <li> 
+        If the second <i>this</i> is a standard element, you need to 'jQuerify' it to have access to the jQuery methods on it: <code>$(this)</code>
+        </li>
+        <li>
+        By doing <code>return this.each(...)</code>, you also return the current jQuery instance which can then be chained with others plugins
+        </li>
+    </ul>
 
-jQuery(document).ready(function(){
-    
-    jQuery.fn.hideplugin = function(){
+    <button id="sayHello">
+        say hello
+    </button>
 
-    	return this.each(function(){
-    		
-            $(this).hide()
-                    .html("Hello jQuery")
-                    .css({"font-size": "80px"})
-                    .slideDown();</span>
-    	});
-    } 
-    
-    jQuery("h1").hideplugin();
-});
+	<editor style="margin-top:30px" editor-options="{height:350,angular:false, showTabs: true}">
+		<file type="javascript" name="plugin.js">
+
+(
+    function($){
+            
+        $.fn.sayHello = function(){
+
+            return this.each(function(index, element){
+                
+                $(this).hide()
+                        .html("Hello jQuery")
+                        .css({"font-size": "80px"})
+                        .slideDown();
+            });
+        }
+    }
+
+)(jQuery);
 
 		</file>	
+        <file type="javascript" name="run.js">
+jQuery('#sayHello').off('click').on('click', function(){
+    console.log(jQuery('h1').sayHello().prop('tagName'));
+});
+        </file>
 	</editor>	
 
 

@@ -4,7 +4,7 @@
 		<p>This is the zone 1</p>
 	</div>
 
-	<editor>
+	<editor editor-options={height:'400'}>
 		<file type="javascript" name="script.js">
 var button = document.querySelector("#z1 button");
 
@@ -15,10 +15,13 @@ button.addEventListener("click", function(e){
 });
 
 function launchFullScreen(element) {
-	if (element.requestFullscreen)	{ element.requestFullscreen(); }
-	else if (element.mozRequestFullScreen) { element.mozRequestFullScreen(); }
-	else if (element.webkitRequestFullscreen) { element.webkitRequestFullscreen(); }
-	else if (element.msRequestFullscreen){ element.msRequestFullscreen(); }
+	var rf= 
+		element.requestFullscreen || 
+		element.mozRequestFullScreen || 
+		element.webkitRequestFullscreen || 
+		element.msRequestFullscreen;
+	
+	rf.call(element);
 }
 		</file>	
 	</editor>	

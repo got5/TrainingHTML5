@@ -1,24 +1,31 @@
 <div class="bloc-content text-content">
 	<ul>
-		<li>show(), hide() or toggle()</li>
+		<li>
+			You can easily use <code>show()</code>, 
+			<code>hide()</code> or <code>toggle()</code>
+			on an element
+		</li>
 	</ul>
 
 	
-	<button id="anime">Animate it the snippet block!</button>
+	<button id="hide">hide</button>
+	<button id="show">show</button>
+	<button id="toggle">toggle</button>
 
-	<editor>
+	<editor editor-options="{height: 400}">
 		<file type="javascript" name="myscript.js">
 jQuery(document).ready(function(){
-     jQuery("#anime").off("click");
-
-     jQuery("#anime").on("click", function(event){
-     		event.preventDefault();
+     jQuery("#hide").off("click").on("click", function(event){
      		jQuery("pre#editor").hide();
-     		//jQuery("pre#editor").show();
-     		//jQuery("pre#editor").toggle();
 	  });
-     
-     
+
+     jQuery("#show").off("click").on("click", function(event){
+     		jQuery("pre#editor").show();
+	  });
+
+	  jQuery("#toggle").off("click").on("click", function(event){
+     		jQuery("pre#editor").toggle();
+	  });
 });
 		</file>	
 	</editor>	

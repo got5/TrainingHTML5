@@ -22,6 +22,12 @@ iframe {
     border: none;
 }
 
+button{
+    font-size: 0.8em;
+    line-height: 1em;
+    margin: 0.2em;
+}
+
 .header {
     position: absolute;
     left: 50px;
@@ -98,6 +104,15 @@ iframe {
 p.small{
     font-size: 0.8em;
 }
+
+ul.small li{
+    line-height:1.5;
+}
+
+ul.line li{
+    display:inline-block;
+}
+
 
 p.x-small{
     font-size: 0.7em;

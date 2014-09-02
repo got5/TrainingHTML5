@@ -9,11 +9,10 @@
 		<li>A Handler may decide that event is fully processed and stop the bubbling</li>
 		<li>Two different ways :</li>
 		<ul>
-			<li>W3C-compliant browers : event.stopPropagation()</li>
-            <li class="todo">And the second? return false;</li>
+			<li>W3C-compliant browers : use <code>event.stopPropagation()</code></li>
+            <li>Or just <code>return false</code></li>
 		</ul>
-		<li>Can disable the default behavior : event.preventDefault()
-        <div class="todo">Un exemple</div>
+		<li>Can disable the default behavior : <code>event.preventDefault()</code>
         </li>
 	</ul>
 
@@ -29,9 +28,10 @@
         </file>
         <file type="javascript" name="script.js">
 jQuery(document).ready(function(){
-	jQuery(".d1").on("click", function(event){
-     	event.stopPropagation();
-     	alert("target = "+event.target.className+", this="+this.className);
+
+     jQuery(".d1").on("click", function(event){
+        event.stopPropagation();
+        alert("target = "+event.target.className+", this="+this.className);
      });
      
      jQuery(".d2").on("click", function(event){
@@ -40,7 +40,6 @@ jQuery(document).ready(function(){
      });
 
      jQuery(".d3").on("click", function(event){
-     	event.stopPropagation();
      	alert("target = "+event.target.className+", this="+this.className);
      });
      

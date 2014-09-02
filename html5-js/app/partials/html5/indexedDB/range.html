@@ -1,26 +1,52 @@
 <div class="bloc-content text-content">
-<ul>
-	<li>Using Range to add constraint to the result :</li>
-	<ul>
-		<li>upperBound(NUMBER/STRING,Boolean) : the boolean is for exclude</li>
-		<li>lowerBound(18,true)</li>
-		<li>bound(NUMBER/STRING,NUMBER/STRING,Boolean,Boolean)</li>
-		<ul><li>ex : bound(18,26,true,false): 18 < result <= 26 </li></ul>
-	</ul>
-</ul>		
-<editor editor-options="{height:300}">
-<file type="javascript" name="range.js">//...
-var 
-	startAt = 18,
-    endAt = 26,
- 	transaction = db.instance.transaction(['people'],'readonly'),
-	index = transaction.objectStore('people').index('age'),
-	range = IDBKeyRange.bound(startAt,endAt);
-	//range = IDBKeyRange.lowerBound(startAt,true);
 
-var getRequest = index.openCursor(range);
-//...
+<p>
+	<img src="images/keyrange.jpg" style="float:right" width="350"/> 
+	<ul>
+	<li>Use a range to get a according data by opening a cursor on an IDBIndex object</li>
+	<li>
+		Use a constraint to specify the cursor behavior:
+		<ul>
+			<li>'next': default order, 'nextunique': same than 'next' and disable duplicates</li>
+			<li>'prev': reverse order, 'prevunique': same than 'prev' and disable duplicates</li>
+		</ul>
+	</li>
+	</ul>
+</p>
+
+<div style="width:750px;">
+<editor editor-options="{height:400}">
+	<file type="javascript" name="range.js">
+
+indexedDB.open('CursorDB').onsuccess= function(e0){
+
+	var displayCursor= function(message, cursorRequest){
+
+		cursorRequest.onsuccess= function(e){
+			var res= e.target.result;
+			if (res){
+			    message+=  '\n (' + res.value.age + ', ' 
+			    + res.value.firstName + ')\n';
+				res.continue();
+			}else{
+			    console.log(message);
+			}
+		}
+	}
+
+	var db= e0.target.result;
+
+	var range1= IDBKeyRange.upperBound(20),
+	range2= IDBKeyRange.bound(18, 22),
+	transaction= db.transaction(['people'],'readonly'),
+	index= transaction.objectStore('people').index('age');
+
+	displayCursor('range1', index.openCursor(range1));
+	displayCursor('range2', index.openCursor(range2, 'prevunique'));
+}
+
 </file>
 </editor>
+</div>
 
 </div>

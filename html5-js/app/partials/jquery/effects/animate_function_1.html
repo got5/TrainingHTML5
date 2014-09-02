@@ -8,22 +8,21 @@
 	
 	<button id="anime">Animate it the snippet block!</button>
 
-	<editor>
+	<editor editor-options="{height:290}">
 		<file type="javascript" name="myscript.js">
 jQuery(document).ready(function(){
-     jQuery("#anime").off("click");
+     jQuery('#anime').off('click');
 
-     jQuery("#anime").on("click", function(event){
+     jQuery('#anime').on('click', function(event){
      		event.preventDefault();
-     		jQuery("pre#editor").animate({
-     			"height": "+=200px"
-     		});
-     		/*
-     		jQuery("pre#editor").animate({
-     			"height": "+=10%"
-     		});
-     		*/
-	  });     
+     		jQuery('pre#editor')
+     		.animate({
+     			'height': '190px'
+     		}, 'slow')
+     		.animate({
+     			'height': '+=100'
+     		}, 'slow');     		
+	  });
 });
 		</file>	
 	</editor>	

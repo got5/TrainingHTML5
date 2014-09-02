@@ -1,6 +1,13 @@
 <div class="bloc-content text-content">
+
+<p> 
+Below is an example on how to retrieve and/or create a directory. This returns a DirectoryEntry object
+which can then be used to read or remove its content, or create sub directories.
+</p>
+
     <editor editor-options="{showTabs:true,height:650,showPreview:true}">
-        <file type="javascript" name="wrapper.js">var localFileSystem = (function () {
+        <file type="javascript" name="wrapper.js">
+var localFileSystem = (function () {
 
     window.requestFileSystem =
         window.requestFileSystem ||
@@ -59,42 +66,30 @@
         defaultErrorHandler: fs.defaultErrorHandler
     }
 
-})();</file>
-<file type="javascript" name="directory.js">var createDirectory = function(){
-    this.create = function(name){
+})();
+</file>
+<file type="javascript" name="directory.js">
+
+var createDirectory = function(){
+
+    var getOrCreate= function(name, needCreation){
         localFileSystem.request(function(fileSystem){
             fileSystem.root.getDirectory(
                 name,
-
-                {create:true},
-              //{create:true,exclusive:true},
-
+                needCreation? {create: true}: {},
                 function(directory){
-                    console.log(name + ' created');
                     console.log(directory);
                 },
-
                 localFileSystem.defaultErrorHandler);
         });
-  }
-
-    this.read = function(name){
-        localFileSystem.request(function(fileSystem){
-            fileSystem.root.getDirectory(
-                name,
-
-                {},
-
-                function(directory){
-                    console.log(name + ' created');
-                    console.log(directory);
-                },
-
-                localFileSystem.defaultErrorHandler);
-        });
-
     }
-}</file>
+
+    this.create = function(name){ getOrCreate(name, true); }
+    this.read = function(name){ getOrCreate(name, false); }
+
+}
+
+</file>
 <file type="html" name="create.html">&lt;div ng-controller="createDirectory as cd"&gt;
     &lt;input type="text" ng-model="name"/&gt;
     &lt;button type="button" class="btn btn-mini btn-default" ng-click="cd.create(name)"&gt;Create Directory&lt;/button&gt;

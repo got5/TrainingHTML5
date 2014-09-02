@@ -1,34 +1,50 @@
 <div class="bloc-content text-content">
 
-<div class="todo">
-Exemple pas clair pour moi
-</div>
-
 	<ul>
 		<li>Specify the speed at which the animation progresses at different points within the animation</li>
-		<li>The default value is swing</li>
+		<li>The default value is swing: slower at start and at end</li>
 		<li>Only Two implementations in jQuery : swing and linear</li>
 		<li>More easing functions are available with the use of plugins</li>
-		<li>Can specify an easing function per property</li>
+		<li>We can specify an easing function per property</li>
 	</ul>
 
 	
-	<button id="anime">Animate it the snippet block!</button>
+	<button id="anime1">1st tab anim</button>
+	<button id="anime2">2nd tab anim</button>
 
-	<editor>
-		<file type="javascript" name="myscript.js">
+	<editor editor-options="{height: 210, showTabs: true}">
+		<file type="javascript" name="standard.js">
 jQuery(document).ready(function(){
-     jQuery("#anime").off("click");
-
-     jQuery("#anime").on("click", function(event){
+     jQuery('#anime1')
+     .off('click').on('click', function(event){
      		event.preventDefault();
-     		jQuery("pre#editor").animate({
-     			"height": 500
-     		}, 500, "linear", function(){alert("the animation is finished!")});
+     		jQuery('pre#editor')
+     		.animate({'height': '500px'}, 'slow', 'linear')
+     		.animate({'height': '210px'}, 'slow', 'linear');
 	  });
      
      
 });
-		</file>	
+		</file>
+		<file type="javascript" name="perProperty.js">
+jQuery(document).ready(function(){
+     //opacity uses 'linear' while height property uses 'swing'
+     jQuery('#anime2')
+     .off('click').on('click', function(event){
+     		event.preventDefault();
+     		jQuery('pre#editor')
+     		.animate(
+     			{
+     				'opacity': 0,
+     				'height': ['500px', 'swing'],
+     			},'slow', 'linear')
+     		.animate(
+     			{
+     				'opacity': 1,
+     				'height': ['210px', 'swing'],
+     			},'slow', 'linear');  			
+	  });
+});
+		</file>			
 	</editor>	
 </div>

@@ -1,5 +1,15 @@
 <div class="bloc-content text-content">
 
+	<p>
+		For each element in the set, get the first element that matches the selector by testing the element itself 
+		and traversing up through its ancestors in the DOM tree.
+	</p>
+
+
+	<button id="showClosest">
+	show closest
+	</button>
+
 	<editor editor-options="{height:300,showTabs:true,angular:false}">
 		<file type="html" name="index.html">
 &lt;div id="contenu"&gt;
@@ -13,8 +23,10 @@
 		</file>	
 	
 		<file type="javascript" name="script.js">
-jQuery(".current").closest("#contenu");
+jQuery('#showClosest').off('click').on('click', function(){
+	console.log(jQuery(".current").closest("#contenu").prop('tagName'));
+});
 		</file>	
-	</editor>	
+	</editor>
 
 </div>

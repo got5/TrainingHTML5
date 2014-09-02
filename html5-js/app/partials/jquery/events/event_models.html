@@ -3,10 +3,13 @@
 	<ul>
 		<li>There are two event models:</li>
 		<ul>
-			<li>Bubble</li>
-			<li>Capture</li>
+			<li>Bubble -> From the deeper element to the body</li>
+			<li>Capture -> Opposed to Bubble</li>
 		</ul>
-		<li>Bubbling is the only one that currently works in all browsers</li>
+		<li>
+		Bubbling is the only one that currently works in all browsers 
+		and jQuery makes it consistant by replacing <i>Capture</i> events by <i>Bubble</i> ones.
+		</li>
 		<li>When an event occurs, an event object is created and passed to listeners</li>
 		<ul>
 			<li>Many DOM event subclasses : <span class="text-red">MouseEvent</span>, <span class="text-red">FocusEvent</span>, <span class="text-red">KeyboardEvent</span></li>

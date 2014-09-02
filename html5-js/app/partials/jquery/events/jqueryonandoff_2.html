@@ -5,10 +5,11 @@
 
 <div class="bloc-content text-content">
 
-    <div class="todo">
-        Le off fait quoi? Suppression du handler par défaut? <br />
-        Si oui pourquoi utiliser preventDefault dans le on.
-    </div>
+<p> 
+Can be usefull with forms, for example to make sure the form is not sent 
+depending on some validation rules
+</p>
+
 
 
     <editor editor-options="{showPreview:true,height:300,showTabs:true,angular:false}">
@@ -20,11 +21,16 @@
         </file>
         <file type="javascript" name="myscript.js">
 jQuery(document).ready(function(){
-    jQuery("form").off("submit");
-
-    jQuery("form").on("submit", function(event){
-        alert(jQuery("input[type='text']").val());
-        event.preventDefault();
+    jQuery("form")
+    .off("submit")
+    .on("submit", function(event){
+        var isRuleOk= jQuery("input[type='text']").val().length > 0;
+        if (!isRuleOk){
+            event.preventDefault();
+            alert('KO');
+        }
+        //just an example, never submit...
+        return false;
     });
 });
         </file>

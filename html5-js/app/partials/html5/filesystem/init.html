@@ -1,7 +1,13 @@
 <div class="bloc-content text-content">
 
-<editor editor-options="{showTabs:true,height:650}">
-<file type="javascript" name="script.js">window.requestFileSystem =
+<ul>
+<li>Reserve quota for your app</li>
+<li>Tehn request a File System </li>
+</ul>
+
+    <editor editor-options="{showTabs:true,height:650}">
+        <file type="javascript" name="script.js">
+window.requestFileSystem =
     window.requestFileSystem ||
     window.webkitRequestFileSystem;
 
@@ -28,27 +34,36 @@ navigator.webkitTemporaryStorage.requestQuota(size, function (grantedBytes) {
 function fileSysterSuccessHandler(fileSystem){
     console.log("File system initialized");
     console.log(fileSystem);
-
 }
-function fileSystemErrorHandler(fileError){
-    var msg = 'Error initializing file system. ';
-    switch(fileError.code){
-        case FileError.NOT_FOUND_ERR: //1
-            msg += 'File or directory not found. ';
-            break;
 
-        case FileError.SECURITY_ERR: //2
-            msg += 'Security Error. ';
-            break;
+function fileSystemErrorHandler(e){
+var msg = '';
 
-        case FileError.ABORT_ERR:
-            msg += 'Abort error. ';
-            break;
-        // Other cases ... See FileError.prototype for complete list
-    }
+  switch (e.code) {
+    case FileError.QUOTA_EXCEEDED_ERR:
+      msg = 'QUOTA_EXCEEDED_ERR';
+      break;
+    case FileError.NOT_FOUND_ERR:
+      msg = 'NOT_FOUND_ERR';
+      break;
+    case FileError.SECURITY_ERR:
+      msg = 'SECURITY_ERR';
+      break;
+    case FileError.INVALID_MODIFICATION_ERR:
+      msg = 'INVALID_MODIFICATION_ERR';
+      break;
+    case FileError.INVALID_STATE_ERR:
+      msg = 'INVALID_STATE_ERR';
+      break;
+    default:
+      msg = 'Unknown Error';
+      break;
+  };
 
-}</file>
-</editor>
+  console.log('Error: ' + msg);
+}
+        </file>
+    </editor>
 
 </div>
 

@@ -7,24 +7,16 @@
 		<li>For older browser, use these polyfills : <a href="https://github.com/eligrey/classList.js">classList.js</a> and <a href="https://gist.github.com/devongovett/1381839">classList shim</a></li>
 	</ol>
 
-	<editor >
-		<file type="javascript" name="script.js">
-interface DOMTokenList (DOMTokenList) {
-	readonly attribute unsigned long length;
-  	
-  	getter DOMString item(unsigned long index);
-  	
-  	boolean contains(DOMString token);
-  	
-  	void add(DOMString... tokens);
-  	
-  	void remove(DOMString... tokens);
-  	
-  	boolean toggle(DOMString token, optional boolean force);
-  	
-  	stringifier;
-}
+  <pre>
+  interface DOMTokenList (DOMTokenList) {
+      readonly attribute unsigned long length;
 
-		</file>	
-	</editor>	
+      getter DOMString item(unsigned long index);
+      boolean contains(DOMString token);
+      void add(DOMString... tokens);
+      void remove(DOMString... tokens);
+      boolean toggle(DOMString token, optional boolean force);
+      stringifier;
+  }
+  </pre>
 </div>

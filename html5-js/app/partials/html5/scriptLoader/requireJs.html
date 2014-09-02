@@ -1,8 +1,15 @@
 <div class="bloc-content text-content">
-       <p><a href="http://requirejs.org/" target="_blank">RequireJS</a> is an other Asset loader. It provide also a bit of dependency management.</p>
+       <p>
+       <span class="todo">
+       	Hors sujet, modernizr doesn't expose by default its code as an AMD module (Asynchronous Module Definition ) .
+       	This can be done manually, but that's not sugegsted by modernizr. So use load instead().
+
+       </span>
+       <a href="http://requirejs.org/" target="_blank">RequireJS</a> is an other Asset loader. It provide also a bit of dependency management.</p>
 
     <ul>
-        <li>Load the app with the <span class="text-red">data-main</span> attribute (extension optional)</li>
+        <li>Load <i>require</i> as any other js file</li>
+        <li>Just add the <span class="text-red">data-main</span> attribute to tell require which script will contain the <i>require</i> configuration</ul>
     </ul>
     
     <editor editor-options="{showPreview:false,showTabs:true,height:200,compileCode:false,angular:false}">
@@ -11,7 +18,7 @@
     &lt;head&gt;&lt;/head&gt;
 &lt;body&gt;
 &lt;!--....--&gt;
-&lt;script data-main="main.js" src="require.js"&gt;&lt;/script&gt;
+&lt;script data-main="main" src="require.js"&gt;&lt;/script&gt;
 &lt;/body&gt;
 &lt;/html&gt;</file>
 
