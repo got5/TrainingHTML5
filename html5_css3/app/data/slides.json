@@ -1,5 +1,6 @@
 [
   {
+    "title":"1st slide",
     "content":"title"
   },
   {
@@ -128,7 +129,7 @@
   },
   {
     "title":"Commentaires conditionnels",
-    "content":"css3/condiational_comment"
+    "content":"css3/conditional_comment"
   },
   {
     "title":"CSS selectors : by class and by ID",
@@ -141,10 +142,6 @@
   {
     "title":"Practical Works",
     "content":"css3/tp_pseudo_classes"
-  }, 
-  {
-  	"title":"Responsive Web Design",
-  	"content":"css3/rwd/index.html"
   }
 
 ]

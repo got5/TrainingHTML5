@@ -1,35 +1,35 @@
 'use strict';
 
-var MainController = function($scope, $document, $http, $route, $location, $position, $window) {
-	
-	var currentLocation = $location.url();
-	
-	$scope.$watch('slideIndex', function(newSlide, oldSlide) {
-		if (oldSlide != newSlide && $scope.slides != undefined) {
-			var route = $scope.slides[$scope.slideIndex];
-			$location.path("/" + route.content);
-		}
-	});
-	
-	/** Gets all slides and create urls for each one. */
-	$http.get("data/slides.json").success(function(data) {
-		$scope.slides = data;
-		angular.forEach($scope.slides, function(route) {
-			$route.routes["/" + route.content] = { templateUrl: "partials/" + route.content + ".html" };
-		});
-		
-		if (currentLocation == "/" || currentLocation == "") {
-			//Redirects to the first slide.
-			$scope.slideIndex = 0;
-		} else {
-			var index = getSlideIndexFromURL(currentLocation);
-			$scope.slideIndex = index != -1 ? index : 0;
-		}
-	}).error(function(data) {
-		console.log("Error loading slides.json file...");
-	});
-	
-	var getSlideIndexFromURL = function(url) {
+var MainController = function ($scope, $route, $location, $document, $window) {
+
+    var animation = "view-animate";
+    var currentLocation = $location.url();
+    $scope.slideIndexAsPc = 0;
+
+
+    $scope.$watch('slideIndex', function (newSlide, oldSlide) {
+        $scope.updateSlideIndexAsPc();
+        if (oldSlide != newSlide && $scope.slides != undefined) {
+            var route = $scope.slides[$scope.slideIndex];
+            $location.path("/" + route.content);
+        }
+    });
+
+    /** Gets all slides and create urls for each one. */
+    setTimeout(function () {
+        $scope.slides = application.slides;
+        $scope.updateSlideIndexAsPc();
+
+        if (currentLocation == "/" || currentLocation == "") {
+            //Redirects to the first slide.
+            $scope.slideIndex = 0;
+        } else {
+            var index = getSlideIndexFromURL(currentLocation);
+            $scope.slideIndex = index != -1 ? index : 0;
+        }
+    }, 0);
+
+    var getSlideIndexFromURL = function (url) {
         if ($scope.slides != undefined) {
             for (var index = 0; index < $scope.slides.length; index++) {
                 var route = $scope.slides[index];
@@ -38,78 +38,95 @@ var MainController = function($scope, $document, $http, $route, $location, $posi
                 }
             }
         }
-		return -1;
-	};
+        return -1;
+    };
 
-	$scope.nextSlide = function() {
-		if ($scope.slides != undefined && $scope.slideIndex < $scope.slides.length) {
-			$scope.slideIndex++;
-		}
-	};
+    $scope.nextSlide = function () {
+        $scope.getAnimation(true);
 
-	$scope.previousSlide = function() {
-		if ($scope.slideIndex > 0) {
-			$scope.slideIndex--;
-		}
-	};
-	
-	/** Used for progress bar */
-	var progressBarIndicator = {
-		index: 0,
-		value: { value: 0, type: "danger" }
-	};
-	
-	$scope.getProgressLength = function() {
-		if ($scope.slides != undefined && progressBarIndicator.index != $scope.slideIndex) {
-			progressBarIndicator.index = $scope.slideIndex;
-			progressBarIndicator.value = { value: $scope.slideIndex/ $scope.slides.length * 100, type: "danger" };
-		}
-		return progressBarIndicator.value;
-	};
+        if ($scope.slides != undefined && $scope.slideIndex < $scope.slides.length) {
+            $scope.slideIndex++;
+        }
+    };
 
-	$document.keydown(function(event) {
-		if (event.keyCode == 37) {
-			$scope.$apply(function() {
-				$scope.previousSlide();
-			});
-		} else if (event.keyCode == 39) {
-			$scope.$apply(function() {
-				$scope.nextSlide();
-			});
-		}
-	});
-	
-	var indexSlide = 0;
+    $scope.previousSlide = function () {
+       $scope.getAnimation(false);
+
+        if ($scope.slideIndex > 0) {
+            $scope.slideIndex--;
+        }
+    };
+
+    $scope.updateSlideIndexAsPc = function () {
+        if ($scope.slideIndex != undefined && $scope.slides != undefined && $scope.slides.length > 0) {
+            $scope.slideIndexAsPc = $scope.slideIndex / $scope.slides.length * 100;
+        } else {
+            $scope.slideIndexAsPc = 0;
+        }
+    };
+
+    $document.on("keydown", function (event) {
+        if (event.keyCode == 37) {
+            $scope.$apply(function () {
+                $scope.previousSlide();
+            });
+        } else if (event.keyCode == 39) {
+            $scope.$apply(function () {
+                $scope.nextSlide();
+            });
+        }
+    });
+
+    var indexSlide = 0;
 
     /** Changes selected slide index. */
-	$scope.gotoSelectedSlide = function() {
-		$scope.slideIndex = indexSlide;
-	};
+    $scope.gotoSelectedSlide = function () {
+
+        $scope.getAnimation($scope.slideIndex < indexSlide);
+        $scope.slideIndex = indexSlide;
+    };
+
 
     /** Updates popup text with slide title (depends on mouse position on the progress bar). */
-	$scope.setPopupText = function() {
-		if ($scope.slides != undefined) {
-			var mousePos = $position.mouse();
-			indexSlide = (mousePos.x * $scope.slides.length)/$window.document.width;
-			indexSlide = Math.floor(indexSlide) + 1;
-			var progressBarSlide = $scope.slides[indexSlide];
-			if (progressBarSlide != undefined) {
-				$scope.popupText = indexSlide + (progressBarSlide.title != undefined ? " : " + progressBarSlide.title : '');
-			}
-		}
-	};
+    $scope.setPopupText = function (e) {
+        if ($scope.slides != undefined) {
+            indexSlide = Math.floor((e.clientX * $scope.slides.length) / $window.innerWidth) + 1;
+            var progressBarSlide = $scope.slides[indexSlide];
+            if (progressBarSlide != undefined) {
+                $scope.popupText = indexSlide + (progressBarSlide.title != undefined ? " : " + progressBarSlide.title : '');
+            }
+        }
+    };
+
 
     /** Listen to routes changes, to synchronize $scope.slideIndex with current location path. */
-	$scope.$on('$routeChangeStart', function(event, next) {
+    $scope.$on('$routeChangeStart', function (event, next) {
         //TODO: no better way to have the next location...?
         if (next != null && next.$$route != undefined) {
-            var indexURL = getSlideIndexFromURL(next.$$route.templateUrl.replace("partials", "").replace(".html", ""));
+            var templateUrl = next.$$route.templateUrl;
+            var url;
+            if (templateUrl == null) {
+                url = '/'
+            } else {
+                url = templateUrl.replace("partials", "").replace(".html", "");
+            }
+            var indexURL = getSlideIndexFromURL(url);
             if (indexURL > -1 && indexURL != $scope.slideIndex) {
+                $scope.getAnimation($scope.slideIndex < indexURL);
                 $scope.slideIndex = indexURL;
             }
         }
-	});
+    });
+
+    $scope.getAnimation = function(way){
+        if(way){
+            animation = "view-animate";
+        }else{
+            if(way === false){
+                animation = "view-back-animate";
+            }
+        }
+        return animation;
+    };
 };
-
-
-MainController.$inject = [ '$scope', '$document', '$http', '$route', '$location', '$position', '$window' ];
+MainController.$inject = [ '$scope', '$route', '$location', '$document', '$window' ];
