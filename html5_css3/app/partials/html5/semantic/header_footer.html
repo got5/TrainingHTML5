@@ -1,0 +1,47 @@
+<div class="bloc-content text-content">
+	<ul class="small">
+		<li>
+			<strong>header</strong>:
+			<ul>
+				<li>specifies a header for a document or <strong>section</strong></li>
+				<li>should be used as a container for introductory content</li>
+				<li>So it's possible to have several <strong>header</strong> tags in one document</li>
+			</ul>
+		</li>
+		<li>
+			<strong>footer</strong>: 
+			<ul>
+				<li>specifies a footer for a document or <strong>section</strong></li>
+				<li>should contain information about its containing element, typically the author, copyright ...</li>
+			</ul>
+		</li>
+	</ul>
+
+	<editor editor-options="{showTabs: true, showPreview: true, height: 300}">
+
+		<file type="css" name="css">
+article h1{
+	font-size: smaller;
+	text-decoration: underline;
+}
+		</file>
+
+		<file type="html" name="header.html">
+
+&lt;article class="small"&gt;
+  &lt;header&gt;
+    &lt;h1&gt;My article title&lt;/h1&gt;
+    &lt;p&gt;&lt;time datetime="2014-09-01"&gt;&lt;/time&gt;&lt;/p&gt;
+  &lt;/header&gt;
+  &lt;p&gt;My article is so fine, just buy it!&lt;/p&gt;
+	&lt;footer&gt;
+	  &lt;p&gt;Posted by: john doe&lt;/p&gt;
+	  &lt;p&gt;&lt;time datetime="2012-03-01"&gt;&lt;/time&gt;&lt;/p&gt;
+	&lt;/footer&gt;
+&lt;/article&gt;
+
+		</file>
+	</editor>
+
+
+</div>

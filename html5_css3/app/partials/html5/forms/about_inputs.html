@@ -1,0 +1,51 @@
+<div class="bloc-content text-content contents">
+
+	<ul>
+		<li>
+			New functionalities have appeared concerning <strong>input</strong> elements
+			in the HTML5 forms
+		</li>
+		<li>
+			Note: supported by most browsers, and when not supported, 
+			default behavior is used (no error)
+		</li>
+			<ul>
+				<li>
+					the <strong>placeholder</strong> attribute: 
+					a value to display in an <strong>input</strong> before the user starts typing
+				</li>
+				<li>
+					the <strong>autofocus</strong> attribute: 
+					place the focus on the concerned <strong>input</strong> when the page is loaded
+				</li>				
+			</ul>
+		</li>
+	</ul>
+
+
+	<editor editor-options="{showTabs: true, showPreview: true}">
+
+		<file type="css" name="tmp.css">
+#formSamples form{
+	display:inline-block;
+}
+		</file>
+
+		<file type="html" name="samples.html">
+
+&lt;div id="formSamples"&gt;
+
+	&lt;form&gt;
+		&lt;input name="nextUrl" placeholder="go to website..." /&gt;
+	&lt;/form&gt;
+
+	&lt;form&gt;
+		&lt;input name="userName" autofocus /&gt;
+	&lt;/form&gt;	
+
+&lt;/div&gt;
+		</file>
+
+	</editor>
+
+</div>

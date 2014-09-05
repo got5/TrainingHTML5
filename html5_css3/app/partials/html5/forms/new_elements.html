@@ -1,0 +1,68 @@
+<div class="bloc-content text-content contents">
+
+	<ul>
+		<li>
+			HTML5 comes also with new elements for the <strong>forms</strong>
+			<ul>
+				<li>
+					<strong>datalist</strong>: 
+					specifies a list of pre-defined options for 
+					an <strong>input</strong> element which will 
+					be use for auto completion
+				</li>
+				<li>
+					<strong class="todo">keygen</strong>:
+					Pas bien clair pour l'instant, à revoir 
+				</li>
+				<li>
+					<strong>output:</strong>: Used to display/submit a value which is obtained by calculation
+					<ul>
+						<li>
+							<strong>form</strong>: the form id, if the output is not in the form
+							<strong>for</strong>: ids on input concerned for the calculation
+
+						</li>
+					</ul>
+				</li>				
+			</ul>
+		</li>
+	</ul>
+
+
+	<editor editor-options="{showTabs: true, compileCode: false}">
+
+		<file type="html" name="datalist">
+
+&lt;input list="htmlTags"&gt;
+
+&lt;datalist id="htmlTags"&gt;
+  &lt;option value="aside"&gt;
+  &lt;option value="footer"&gt;
+  &lt;option value="header"&gt;
+&lt;/datalist&gt;
+
+		</file>
+
+		<file type="html" name="keygen">
+
+<form action="demo_keygen.asp" method="get">
+Username: <input type="text" name="usr_name">
+Encryption: <keygen name="security">
+<input type="submit">
+</form>
+
+		</file>
+
+		<file type="html" name="output">
+
+&lt;form oninput="x.value=parseInt(a.value)+parseInt(b.value)"&gt;0
+	&lt;input type="range" id="a" value="50"&gt;50 +
+	&lt;input type="number" id="b" value="50"&gt;=
+	&lt;output name="x" for="a b"&gt;&lt;/output&gt;
+&lt;/form&gt;
+
+		</file>
+
+	</editor>
+
+</div>

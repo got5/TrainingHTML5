@@ -1,6 +1,5 @@
 [
   {
-    "title":"1st slide",
     "content":"title"
   },
   {
@@ -8,117 +7,101 @@
     "content":"contents"
   }, 
   {
-    "title":"Dev Workstation : Browser",
-    "content":"html5/browser"
+    "title":"HTML5 - First Notions - Remark",
+    "content":"html5/informations/remark"
+  },  
+  {
+    "title":"HTML5 - First Notions - Devlopment tools - Browser",
+    "content":"html5/informations/browser"
   },
   {
-    "title":"Dev Workstation : IDE",
-    "content":"html5/ide"
+    "title":"HTML5 - First Notions - Devlopment tools - IDE",
+    "content":"html5/informations/ide"
   },
   {
-    "title":"Standards",
-    "content":"html5/standards"
-  },
-  {
-  	"title":"HTML5 History",
-  	"content":"html5/html5_history"
+  	"title":"HTML5 - Informations - History",
+  	"content":"html5/informations/html5_history"
   }, 
   {
-    "title":"HTML5 Doctype",
-    "content":"html5/html5_doctype"
+    "title":"HTML5 - First Notions - Doctype",
+    "content":"html5/first_notions/html5_doctype"
   }, 
   {
-    "title":"HTML5-based XML",
-    "content":"html5/html5_based_xml"
+    "title":"HTML5 - First Notions - Syntax - Basic Sample",
+    "content":"html5/first_notions/basic_sample"
+  },
+  {
+    "title":"HTML5 - First Notions - Syntax - Vocabulary",
+    "content":"html5/first_notions/vocabulary"
   }, 
   {
-    "title":"HTML5-based XML",
-    "content":"html5/html5_based_xml_2"
+    "title":"HTML5  - First Notions - Remarks",
+    "content":"html5/first_notions/remarks"
   }, 
   {
-    "title":"Parts of a tag",
-    "content":"html5/html5_based_xml_3"
+  	"title":"HTML5 - Semantic Notion - Intro",
+  	"content":"html5/semantic/intro"
   }, 
   {
-  	"title":"Notion : Code Sémantique",
-  	"content":"html5/code_semantique"
+    "title":"HTML5 - Semantic Notion - All tags",
+    "content":"html5/semantic/tags"
   }, 
   {
-    "title":"Page Structure",
-    "content":"html5/structure_page/index"
+    "title":"HTML5 - Semantic Notion - Page Structure - Header & Footer",
+    "content":"html5/semantic/header_footer"
   },
   {
-    "title":"Header",
-    "content":"html5/structure_page/header"
+    "title":"HTML5 - Semantic Notion - Page Structure - Main & Nav",
+    "content":"html5/semantic/main_nav"
   },
   {
-    "title":"Header",
-    "content":"html5/structure_page/header_example"
+    "title":"HTML5 - Semantic Notion - Page Structure - Section & Article",
+    "content":"html5/semantic/section_article"
   },
   {
-    "title":"Footer",
-    "content":"html5/structure_page/footer"
+    "title":"HTML5 - Semantic Notion - Page Structure - Aside",
+    "content":"html5/semantic/aside"
   },
   {
-    "title":"Footer",
-    "content":"html5/structure_page/footer_example"
+    "title":"HTML5 - Semantic Notion - Page Structure - Outline",
+    "content":"html5/semantic/outline"
   },
   {
-    "title":"Main",
-    "content":"html5/structure_page/main"
+  	"title":"HTML5 - Semantic Notion - Pratical Works",
+  	"content":"html5/semantic/pw"
   },
   {
-    "title":"Main",
-    "content":"html5/structure_page/main_example"
+    "title":"HTML5 - Forms - New Elements",
+    "content":"html5/forms/new_elements"
   },
   {
-    "title":"Nav",
-    "content":"html5/structure_page/nav"
-  },
-  {
-    "title":"Nav",
-    "content":"html5/structure_page/nav_example"
-  },
-  {
-    "title":"Section",
-    "content":"html5/structure_page/section"
-  },
-  {
-    "title":"Section",
-    "content":"html5/structure_page/section_example"
-  },
-  {
-    "title":"Article",
-    "content":"html5/structure_page/article"
-  },
-  {
-    "title":"Article",
-    "content":"html5/structure_page/article_example"
-  },
-  {
-    "title":"Aside",
-    "content":"html5/structure_page/aside"
-  },
-  {
-    "title":"Aside",
-    "content":"html5/structure_page/aside_example"
-  },
-  {
-  	"title":"Pratical Works",
-  	"content":"html5/structure_page/tp_structuration_page"
+    "title":"HTML5 - Forms - About Inputs",
+    "content":"html5/forms/about_inputs"
   }, 
   {
-  	"title":"Notion : Accessibilité",
-  	"content":"html5/code_accessible"
-  }, 
-  {
-  	"title":"Inputs",
-  	"content":"html5/input"
-  }, 
-  {
-  	"title":"Inputs",
-  	"content":"html5/tp_input"
+    "title":"HTML5 - Forms - About Inputs (...)",
+    "content":"html5/forms/about_inputs_2"
   },
+  {
+    "title":"HTML5 - Forms - About Inputs - Email And Url",
+    "content":"html5/forms/email_url"
+  },
+  {
+    "title":"HTML5 - Forms - About Inputs - Number And Range",
+    "content":"html5/forms/number_range"
+  },
+  {
+    "title":"HTML5 - Forms - About Inputs - data / time / ...",
+    "content":"html5/forms/date_time"
+  },
+  {
+    "title":"HTML5 - Forms - About Inputs - data / time / ...",
+    "content":"html5/forms/search_color"
+  },
+  {
+    "title":"HTML5 - Forms - About validation",
+    "content":"html5/forms/about_validation"
+  },  
   {
     "title":"Notion : Import CSS stylesheets : the bad way",
     "content":"css3/css_inline"

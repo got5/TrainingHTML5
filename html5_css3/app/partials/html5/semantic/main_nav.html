@@ -1,0 +1,55 @@
+<div class="bloc-content text-content">
+	<ul class="small">
+		<li>
+			<strong>main</strong>:
+			<ul>
+				<li> specifies the main content of a document </li>
+				<li>The content inside the <strong>main</strong> element should be unique to the document. It should not contain any content that is repeated across documents such as sidebars, navigation links, copyright information, site logos, and search forms</li>
+				<li>There must not be more than one <strong>main</strong> element in a document</li>
+			</ul>
+		</li>
+		<li>
+			<strong>nav</strong>: 
+			<ul>
+				<li>defines a set of navigation links</li>
+				<li>Not all links of a document should be inside a <strong>nav</strong> element, it is intended only for major block of navigation links</li>
+				<li>It can be usefull for audio browsers for example, which could then skip this section</li>
+			</ul>
+		</li>
+	</ul>
+
+	<editor editor-options="{showTabs: true,height: 300, compileCode: false}">
+
+		<file type="html" name="main.html">
+
+&lt;main&gt;
+  &lt;h1&gt;HTML5 Norms&lt;/h1&gt;
+  &lt;p&gt;W3C and WHATWG have now their own standards&lt;/p&gt;
+
+  &lt;article&gt;
+    &lt;h1&gt;W3C&lt;/h1&gt;
+    &lt;p&gt;Normalized and slow process&lt;/p&gt;
+  &lt;/article&gt;
+
+  &lt;article&gt;
+    &lt;h1&gt;WHATWG&lt;/h1&gt;
+    &lt;p&gt;Makes the feature ASAP&lt;/p&gt;
+  &lt;/article&gt;
+&lt;/main&gt;
+
+		</file>
+
+		<file type="html" name="nav" >
+&lt;nav&gt;
+  &lt;a href="/menu/1"&gt;Menu 1&lt;/a&gt; |
+  &lt;a href="/menu/2"&gt;Menu 2&lt;/a&gt; |
+  &lt;a href="/menu/3"&gt;Menu 3&lt;/a&gt; |
+&lt;/nav&gt;
+
+		</file>
+
+
+	</editor>
+
+
+</div>

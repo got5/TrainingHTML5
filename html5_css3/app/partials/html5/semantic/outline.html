@@ -1,0 +1,57 @@
+<div class="bloc-content text-content">
+	<ul>
+		<li>
+			The <strong>outline</strong> of a web page is the 
+			structure of the document
+		</li>
+		<li>
+			In HTML4, the <strong>outline algorithm</strong> was 
+			only based on the <strong>heading</strong> elements (h1, ..., h6)
+		</li>
+		<li>
+			In HTML5, the <strong>outline algorithm</strong> takes also in 
+			consideration the new semantic tags we have seen before 
+			( body, section, article, aside, footer, header et nav)
+		</li>
+		<li>
+			The use of these element implies a new subsection in the outline
+		</li>
+	</ul>
+
+	<editor editor-options="{showTabs: true, compileCode: false, height: 350}">
+
+		<file type="html" name="example.html">
+
+&lt;h1&gt;Welcome&lt;/h1&gt;
+&lt;section&gt;
+  &lt;h1&gt;About HTML5&lt;/h1&gt;
+  &lt;p&gt;So fine...&lt;/p&gt;
+  &lt;section&gt;
+    &lt;h1&gt;Better that HTML4?&lt;/h1&gt;
+    &lt;p&gt;Yes sure...&lt;/p&gt;
+  &lt;/section&gt;
+&lt;/section&gt;
+&lt;footer&gt;
+	&lt;section&gt;
+	  &lt;h1&gt;Contact&lt;/h1&gt;
+	  &lt;p&gt;Feel free to ask your questions&lt;/p&gt;
+	&lt;/section&gt;
+	&lt;section&gt;
+		&lt;h1&gt;About us&lt;/h1&gt;
+		&lt;p&gt;worldline&lt;/p&gt;
+	&lt;/section&gt;
+&lt;/footer&gt;
+
+		</file>
+		<file type="text" name="result.txt">
+1. Welcome
+	1. About HTML5
+		1. Better that HTML4?
+	2. Contact
+	3. About us
+		</file>
+	
+	</editor>
+
+
+</div>
