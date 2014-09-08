@@ -1,0 +1,34 @@
+<div class="bloc-content text-content contents">
+
+	<ul>
+		<li>
+			By following the <a href="http://schema.org/Movie">http://schema.org/Movie</a>
+			 url and looking for the <strong>director</strong> property, you can see
+			 that it extends the <strong>Person</strong> type, which also has its own properties
+		</li>
+		<li>
+			Which means that you can use a new <strong>itemtype</strong> attribute 
+			to give more details on the director if needed
+		</li>
+		<li>
+		The more abstract type is <strong>Thing</strong>, whose <strong>Place</strong>
+		for example inhérits, while <strong>LocalBusiness</strong> is a type of place
+		</li>
+	</ul>
+
+	<editor editor-options="{compileCode: false, showTabs: true, height: 300}">
+		<file name="sample.html" type="html">
+&lt;div itemscope itemtype ="http://schema.org/Movie"&gt;
+  &lt;h1 itemprop="name"&gt;The Big Lebowski&lt;/h1&gt;
+  &lt;div itemprop="director" itemscope itemtype="http://schema.org/Person"&gt;
+  Director: &lt;span itemprop="name"&gt;Ethan Coen&lt;/span&gt; 
+  (born &lt;span itemprop="birthDate"&gt;November 29, 1954)&lt;/span&gt;
+  &lt;/div&gt;
+  &lt;span itemprop="genre"&gt;Comedy&lt;/span&gt;
+  &lt;a href="./url/to/trailer" itemprop="trailer"&gt;Trailer&lt;/a&gt;
+&lt;/div&gt;
+</div>		
+		</file>
+	</editor>
+
+</div>

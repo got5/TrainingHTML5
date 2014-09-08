@@ -103,6 +103,22 @@
     "content":"html5/forms/about_validation"
   },  
   {
+    "title":"HTML5 - Microdata - Intro",
+    "content":"html5/microdata/intro"
+  },
+  {
+    "title":"HTML5 - Microdata - Itemscope and Itemtype",
+    "content":"html5/microdata/itemscope_itemtype"
+  },
+  {
+    "title":"HTML5 - Microdata - Itemscope and Itemtype",
+    "content":"html5/microdata/itemprop"
+  },
+  {
+    "title":"HTML5 - Microdata - Extended Properties",
+    "content":"html5/microdata/extended_properties"
+  },
+  {
     "title":"Notion : Import CSS stylesheets : the bad way",
     "content":"css3/css_inline"
   },
