@@ -1,0 +1,23 @@
+<div class="bloc-content text-content">
+
+
+    <p>
+        The IndexedDB API is an event driven API. 
+        Events are used at different levels, and you can interact with them by using custom handlers.
+        Most used events are <i>success</i> and <i>error</i>, but some others can also be used depending on the operation you are doing.
+        Below are some examples.
+    </p>
+    <ul>
+        <li><span class="text-red">success</span> and <span class="text-red">error</span>: can be handled when you open the database, read object stores or create object stores and more generally each time a request is used</li>
+        <li>
+            <span class="text-red">upgradeneeded</span> : you try to open a database which doesn't exist or with a version id higher than its current version id
+        </li>
+        <li>
+            <span class="text-red">blocked</span> : you try to open a DB which is already opened
+        </li>
+        <li>
+            <span class="text-red">abort</span>,<span class="text-red">complete</span>,<span class="text-red">error</span>: Can be handled at the transaction level to know its state
+        </li>
+    </ul>
+
+</div>

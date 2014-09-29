@@ -1,0 +1,28 @@
+<div class="bloc-content text-content">
+	<ul>
+		<li>
+			Or again <code>slideUp()</code>, <code>slideDown()</code> and <code>SlideToggle()</code>
+		</li>
+	</ul>
+
+	
+	<button id="sup">slide up</button>
+	<button id="sdown">slide down</button>
+	<button id="stoggle">slide toggle</button>
+
+	<editor editor-options="{height: 400}">
+		<file type="javascript" name="myscript.js">
+jQuery(document).ready(function(){
+     jQuery("#sup").off("click").on("click", function(event){
+     	jQuery("pre#editor").slideUp();
+     });
+     jQuery("#sdown").off("click").on("click", function(event){
+     	jQuery("pre#editor").slideDown();
+     });
+     jQuery("#stoggle").off("click").on("click", function(event){
+     	jQuery("pre#editor").slideToggle();
+     });
+});
+		</file>	
+	</editor>	
+</div>

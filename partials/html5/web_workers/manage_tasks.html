@@ -1,0 +1,72 @@
+<div class="bloc-content text-content small">
+
+<p>
+    Here is a sample showing how communication can be done
+    between parent and child processes. Communication allows to
+    manage specific tasks
+</p>
+
+<editor editor-options="{showTabs:true,height:650}">
+
+    <file type="html" name="workerTask.js">
+&lt;script type="javascript/worker" id="localScript"&gt;
+	
+	self.onmessage = function(e) {
+	
+		var dataIn= e.data;
+		switch(dataIn.cmd){
+			case 'START':
+				self.postMessage({cmd:'ALERT', msg:'I start'});
+				break;
+			case 'STOP':
+				self.postMessage({cmd:'CONSOLE', msg:'I stop'});
+				self.close();
+				break;
+			default:
+				self.postMessage({cmd:ALERT, msg:'Unknown'});
+				break;
+		}
+	}
+&lt;/script&gt;
+    </file>   
+
+    <file type="javascript" name="manage.js">
+
+
+var testWorker= function(scriptContent){
+    var blob = new Blob([scriptContent]);
+    var url= window.URL.createObjectURL(blob); //could be /my/script.js as well...
+
+    var worker= new Worker(url);
+
+    worker.onmessage= function(e){
+
+	    var dataIn= e.data;
+		switch(dataIn.cmd){
+			case 'ALERT':
+				console.log(dataIn.msg);
+				break;
+			case 'CONSOLE':
+				alert(dataIn.msg);
+				break;
+			default:
+				console.log('Unknown command');
+				break;
+		}
+	}
+
+    worker.postMessage({cmd: 'START'});
+    worker.postMessage({cmd: 'STOP'});
+    worker.postMessage({cmd: 'START'});
+}
+
+$(document).ready(function(){
+    moduleUtils.beSureScriptNodeExistBeforeRun('#localScript', [testWorker]);
+});
+    </file> 
+
+</editor>
+
+
+
+</div>

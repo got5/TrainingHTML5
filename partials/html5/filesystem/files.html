@@ -1,0 +1,108 @@
+<div class="bloc-content text-content">
+    <editor editor-options="{showTabs:true,height:650,showPreview:true}">
+        <file type="javascript" name="wrapper.js">var localFileSystem = (function () {
+
+    window.requestFileSystem =
+        window.requestFileSystem ||
+        window.webkitRequestFileSystem;
+
+
+    var fs = {
+        asBytes: function (mega) {
+            return mega * 1048576;
+        },
+        defaultErrorHandler: function fileSystemErrorHandler(fileError) {
+            var msg = 'Error initializing file system. ';
+            switch (fileError.code) {
+                case FileError.NOT_FOUND_ERR: //1
+                    msg += 'File or directory not found. ';
+                    break;
+
+                case FileError.SECURITY_ERR: //2
+                    msg += 'Security Error. ';
+                    break;
+
+                case FileError.ABORT_ERR: //3
+                    msg += 'Abort error. ';
+                    break;
+
+            // Other cases ... See FileError.prototype for complete list
+
+                default:
+                    msg +='Unknown error. ';
+
+            }
+            console.error(msg);
+        },
+        request: function (successHandler) {
+
+            var size = fs.asBytes(2);
+
+            navigator.webkitTemporaryStorage.requestQuota(size, function (grantedBytes) {
+                console.log('Attempting to request ' + grantedBytes);
+
+                if (grantedBytes === size) {
+                    window.requestFileSystem(
+                        window.TEMPORARY,
+                        grantedBytes,
+                        successHandler,
+                        fs.defaultErrorHandler);
+                }
+            }, fs.defaultErrorHandler);
+
+        }
+    };
+
+
+    function successHandler(fileSystem) {
+        console.log("File system initialized");
+        console.log(fileSystem);
+    }
+
+    return {
+        request: fs.request,
+        defaultErrorHandler: fs.defaultErrorHandler
+    }
+
+})();</file>
+<file type="javascript" name="file.js">var createFile = function(){
+    this.create = function(name){
+        localFileSystem.request(function(fileSystem){
+            fileSystem.root.getFile(
+                name,
+                {create:true},
+                //{create:true, exclusive: true},
+
+                function(fileEntry){
+                    console.log(fileEntry);
+                },localFileSystem.defaultErrorHandler);
+        });
+  }
+
+    this.read = function(name){
+        localFileSystem.request(function(fileSystem){
+            fileSystem.root.getFile(
+                name,
+
+                {},
+
+                function(file){
+                    console.log(name + ' created');
+                    console.log(file);
+                },
+
+                fileSystem.defaultErrorHandler);
+        });
+
+    }
+}</file>
+<file type="html" name="create.html">&lt;div ng-controller="createFile as cf"&gt;
+    &lt;input type="text" ng-model="name"/&gt;
+    &lt;button type="button" class="btn btn-mini btn-default" ng-click="cf.create(name)"&gt;Create File&lt;/button&gt;
+    &lt;button type="button" class="btn btn-mini btn-success" ng-click="cf.create(name)"&gt;Read File&lt;/button&gt;
+&lt;/div&gt;
+</file>
+    </editor>
+
+</div>
+

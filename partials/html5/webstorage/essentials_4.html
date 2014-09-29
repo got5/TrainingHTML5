@@ -1,0 +1,33 @@
+<div class="bloc-content text-content">
+
+	<ul>
+		<li>The LocalStorage object is designed to store strings only</li>
+		<li>To store JSON Object, need to serialise the object</li>
+	</ul>
+
+	
+	<button id="storage">Get Storage</button>
+	<p>
+		Value from the localStorage
+	</p>
+
+	<editor editor-options="{height:400,angular:false}">
+		<file type="javascript" name="script.js">
+
+var button = document.getElementById("storage");
+
+button.removeEventListener("click");
+
+button.addEventListener("click", function(){
+
+	localStorage.setItem("test", {name: 'Emmanuel'});
+
+   	//localStorage.setItem("test", JSON.stringify({name: 'Emmanuel'}));
+
+   	document.querySelector("#storage ~ p").innerHTML = localStorage.getItem("test");
+
+});
+		</file>	
+	</editor>	
+
+</div>

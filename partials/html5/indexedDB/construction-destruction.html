@@ -1,0 +1,55 @@
+<div class="bloc-content text-content">
+
+
+<editor editor editor-options="{showPreview:true,showTabs:true,height:350,compileCode:true,angular:true}">
+<file type="javascript" name="construction.js">var openRequest = window.indexedDB.open('InitDB',1);
+//add suffix to variable to know which request is which
+//open(databasename,versionNumber) to create or access a DB
+
+openRequest.onupgradeneeded = function(e){ 
+    var newVersion = e.target.result;
+
+    if(!newVersion.objectStoreNames.contains('course')){
+        newVersion.createObjectStore('courses',
+            {
+                autoIncrement:true
+            });
+    }
+};
+
+openRequest.onerror = openRequest.onblocked = console.log;
+
+openRequest.onsuccess = function(e){
+	console.log('Database opened');
+    initDB = e.target.result;
+};
+</file>
+<file type="javascript" name="destruction.js">
+function _deleteDatabase(){
+console.log("check if the database exists");
+if(typeof initDB !== 'undefined'){
+    console.log('Closing the database...');
+    initDB.close(); //db have to be closed to be deleted
+    //This call is async !
+
+    console.log('try to delete the db');
+
+    var deleteRequest = indexedDB.deleteDatabase('InitDB');
+
+    deleteRequest.onerror = deleteRequest.onblocked = console.log;
+
+    deleteRequest.onsuccess = function(){
+        console.log('Database Deleted');
+    }
+}}
+ var indexedDBCtrl = function(){
+        this.deleteDatabase = _deleteDatabase;
+};</file>
+<file type="html" name="index.html">&lt;!--This use the AngularJS framework. You don't need to understand what's in here. --&gt;
+&lt;p class="small" ng-controller="indexedDBCtrl as iDC"&gt;
+    &lt;a  class="btn" ng-click="iDC.deleteDatabase()"&gt;Call Del() function&lt;/a&gt; 
+    &lt;span&gt;Open your console&lt;/span&gt;
+&lt;/p&gt;
+</file>
+</editor>
+</div>

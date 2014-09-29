@@ -1,0 +1,38 @@
+<div class="bloc-content text-content">
+	<ul>
+		<li>Drag from an element to another one</li>
+		<li>Set the <i>draggable</i> attribute to <i>true</i> and use the <i>dragstart</i> event on the source element</li>
+		<li>Use the <i>dragover</i> and <i>drop</i> events on the target element respectively to allow the drop action and to implement this action behavior</li>
+		<li>Finally, use the <i>dataTransfer</i> attribute to transfer programmatically data between the source and the target</li>
+	</ul>
+
+	<p>Below a sample from w3c</p>
+
+	<editor editor-options="{compileCode:false, height: 400, showTabs:true}">
+		<file type="html" name="index.html">
+&lt;body&gt;
+&lt;div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"&gt;&lt;/div&gt;
+&lt;img id="drag1" src="img_logo.gif" draggable="true"
+ondragstart="drag(event)" width="336" height="69"&gt;
+&lt;/body&gt;
+		</file>
+		<file type="javascript" name="script.js">
+function allowDrop(ev) {
+    ev.preventDefault();
+}
+
+function drag(ev) {
+    ev.dataTransfer.setData("Text", ev.target.id);
+}
+
+function drop(ev) {
+    ev.preventDefault();
+    var data = ev.dataTransfer.getData("Text");
+    ev.target.appendChild(document.getElementById(data));
+}
+		</file>	
+	</editor>	
+
+
+
+</div>

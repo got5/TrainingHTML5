@@ -1,0 +1,22 @@
+<div class="bloc-content text-content">
+   <p>When using cache manifest, at least two refresh are necessary to get new assets from server</p>
+    <ul>
+        <li>Why ?</li>
+        <ul>
+            <li>It's a safety mechanism which ensure that all assets are successfully downloaded before transfer it to the active cache
+            <div class="todo">
+            Ca explique pas pkoi le navigateur recharge pas la page avec les resources en cache en cas de succès,
+            je dirais juste que c'est comme ça sans plus de précisions.
+            </div>
+            </li>
+            <ul>
+                <li>At first request, the assets are stored in a temporary Store</li>
+            </ul>
+            <li>If there is a problem with one asset, the cache is not updated and you still get your old working application</li>
+            <li>Note : the front page is automatically cached. So user will have to refresh twice to get new contents !</li>
+            <ul>
+                <li>You can check that in the developer tools of your Browser</li>
+            </ul>
+        </ul>
+    </ul>
+</div>

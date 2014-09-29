@@ -1,0 +1,31 @@
+<div class="bloc-content text-content">
+
+	<ul>
+		<li>Call the setItem method of the localStorage object</li>
+        <li>Store Strings only</li>
+        <li>Capacity : W3C recommend 5MB per origin</li>
+        <li>Sandboxed data</li>
+
+    </ul>
+
+	<button id="storage">Save Storage</button>
+
+	<editor editor-options="{height:300,compileCode:true}">
+		<file type="javascript" name="script.js">
+
+var button = document.getElementById("storage");
+
+button.removeEventListener("click");
+
+button.addEventListener("click", function(){
+	localStorage.setItem("test", "this is a test item");
+
+    //Or you can use the JS setter syntax
+    //localStorage.test = "this is a test item";	
+});
+		</file>	
+	</editor>	
+
+
+
+</div>

@@ -1,0 +1,40 @@
+<div class="bloc-content text-content">
+
+<p> Get first and last elements matching the selector</p>
+
+	<editor editor-options="{showPreview:true,height:200,showTabs:true, compileCode: true}">
+		<file type="html" name="index.html">
+
+&lt;div id="myBloc"&gt;
+	&lt;ul class="line" &gt;
+		&lt;li&gt;LI A.1&lt;/li&gt;
+		&lt;li&gt;LI A.2&lt;/li&gt;
+	&lt;/ul&gt;
+	&lt;ul class="line" &gt;
+		&lt;li&gt;LI B.1&lt;/li&gt;
+		&lt;li&gt;LI B.2&lt;/li&gt;
+	&lt;/ul&gt;
+&lt;/div&gt;
+
+&lt;button id="myButton"&gt; test &lt;/button&gt;
+		</file>	
+
+		<file type="javascript" name="myscript.js">
+var testFirstLast= function(){
+     
+     var firstLi = jQuery('#myBloc li:first');
+     var lastLi = jQuery('#myBloc li:last');
+
+     console.log(firstLi[0].innerHTML);
+     console.log(lastLi[0].innerHTML);
+     
+};
+
+moduleUtils.beSureScriptNodeExistBeforeRun('#myBloc', [
+    function(){
+    	$('#myButton').on('click', testFirstLast);
+    }
+]);
+		</file>	
+	</editor>	
+</div>

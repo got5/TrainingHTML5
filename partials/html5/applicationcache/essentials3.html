@@ -1,0 +1,35 @@
+<div class="bloc-content text-content">
+    <ul>
+        <li>To activate it, you have to use the <span class="text-red">manifest</span> attribute on the html tag to point to the manifest url</li>
+        <li>The server has to answer to the request with the mime type: "text/cache-manifest"</li>
+
+        <li>No wildcard/regexp are allowed in the cache section, so how to say "I want to cache all images"? 
+            <ul>
+                <li>Just generate the manifest dynamically on the server side</li>
+            </ul>
+        </li>
+        <li>Use the <span class="text-red">manifest</span> attribute makes this html page to be automatically cached</li>
+    </ul>
+
+    <editor editor-options="{showPreview:false,showTabs:true,height:100,compileCode:false,angular:false}">
+
+        <file type="html" name="index.html">&lt;!doctype html&gt;
+            &lt;html lang="en" manifest="/offline.appcache"&gt;
+            ...
+        <file type="cpp" name="offline.appcache">CACHE MANIFEST
+
+            #Version 00
+
+            CACHE:
+            /js/jquery.min.js
+            /js/app.min.js
+
+            /styles/main.css
+
+            /images/logo.png
+
+            NETWORK
+            *
+        </file>
+    </editor>
+</div>

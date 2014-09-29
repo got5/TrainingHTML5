@@ -1,0 +1,36 @@
+<div class="bloc-content text-content">
+
+    <table class="small"><tbody><tr><th colspan="2">Enumeration description</th></tr><tr><td><code id="idl-def-IDBTransactionMode.readonly">readonly</code></td><td>
+        This mode means that the transaction is only allowed
+        to read data. No modifications can be done by this type of transaction. This has the advantage
+        that several <code>"readonly"</code> transactions can run at the same time even if their <a title="scope" href="#dfn-scope" class="internalDFN">scopes</a>
+        are overlapping, i.e. if they are using the same object stores. This type of transaction can
+        be created any time once a database has been opened using the
+        <a href="#widl-IDBDatabase-transaction-IDBTransaction-DOMString-sequence-DOMString--storeNames-IDBTransactionMode-mode"><code>IDBDatabase.transaction</code></a>
+        <!--
+            or
+            <a href="#widl-IDBDatabaseSync-transaction-void-DOMString-sequence-DOMString-storeNames-IDBTransactionCallback-callback-IDBTransactionMode-mode-unsigned-long-timeout"><code>IDBDatabaseSync.transaction</code></a>
+        -->
+        method.
+    </td></tr><tr><td><code id="idl-def-IDBTransactionMode.readwrite">readwrite</code></td><td>
+        The type of transaction is allowed to read, modify and
+        delete data from existing object stores. However object stores and indexes can't be added or removed.
+        Multiple <code>"readwrite"</code> transactions can't run at the same time if their <a title="scope" href="#dfn-scope" class="internalDFN">scopes</a> are overlapping
+        since that would mean that they can modify each other's data in the middle of the transaction.
+        This type of transaction can be created any time once a database has been opened using the
+        <a href="#widl-IDBDatabase-transaction-IDBTransaction-DOMString-sequence-DOMString--storeNames-IDBTransactionMode-mode"><code>IDBDatabase.transaction</code></a>
+        <!--
+            or
+            <a href="#widl-IDBDatabaseSync-transaction-void-DOMString-sequence-DOMString-storeNames-IDBTransactionCallback-callback-IDBTransactionMode-mode-unsigned-long-timeout"><code>IDBDatabaseSync.transaction</code></a>
+        -->
+        method.
+    </td></tr><tr><td><code id="idl-def-IDBTransactionMode.versionchange">versionchange</code></td><td>
+        This is similar to a <code>"readwrite"</code> transaction,
+        however it can additionally create and remove object stores and indexes. It is the only type of
+        transaction that can do so. This type of transaction can't be manually created, but instead is created
+        automatically when a <a href="#dfn-upgradeneeded" class="internalDFN"><code>upgradeneeded</code></a> event is fired.
+    </td></tr></tbody></table>
+
+    </div>
+
+<div data-side-button url="http://www.w3.org/TR/IndexedDB/" title="W3C" image="images/w3c.jpeg"></div>

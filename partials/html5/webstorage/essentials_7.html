@@ -1,0 +1,38 @@
+<div class="bloc-content text-content">
+
+
+	<ul>
+		<li>The spec outlines a storage event</li>
+		<li>Used to listen for storage changes</li>
+		<li><span class="text-red">WARN:</span>
+		This event is not sent to the window which initiates the event, but to other ones, so to see the result, open this url in several tabs/windows...
+		</li>
+	</ul>
+
+	
+	<button id="storage">Get Storage</button>
+	<p>
+		Value from the localStorage
+	</p>
+
+	<editor editor-options="{height:400,angular:false}">
+		<file type="javascript" name="script.js">
+var button = document.getElementById("storage");
+
+button.removeEventListener("click");
+window.removeEventListener("storage");
+
+window.addEventListener("storage", function(e){
+    document.querySelector("#storage ~ p").innerHTML = e.newValue;
+});
+
+button.addEventListener("click", function(){
+	localStorage.setItem("test2", "new value");
+});
+
+		</file>	
+	</editor>	
+
+
+
+</div>

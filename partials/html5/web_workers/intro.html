@@ -1,0 +1,20 @@
+<div class="bloc-content text-content small">
+    <ul>
+        <li>Web Workers allow to execute tasks in background threads</li>
+        <li>To create a Web Worker, you just need to tell the script it has to execute</li>
+        <li>A worker has its own execution environment:
+            <ul>
+                <li>It doesn't share its data with other workers </li>
+                <li>It doesn't have access to the dom</li>
+                <li>It can communicate with its parent: again, data is copied, not shared </li>
+            </ul>
+        </li>
+        <li>You could see a worker a little bit like a batch and imagine a lot of use cases
+            <ul>
+                <li> Continuously do AJAX calls to get recent data </li>
+                <li> Clean your indexedDB by removing unused data </li>
+                <li> Make intensive calculation without blocking the user...</li>
+            </ul>
+        </li>
+    </ul>
+</div>

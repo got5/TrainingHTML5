@@ -1,0 +1,49 @@
+<div class="bloc-content text-content">
+
+<ul>
+	<li>
+		<code>append</code>: Insert content, specified by the parameter, to the end of each element in the set of matched elements.
+	</li>
+	<li>
+		<code>prepend</code>: Insert content, specified by the parameter, to the beginning of each element in the set of matched elements
+	</li>
+
+
+</ul>
+
+	<editor editor-options="{showTabs:true, showPreview:true}">
+		<file type="html" name="index.html">
+
+&lt;div id="myDiv"&gt;
+	&lt;p&gt;Block 1&lt;/p&gt;
+	&lt;p&gt;Block 2&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;button id="myButton"&gt; test &lt;/button&gt;	
+
+		</file>	
+
+		<file type="javascript" name="myscript.js">
+var testAppendPrepend= function(){   
+     jQuery('#myDiv')
+     .append('&lt;p&gt;Block 3&lt;/p&gt;')
+     .prepend('&lt;p&gt;Block 0&lt;/p&gt;');
+}
+
+moduleUtils.beSureScriptNodeExistBeforeRun('#myDiv',[
+	function(){
+		$('#myButton').on('click', testAppendPrepend);
+	}
+]);
+		</file>	
+	</editor>
+
+
+	<div class="result res1" style="max-width: 20%; float:left;">
+
+	</div>
+
+	<div class="result res2" style="max-width: 20%;float:left;">
+
+	</div>	
+</div>

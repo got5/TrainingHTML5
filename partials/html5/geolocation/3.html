@@ -1,0 +1,46 @@
+<div class="bloc-content text-content">
+
+	<ul>
+		<li>Use options to tune behavior
+			<ul>
+				<li><i>enableHighAccuracy</i>: get a more precise position</li>
+				<li><i>timeout</i>: Wait this time before calling the error function callback</li>
+				<li><i>maximumAge</i>:keep position in cache this time instead of ask for the real position</li>
+			</ul>
+		</li>
+		<li>Manage errors: check for the error type in the appropriated callback (timeout, permission denied, ...)
+		</li>		
+	</ul>
+
+	<editor editor-options="{compileCode:false, height: 350, showTabs: false}">	
+		<file type="javascript" name="optionsAndErrors.js">
+
+var whatToDo= function(position){ ... }
+
+var errorCallback= function(error) {
+    switch(error.code) {
+	    case error.TIMEOUT:
+	    	console.log('Timeout !');
+	    	break;
+	    case error.PERMISSION_DENIED:
+	    	console.log('Permission denied !');
+		    break;
+	    case error.POSITION_UNAVAILABLE:
+	    	console.log('La position n’a pu être déterminée');
+	    	break;
+	    case error.UNKNOWN_ERROR:
+	    	console.log('Erreur inconnue');
+	    	break;
+    }
+}
+
+var opts = {
+  enableHighAccuracy: true, 
+  maximumAge        : 30000, 
+  timeout           : 27000
+};
+
+geolocation.watchPosition(whatToDo, errorCallback, opts);
+		</file>
+	</editor>
+</div>

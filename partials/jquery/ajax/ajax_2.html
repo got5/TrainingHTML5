@@ -1,0 +1,32 @@
+<div class="bloc-content text-content">
+
+<ul>
+	<li>
+	Ajax allows to dynamically make http requests with javascript.
+	The request can then be used to add data to the DOM, to retrieve a JSON file and so on
+	</li>
+	<li> 
+		jQuery provides several methods to do this, here are some of them.
+		<ul>
+			<li>
+				<code>jQuery.ajax({})</code>: 
+				Is the general method, its behavior depends on options passed as parameter</li>
+			<li>
+				<code>jQuery.get({})</code>: 
+				Is a shortcut of the option <i>type:'GET'</i> in the <code>ajax()</code> method, and so allows to use the <i>GET</i> method during the http request
+				</li>
+			<li>
+				<code>jQuery.post({})</code>: 
+				Is a shortcut of the option <i>type:'POST'</i> in the <code>ajax()</code> method, and so allows to use the <i>POST</i> method during the http request
+				</li>
+			</li>
+			<li>
+				<code>jQuery.getJSON({})</code>:
+				Is a shortcut of the option <i>dataType: 'json'</i> in the <code>ajax()</code> method, and allows to reetrieve JSON content		
+			</li>
+		</ul>
+	</li>
+	<li>
+	jQuery allows you to specify the data you're expecting back: XML, HTML, JSON, JSONP, TEXT, SCRIPT
+	</li>
+</div>

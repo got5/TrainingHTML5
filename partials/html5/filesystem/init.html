@@ -1,0 +1,69 @@
+<div class="bloc-content text-content">
+
+<ul>
+<li>Reserve quota for your app</li>
+<li>Tehn request a File System </li>
+</ul>
+
+    <editor editor-options="{showTabs:true,height:650}">
+        <file type="javascript" name="script.js">
+window.requestFileSystem =
+    window.requestFileSystem ||
+    window.webkitRequestFileSystem;
+
+
+var asBytes = function(size){
+    return size * 1048576;
+};
+
+var size = asBytes(2);
+
+//navigator.webkitPersistentStorage.requestQuota...
+navigator.webkitTemporaryStorage.requestQuota(size, function (grantedBytes) {
+    console.log('Attempting to request ' + grantedBytes );
+
+    if(grantedBytes === size){
+        window.requestFileSystem(
+            window.TEMPORARY,  // OR window.PERSISTENT
+            grantedBytes,
+            fileSysterSuccessHandler,
+            fileSystemErrorHandler);
+    }
+},fileSystemErrorHandler);
+
+function fileSysterSuccessHandler(fileSystem){
+    console.log("File system initialized");
+    console.log(fileSystem);
+}
+
+function fileSystemErrorHandler(e){
+var msg = '';
+
+  switch (e.code) {
+    case FileError.QUOTA_EXCEEDED_ERR:
+      msg = 'QUOTA_EXCEEDED_ERR';
+      break;
+    case FileError.NOT_FOUND_ERR:
+      msg = 'NOT_FOUND_ERR';
+      break;
+    case FileError.SECURITY_ERR:
+      msg = 'SECURITY_ERR';
+      break;
+    case FileError.INVALID_MODIFICATION_ERR:
+      msg = 'INVALID_MODIFICATION_ERR';
+      break;
+    case FileError.INVALID_STATE_ERR:
+      msg = 'INVALID_STATE_ERR';
+      break;
+    default:
+      msg = 'Unknown Error';
+      break;
+  };
+
+  console.log('Error: ' + msg);
+}
+        </file>
+    </editor>
+
+</div>
+

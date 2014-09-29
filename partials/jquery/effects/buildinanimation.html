@@ -1,0 +1,32 @@
+<div class="bloc-content text-content">
+	<ul>
+		<li>
+			You can easily use <code>show()</code>, 
+			<code>hide()</code> or <code>toggle()</code>
+			on an element
+		</li>
+	</ul>
+
+	
+	<button id="hide">hide</button>
+	<button id="show">show</button>
+	<button id="toggle">toggle</button>
+
+	<editor editor-options="{height: 400}">
+		<file type="javascript" name="myscript.js">
+jQuery(document).ready(function(){
+     jQuery("#hide").off("click").on("click", function(event){
+     		jQuery("pre#editor").hide();
+	  });
+
+     jQuery("#show").off("click").on("click", function(event){
+     		jQuery("pre#editor").show();
+	  });
+
+	  jQuery("#toggle").off("click").on("click", function(event){
+     		jQuery("pre#editor").toggle();
+	  });
+});
+		</file>	
+	</editor>	
+</div>

@@ -1,0 +1,33 @@
+<div class="bloc-content text-content">
+	<ul>
+		<li>API:</li>
+		<ul>
+			<li>Constructor: <b>new FormData([in HTMLFormElement form])</b>, form is optional</li>
+			<li>Just one method: <b>void append(in DOMString name, in nsIVariant value);</b>, to add a field name and its value to the form</li>
+		</ul>
+	</ul>
+
+	<editor editor-options="{compileCode:false, height: 400}">
+		<file type="javascript" name="script.js">
+
+var formData = new FormData();
+
+formData.append("username", "Groucho");
+formData.append("accountnum", 123456); // number 123456 is immediately converted to string "123456"
+
+// HTML file input user's choice...
+formData.append("userfile", fileInputElement.files[0]);
+
+// JavaScript file-like object...
+var content = '&lt; id="a"&gt;&lt;b id="b"&gt;hey!&lt;/b&gt;&lt;/a&gt;'; // the body of the new file...
+var blob = new Blob([content], { type: "text/xml"});
+
+formData.append("webmasterfile", blob);
+
+var request = new XMLHttpRequest();
+request.open("POST", "http://foo.com/submitform.php");
+request.send(formData);
+
+		</file>	
+	</editor>	
+</div>

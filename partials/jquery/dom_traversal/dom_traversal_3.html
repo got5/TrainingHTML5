@@ -1,0 +1,28 @@
+<div class="bloc-content text-content">
+
+	<p>
+		A sample showing how to retrieve the children of a given element.
+	</p>
+
+	<button id="showParent">show parent</button>
+
+	<editor editor-options="{height:300,showTabs:true,angular:false}">
+		<file type="html" name="index.html">
+&lt;div id="contenu"&gt;
+	&lt;p&gt;List&lt;/p&gt;
+	&lt;ul&gt;
+		&lt;li&gt;List 1&lt;/li&gt;
+		&lt;li class="current"&gt;List 2&lt;/li&gt;
+		&lt;li&gt;List 3&lt;/li&gt;
+	&lt;/ul&gt;
+&lt;/div&gt;
+		</file>	
+
+		<file type="javascript" name="script.js">
+$('#showParent').off('click').on('click', function(){
+	console.log(jQuery(".current").parent().prop('tagName'));
+});
+		</file>	
+	</editor>	
+
+</div>

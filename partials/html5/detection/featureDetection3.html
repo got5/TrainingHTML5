@@ -1,0 +1,55 @@
+<div class="bloc-content text-content">
+    <editor editor-options="{showPreview:false,showTabs:true,height:350,compileCode:false,angular:false}">
+<file name="index.html" type="html">&lt;!doctype html&gt;
+&lt;html class="no-js"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;Document&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div id="test"&gt;
+        &lt;canvas id="myCanvas" width="200" height="100" style="border: 1px solid #000000;"&gt;&lt;/canvas&gt;
+    &lt;/div&gt;
+
+&lt;script src="vendor/modernizr/modernizr.js"&gt;&lt;/script&gt;
+&lt;script src="js/script.js"&gt;&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</file>
+<file name="index-loaded.html" type="html">&lt;!doctype html&gt;
+&lt;html class="js flexbox flexboxlegacy canvas canvastext webgl no-touch geolocation
+    postmessage websqldatabase indexeddb hashchange history draganddrop websockets rgba
+    hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity
+    cssanimations csscolumns cssgradients cssreflections csstransforms csstransforms3d csstransitions
+    fontface generatedcontent video audio localstorage sessionstorage webworkers applicationcache
+    svg inlinesvg smil svgclippaths"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;Document&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div id="test"&gt;
+        &lt;canvas id="myCanvas" width="200" height="100" style="border: 1px solid #000000;"&gt;&lt;/canvas&gt;
+    &lt;/div&gt;
+&lt;script src="vendor/modernizr/modernizr.js"&gt;&lt;/script&gt;
+&lt;script src="js/script.js"&gt;&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</file>
+<file name="script.js" type="javascript">if(Modernizr.canvas){
+    console.log("Canvas available");
+}else{
+    console.log("Display an error message OR Load a polyfill");
+}</file>
+<file name="style.css" type="css">.canvas #test {
+    /* Do things with CSS for browsers that support canvas */
+}
+
+.no-canvas #test {
+    /* Do things with CSS for browsers that DO NOT support canvas */
+}</file>
+
+    </editor>
+<p><a href="http://modernizr.com/docs/#s2">More examples</a></p>
+
+
+</div>
+

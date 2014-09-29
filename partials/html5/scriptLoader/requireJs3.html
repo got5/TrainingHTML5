@@ -1,0 +1,21 @@
+<div class="bloc-content text-content">
+    <ul> 
+      <li>The <span class="text-red">define</span> function allows to create a new module</li>
+      <li>A module is an object which exposes variables/functions and which can depend on other modules</li>
+      <li>can have an extra param (first position). The name of the module.</li>
+      <li>In the below example, we are defining a new module named <i>/path/to/module</i> and which depends on the jquery module</li>
+    </ul>
+
+    <editor editor-options="{showPreview:false,showTabs:true,height:230,compileCode:false,angular:false}">
+<file type="javascript" name="module.js">
+define(["jquery"], function($){
+  return {
+    myProp: 'propValue',
+    myFunction: function(){
+      //...
+    }
+  }
+});
+</file>
+    </editor>
+</div>

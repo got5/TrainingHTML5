@@ -1,0 +1,23 @@
+<div class="bloc-content text-content">
+
+	<ul>
+		<li>There are several ways to retrieve an element of the DOM in javascript.	</li>
+		<li>Recent browsers allow to use the <i>querySelector</i> API, but old ones don't. </li>
+		<li>By using jQuery, it will work anyway </li>
+	</ul>
+
+	<editor editor-options="{showPreview:false,height:300,compileCode:false,angular:false}">
+		<file type="javascript" name="script.js">var el;
+
+if(browserType == "gecko") {
+	el = "Get the field with the Gecko syntax";
+}
+else if(browserType == "ie") {
+	el = "Get the field with the IE syntax";
+}
+else el = "Get the field with the default syntax";
+
+el.style.visible = "visible";</file>
+	</editor>	
+	
+</div>

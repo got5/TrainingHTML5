@@ -1,0 +1,22 @@
+<div class="bloc-content text-content">
+
+	<ol>
+		<li>Security</li>
+		<ul>
+			<li>Web Storage objects are regulated by the same origin policy</li>
+			<li><span class="text-red">http://example.com/</span> and  <span class="text-red">http://example.com/about</span> will share storage</li>
+			<li><span class="text-red">http://example.com/</span> and <span class="text-red">https://example.com:87/do</span> not share storage</li>
+		</ul>
+		<li>Quota (around <span class="text-red">5Mb</span>, varies from device to device, browser to browser)</li>
+        <ul>
+            <li>Exceed quote : throw  QUOTA_EXCEEDED_ERR and SECURITY_ERR</li>
+            <li>code : 22</li>
+        </ul>
+        <li>Other</li>
+		<ul>
+			<li>Easy to use, synchronous API, opposed to indexedDB</li>
+			<li>Perfect to store user preferences</li>
+		</ul>
+	</ol>
+
+</div>

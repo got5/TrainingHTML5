@@ -1,0 +1,23 @@
+<div class="bloc-content text-content">
+   <ul>
+       <li>We can configure Require in the main.js with require.config() function</li>
+       <li>Librairies like JQuery run as a module (use module name and not path) when they are detecting Require.</li>
+    </ul>
+    <editor editor-options="{showPreview:false,showTabs:true,height:300,compileCode:false,angular:false}">
+<file type="javascript" name="main.js">
+require.config({
+    //By default load any module IDs from js/lib
+    baseUrl: "js/lib",
+    //except, if the module ID starts with "app",
+    //load it from the js/app directory.
+    "paths": {
+        "app": "../app"
+    }
+});
+
+require(['jquery', 'app/myApp'], function($, myApp){
+  //do my job here
+});
+</file>
+    </editor>
+</div>

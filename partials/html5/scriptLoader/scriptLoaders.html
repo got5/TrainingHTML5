@@ -1,0 +1,25 @@
+<div class="bloc-content text-content">
+
+       <p>Modernizr includes (optionally) a <i>script loader</i> (<a href="http://yepnopejs.com/" target="_blank">Yepnope.js</a>).</p>
+    <p class="small">You call Yepnope with <i>yepnope()</i> or <i>Modernizr.load()</i> </p>
+
+    <p class="small">The scripts are loaded asynchronously and in parallels !</p>
+    <p class="x-small">Exemple : test if the browser support geolocation and load the proper polyfill if it doesn't.</p>
+    <editor editor-options="{showPreview:false,showTabs:true,height:200,compileCode:false,angular:false}">
+
+        <file name="script.js" type="javascript">Modernizr.load({
+    test: Modernizr.gelocation,
+    yep: 'geo.js',
+    nope: 'geo-polyfill.js',
+});</file>
+
+    </editor>
+    <p>Follow the Guide in the yepnope documentation (callback and complete functions)</p>
+    <p>In the same category, we have 
+    <a href="http://requirejs.org/" target="_blank">RequireJs</a>, 
+    <a href="http://browserify.org/" target="_blank">Browserify</a>, 
+    <a href="http://headjs.com/" target="_blank">HeadJs</a> and
+    <a href="http://labjs.com/" target="_blank">LabJs</a> (no more devlopments... ). 
+    </p>
+
+</div>

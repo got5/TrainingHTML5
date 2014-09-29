@@ -1,0 +1,37 @@
+<div class="bloc-content text-content">
+
+
+	<editor editor-options="{showPreview:true,height:300,showTabs:true,angular:false}">
+		<file type="html" name="index.html">
+&lt;div class="d1"&gt;1
+    &lt;div class="d2"&gt;2
+        &lt;div class="d3"&gt;3
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+		</file>	
+		<file type="javascript" name="script.js">
+jQuery(document).ready(function(){
+		jQuery(".d1, .d2, .d3").on("click", function(event){
+     	var target = event.target || event.srcElement;
+			alert("target = "+target.className+", this="+this.className);
+     });
+});
+
+		</file>
+        <file type="css" name="style.css">
+.d1 {
+background-color: green;
+}
+.d2 {
+background-color: blue;
+}
+.d3 {
+background-color: red;
+}
+        </file>
+	</editor>	
+
+
+</div>

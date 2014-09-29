@@ -1,0 +1,41 @@
+<div class="bloc-content text-content">
+	<ul class="small">
+		<li>Give the ability to find DOM elements using CSS selectors, which are more powerfull</li>
+		<li>Similar to the jQuery Selector API</li>
+		<li>
+			Advatage compared to jquery
+			<ul>
+				<li>Faster because directly implemented at the navigator level</li>
+				<li>Evident but... you don't need jQuery to use it</li>
+			</ul>
+		</li>
+		<li>
+			Disadvatage compared to jquery
+			<ul>
+				<li>Depnds on the implementations of CSS selectors on your browser </li>
+				<li>For example, ie8 will not use CSS3 selectors, but CSS2.1 and so pseudo classes will not be available</li>
+			</ul>
+		</li>
+
+		<li>
+		Only 2 methods, <i>querySelector</i> and <i>querySelectorAll</i>, 
+		for single or multiple results. <i>querySelector</i> will not parse all the DOM...</li>
+	</ul>
+
+	<pre style="max-height: 200px; overfloxw: scroll;">
+partial interface Document {
+	Element? querySelector(DOMString selectors);
+	NodeList querySelectorAll(DOMString selectors);
+}
+
+partial interface DocumentFragment {
+	Element? querySelector(DOMString selectors);
+	NodeList querySelectorAll(DOMString selectors);
+}
+
+partial interface Element {
+	Element? querySelector(DOMString selectors);
+	NodeList querySelectorAll(DOMString selectors);
+}
+	</pre>
+</div>

@@ -1,0 +1,43 @@
+<div class="bloc-content text-content small">
+
+<p>
+    Create a worker is easy. You just have to call the worker constructor with an url.
+    In the context of this course, we don't want to download a script so there is a 
+    workaround to use a "local script".
+</p>
+
+<editor editor-options="{showTabs:true,height:650}">
+
+    <file type="html" name="workerTask.js">
+&lt;script type="javascript/worker" id="localScript"&gt;
+self.onmessage = function(e) {
+    self.postMessage('msg from worker');
+};
+&lt;/script&gt;
+    </file>   
+
+    <file type="javascript" name="create.js">
+
+
+var testWorker= function(scriptContent){
+    //console.log('scriptContent: ' + scriptContent);
+    var blob = new Blob([scriptContent]);
+    var url= window.URL.createObjectURL(blob); //could be /my/script.js as well...
+
+    var worker= new Worker(url);
+    worker.onmessage= function(e){
+        console.log('Received: ' + e.data);
+    }
+    worker.postMessage(); //start worker
+}
+
+$(document).ready(function(){
+    moduleUtils.beSureScriptNodeExistBeforeRun('#localScript', [testWorker]);
+});
+    </file> 
+
+</editor>
+
+
+
+</div>

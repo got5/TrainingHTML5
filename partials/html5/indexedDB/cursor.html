@@ -1,0 +1,109 @@
+<div class="bloc-content text-content">
+
+
+<editor editor editor-options="{showPreview:true,showTabs:true,height:450,compileCode:true,angular:true}">
+<file type="javascript" name="db.js">var db = {
+    name:'CursorDB',
+    version: 1,
+    instance: {},
+    storeNames: {
+        people: 'people'
+    },
+    defaultErrorHandler: function(e){
+        console.log(e);
+    },
+    setDefaultErrorHandler: function(request){
+        if('onerror' in request){
+            request.onerror = db.defaultErrorHandler;
+        }
+        if('onblocked' in request){
+            request.onblocked = db.defaultErrorHandler;
+        }
+        if('onabort' in request){
+        	request.onblocked = db.defaultErrorHandler;
+        }
+    }
+}
+var openDatabase = function(){
+    var openRequest = window.indexedDB.open(db.name,db.version);
+    openRequest.onupgradeneeded = function(e){ 
+        var newVersion = e.target.result;
+
+        if(!newVersion.objectStoreNames.contains(db.storeNames.books)){
+            var store = newVersion.createObjectStore(db.storeNames.people,{autoIncrement:true});     
+            store.createIndex('lastName','lastName',{unique: false});
+            				  //indexName,pathToProperty,options
+            store.createIndex('age','age',{unique: false});
+
+            //generate some data with mockJSON
+            //http://experiments.mennovanslooten.nl/2010/mockjson/
+            var people = $.mockJSON.generateFromTemplate({
+            	'people|200-200':[{
+            		'firstName':'@MALE_FIRST_NAME',
+            		'lastName': '@LAST_NAME',
+            		'age|18-95': 0
+            	}]
+            }).people;
+			
+			people.forEach(function (person){
+				store.add(person);
+			});
+            store.add({'firstName': 'dream', 'lastName':'team', 'age':30});
+            store.add({'firstName': 'nightmare', 'lastName':'team', 'age':30});
+        }
+    };
+    db.setDefaultErrorHandler(openRequest);
+    openRequest.onsuccess = function(e){
+        db.instance = e.target.result;
+    };
+};</file>
+
+<file type="javascript" name="cursor.js">function cursor(){
+    var transaction = db.instance.transaction([db.storeNames.people],'readonly'); //or readwrite!
+    var
+        i = 0
+        store = transaction.objectStore(db.storeNames.people),
+        cursorRequest = store.openCursor();
+    
+    db.setDefaultErrorHandler(getRequest);
+
+    //for each element from the store
+    
+    cursorRequest.onsuccess = function(e){
+        var 
+        	people = {},
+        	result = e.target.result;
+        if(result !== null){
+            person = result.value;
+            console.log(JSON.stringify(person));  
+
+            result.continue(); 
+        }
+    };
+}</file>
+<file type="javascript" name="ctrl.js">//This use the AngularJS framework. You don't need to understand what's in here.
+var indexedDBCtrl = function(){
+        this.open= openDatabase;
+        this.cursor = cursor;
+};</file>
+<file type="html" name="index.html">&lt;!--This use the AngularJS framework. You don't need to understand what's in here. --&gt;
+&lt;p class="small" ng-controller="indexedDBCtrl as iDC"&gt;
+    &lt;a  class="btn" ng-click="iDC.open()"&gt;Call openDatabase() function&lt;/a&gt;
+    &lt;a class="btn" ng-click="iDC.cursor()"&gt;Call cursor() function&lt;/a&gt;
+&lt;/p&gt;</file>
+</editor>
+<ol>
+    <li>We can create index via store.createIndex(name,property,option)</li>
+    <li>Cursor allow to get multiple result of a query</li>
+    <ol>
+        <li>Create a request with store.openCursor()</li>
+        <li>Observe event onsuccess on request</li>
+        <li>Data are in event first argument of the callback (e). We have  e.target.result.value</li>
+        <li>Call the e.result.continue() method to get the next result and trigger the onsuccess callback again</li>
+
+
+    </ol>
+
+</ol>
+</div>
+

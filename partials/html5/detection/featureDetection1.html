@@ -1,0 +1,30 @@
+<div class="bloc-content text-content">
+    <p>How can i know if the feature is available in my browser ?</p>
+    <ul>
+        <li>Just test it !</li>
+    </ul>
+        <editor editor-options="{showPreview:false,showTabs:true,height:200,compileCode:false,angular:false}">
+            <file type="javascript" name="1.js">//1. Check if a property exists on a global variable
+function supports_geolocation(){
+    return 'geolocation' in navigator;
+}</file><file type="javascript" name="2.js">//2. Create an element, then check if a certain property exists on that element
+function supports_input_placeholder(){
+    return 'placeholder' in document.createElement('input');
+}</file><file type="javascript" name="3.js">/* 3. Create an element, check if a certain method exists on that element,
+then call the method and check the value it returns.*/
+function supports_h264_baseline_video() {
+    if (!supports_video()) { return false; }
+    var v = document.createElement("video");
+    return v.canPlayType('video/mp4; codecs="avc1.42E01E, mp4a.40.2"');
+}</file><file type="javascript" name="4.js">/*Create an element, set a property to a certain value,
+then check if the property has retained its value.*/
+function support_date_input(){
+    var i = document.createElement("input");
+    i.setAttribute("type","date");
+    return i.type !== "text";
+}</file>
+</editor>
+
+    <p><a href="http://diveintohtml5.info/everything.html" target="_blank">Want to see more ?</a></p>
+
+</div>

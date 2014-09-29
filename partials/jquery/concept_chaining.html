@@ -1,0 +1,51 @@
+<div class="bloc-content text-content">
+
+<ul>
+	<li>
+		Most jQuery functions/plugins return the jQuery itself, basic mechanism is
+		<ul>
+			<li>
+				<code>$(selector/element/tag)</code> 
+				returns the jquery object enhanced with matching elements
+			</li>
+			<li>
+				So the object returned contains both jQuery methods and results from the previous function
+			</li>
+			<li>$(selector) -> {0:elt0, 1:elt1, fn:{func1:function(){}, ...} } </li>
+			<li>So, we can do <code>$(selector).func1()</code> and if func1 return also jQuery  <code>$(selector).func1().func2()</code></li>
+		</ul>
+	</li>
+</ul>
+
+	<editor editor-options="{showTabs:true, showPreview:true}">
+
+	<file type="css" name="content.css">
+#myList li{
+	display: none;
+}
+	</file>
+
+	<file type="html" name="content.html">
+&lt;ul id="myList" class="line"&gt;
+	&lt;li style="background-color:red" &gt; A &lt;/li&gt;
+	&lt;li style="background-color:green" &gt; B &lt;/li&gt;
+	&lt;li style="background-color:blue" &gt; C &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;button id="myButton"&gt; test &lt;/button&gt;
+	</file>
+
+	<file type="javascript" name="myscript.js">
+
+var testChaining= function(){
+	jQuery('#myList li').fadeIn('slow').css('float', 'right');
+}
+
+moduleUtils.beSureScriptNodeExistBeforeRun('#myList',[
+	function(){
+		$('#myButton').on('click', testChaining);
+	}
+]);
+		</file>	
+	</editor>	
+</div>

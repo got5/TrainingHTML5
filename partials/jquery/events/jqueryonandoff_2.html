@@ -1,0 +1,40 @@
+<!--
+	L'une des bonnes pratiques est d'appeler la méthode preventDefault() à la fin du handler. 
+	Ainsi, si le code JavaScript exécuté tombe en erreur, le fonctionnement normal sera exécuté. 
+-->
+
+<div class="bloc-content text-content">
+
+<p> 
+Can be usefull with forms, for example to make sure the form is not sent 
+depending on some validation rules
+</p>
+
+
+
+    <editor editor-options="{showPreview:true,height:300,showTabs:true,angular:false}">
+        <file type="html" name="index.html">
+&lt;form&gt;
+    &lt;input type="text" /&gt;
+    &lt;input type="submit" /&gt;
+&lt;/form&gt;
+        </file>
+        <file type="javascript" name="myscript.js">
+jQuery(document).ready(function(){
+    jQuery("form")
+    .off("submit")
+    .on("submit", function(event){
+        var isRuleOk= jQuery("input[type='text']").val().length > 0;
+        if (!isRuleOk){
+            event.preventDefault();
+            alert('KO');
+        }
+        //just an example, never submit...
+        return false;
+    });
+});
+        </file>
+
+    </editor>
+
+</div>

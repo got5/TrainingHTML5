@@ -1,0 +1,32 @@
+<div class="bloc-content text-content">
+
+<div class="todo"> Pas clair pour moi </div>
+
+	<ul>
+		<li>The stop() method lets you clear all queued animation</li>
+		<li>To avoid this effect, you can clear the current queue before adding new animation</li>
+		<li>The stop() method can take 2 parameters :</li>
+		<ul>
+			<li>clearQueue : indicating whether to remove queued animation</li>
+			<li>jumpToEnd : indicating whether complete the current animation immediately</li>
+		</ul>
+
+	</ul>
+
+	
+	<button id="anime">Animate it the snippet block!</button>
+	<div class="animated">Animated div</div>
+	<editor>
+		<file type="javascript" name="myscript.js">
+jQuery(document).ready(function(){
+     jQuery("#anime").off("click");
+
+     jQuery("#anime").on("click", function(event){
+     		event.preventDefault();
+     		jQuery(".animated").fadeToggle()
+     		//jQuery(".animated").stop(true, true).fadeToggle();
+	  });
+});
+		</file>	
+	</editor>	
+</div>

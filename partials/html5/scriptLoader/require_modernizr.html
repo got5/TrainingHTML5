@@ -1,0 +1,24 @@
+<div class="bloc-content text-content">
+
+<ul>
+	<li><span class="todo"> A tester, et rajouter un onglet pour définir modernizer en AMD</span></li>
+</ul>
+
+<editor editor-options="{showPreview:false,showTabs:true,height:300,compileCode:false,angular:false}" >
+<file type="javascript" name="module.js">
+define(['modernizr','jquery'], function (modernizr, $) {
+	return {
+		setPlaceHolder: function(){
+		    if (!modernizr.input.placeholder) {
+		        $('#input').placeholder();
+		    }
+		}
+	};
+});</file>
+<file type="javascript" name="myapp.js">
+require(['module'], function(theModule){
+	theModule.setPlaceHolder();
+})
+</file>
+    </editor>
+</div>

@@ -1,0 +1,50 @@
+<div class="bloc-content text-content">
+
+
+		<editor editor-options="{showTabs:true, showPreview: true}"> 
+
+      <file type="html" name="index.html">
+&lt;p id="fruits"&gt;
+  &lt;input type="checkbox" name="fruit" value="apples"&gt; Apples
+  &lt;input type="checkbox" name="fruit" value="oranges"&gt; Oranges
+  &lt;input type="checkbox" name="fruit" value="bananas"&gt; Bananas
+  &lt;input type="checkbox" name="fruit" value="grapes"&gt; Grapes
+
+  &lt;button id="oldWay"&gt;old way&lt;/button&gt; &lt;button id="newWay"&gt;new way&lt;/button&gt;
+&lt;/p&gt;
+      </file>
+
+      <file type="javascript" name="oldWay.js">
+var oldWay= function(){
+  var fruits = document.getElementById('fruits');
+  var checkboxes = fruits.getElementsByTagName('input');
+  var list = [];
+  for (var i = 0; i &lt; checkboxes.length; i++) {
+    if (checkboxes[i].checked){
+      list.push(checkboxes[i]);
+    }
+  } 
+  moduleUtils.displayList(list); 
+}
+
+function testOldWay(){
+  $('#oldWay').on('click', oldWay);
+}
+
+moduleUtils.beSureScriptNodeExistBeforeRun('#fruits', [testOldWay]);
+      </file>
+
+      <file type="javascript" name="newWay.js">
+function newWay(){
+  var list = document.querySelectorAll("#fruits input:checked");
+  moduleUtils.displayList(list);
+}
+
+function testNewWay(){
+  $('#newWay').on('click', oldWay);
+}
+
+moduleUtils.beSureScriptNodeExistBeforeRun('#fruits', [testNewWay]);
+      </file>
+	</editor>	
+</div>
