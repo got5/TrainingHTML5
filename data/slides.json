@@ -4,8 +4,12 @@
     },
     {
         "title": "Contents",
-        "content": "contents"
+        "content": "contents1"
     },
+    {
+        "title": "Contents",
+        "content": "contents2"
+    },    
     {
         "title": "JavaScript",
         "content": "javascript/javascript_basis"
@@ -28,10 +32,6 @@
     },
     {
         "title": "jQuery",
-        "content": "jquery/jquery_plan"
-    },
-    {
-        "title": "jQuery",
         "content": "jquery/presentation"
     },
     {
@@ -39,12 +39,8 @@
         "content": "jquery/jquery_stack"
     },
     {
-        "title": "Display a hidden field without jQuery",
-        "content": "jquery/display_hidden_field_without_jquery"
-    },
-    {
-        "title": "Display a hidden field with jQuery",
-        "content": "jquery/display_hidden_field_with_jquery"
+        "title": "Display a hidden field compareason",
+        "content": "jquery/display_hidden_field_compareason"
     },
     {
         "title": "History",
@@ -55,8 +51,8 @@
         "content": "jquery/who"
     },
     {
-        "title": "Functionnalities",
-        "content": "jquery/functionnalities"
+        "title": "Functionalities",
+        "content": "jquery/functionalities"
     },
     {
         "title": "How to use jQuery",
@@ -158,6 +154,10 @@
         "title": "AJAX Requests : jQuery.getJSON",
         "content": "jquery/ajax/ajax_6"
     },
+    {
+        "title": "PW1, Part 1",
+        "content": "jquery/pw1_a"
+    },    
     {
         "title": "Events : Event Bases",
         "content": "jquery/events/event_bases"
@@ -299,6 +299,10 @@
         "content": "jquery/plugin/plugin_7"
     },
     {
+        "title": "PW1, part2 & PW2",
+        "content": "jquery/pw1_2"
+    },     
+    {
         "title": "HTML5",
         "content": "html5/intro/introduction"
     },
@@ -335,6 +339,10 @@
         "content": "html5/detection/featureDetection5"
     },
     {
+        "title": "PW3",
+        "content": "html5/pw3"
+    },    
+    {
         "title": "Script Loaders",
         "content": "html5/scriptLoader/scriptLoaders"
     },
@@ -357,18 +365,6 @@
     {
         "title": "require.js & Modernizr",
         "content": "html5/scriptLoader/require_modernizr"
-    },
-    {
-        "title": "HTML5 APIs",
-        "content": "html5/intro/apis"
-    },
-    {
-        "title": "Animation API",
-        "content": "html5/animation/demo"
-    },
-    {
-        "title": "Animation Essentials",
-        "content": "html5/animation/essentials"
     },
     {
         "title": "ContentEditable",
