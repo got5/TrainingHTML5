@@ -109,8 +109,11 @@ ul.small li{
     line-height:1.5;
 }
 
+
 ul.line li{
     display:inline-block;
+    background-color: #EEE;
+    margin: 0.5em;
 }
 
 
@@ -260,6 +263,12 @@ a:hover {
     border: 1px solid #578;
     border-radius: 8px;
 }
+
+.space{
+    margin-top: 30px;
+    margin-bottom: 50px;
+}
+
 .note {
     font-size: 1em;
     margin: 10px;

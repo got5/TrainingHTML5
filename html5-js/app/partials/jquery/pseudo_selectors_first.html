@@ -5,7 +5,7 @@
 	<editor editor-options="{showPreview:true,height:200,showTabs:true, compileCode: true}">
 		<file type="html" name="index.html">
 
-&lt;div id="myBloc"&gt;
+&lt;div id="myBlocEven"&gt;
 	&lt;ul class="line" &gt;
 		&lt;li&gt;LI A.1&lt;/li&gt;
 		&lt;li&gt;LI A.2&lt;/li&gt;
@@ -16,23 +16,23 @@
 	&lt;/ul&gt;
 &lt;/div&gt;
 
-&lt;button id="myButton"&gt; test &lt;/button&gt;
+&lt;button id="myButtonEven"&gt; test &lt;/button&gt;
 		</file>	
 
 		<file type="javascript" name="myscript.js">
 var testFirstLast= function(){
      
-     var firstLi = jQuery('#myBloc li:first');
-     var lastLi = jQuery('#myBloc li:last');
+     var firstLi = jQuery('#myBlocEven li:first');
+     var lastLi = jQuery('#myBlocEven li:last');
 
      console.log(firstLi[0].innerHTML);
      console.log(lastLi[0].innerHTML);
      
 };
 
-moduleUtils.beSureScriptNodeExistBeforeRun('#myBloc', [
+moduleUtils.beSureScriptNodeExistBeforeRun('#myBlocEven', [
     function(){
-    	$('#myButton').on('click', testFirstLast);
+    	$('#myButtonEven').on('click', testFirstLast);
     }
 ]);
 		</file>	

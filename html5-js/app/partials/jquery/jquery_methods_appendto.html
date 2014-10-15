@@ -14,14 +14,14 @@
 	<editor editor-options="{showTabs:true, showPreview:true}">
 
 		<file type="css"  name="index.css">
-#myDiv div > p{
+#myDivEven div > p{
 	display:inline-block;
 }
 		</file>
 
 		<file type="html" name="index.html">
 
-&lt;div id="myDiv"&gt;
+&lt;div id="myDivEven"&gt;
 	&lt;div id="div1"&gt;
 		&lt;p&gt;Block A1&lt;/p&gt;
 		&lt;p&gt;Block A2&lt;/p&gt;
@@ -32,20 +32,20 @@
 	&lt;/div&gt;	
 &lt;/div&gt;
 
-&lt;button id="myButton"&gt; test &lt;/button&gt;	
+&lt;button id="myButtonEven"&gt; test &lt;/button&gt;	
 
 		</file>	
 
 		<file type="javascript" name="myscript.js">
 var testAppendPrependTo= function(){   
      jQuery('&lt;p&gt;Block CX&lt;/p&gt;')
-     .appendTo('#myDiv div')
-     .prependTo('#myDiv div');
+     .appendTo('#myDivEven div')
+     .prependTo('#myDivEven div');
 }
 
-moduleUtils.beSureScriptNodeExistBeforeRun('#myDiv',[
+moduleUtils.beSureScriptNodeExistBeforeRun('#myDivEven',[
 	function(){
-		$('#myButton').on('click', testAppendPrependTo);
+		$('#myButtonEven').on('click', testAppendPrependTo);
 	}
 ]);
 		</file>	
