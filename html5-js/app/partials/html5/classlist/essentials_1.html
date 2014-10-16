@@ -5,18 +5,22 @@
 		<li>Provide developers methods by which to add, remove and toggle CSS nodes</li>
 		<li>Allows to check if a CSS class has been asigned to a given node</li>
 		<li>For older browser, use these polyfills : <a href="https://github.com/eligrey/classList.js">classList.js</a> and <a href="https://gist.github.com/devongovett/1381839">classList shim</a></li>
+    <li> <a href="http://caniuse.com/#feat=classlist" target="_blank">caniuse.com</a> </li>
 	</ol>
 
-  <pre>
-  interface DOMTokenList (DOMTokenList) {
-      readonly attribute unsigned long length;
 
-      getter DOMString item(unsigned long index);
-      boolean contains(DOMString token);
-      void add(DOMString... tokens);
-      void remove(DOMString... tokens);
-      boolean toggle(DOMString token, optional boolean force);
-      stringifier;
-  }
-  </pre>
+  <editor editor-options="{height:350,angular:false}">
+    <file type="text" name="interface">
+interface DOMTokenList (DOMTokenList) {
+    readonly attribute unsigned long length;
+
+    getter DOMString item(unsigned long index);
+    boolean contains(DOMString token);
+    void add(DOMString... tokens);
+    void remove(DOMString... tokens);
+    boolean toggle(DOMString token, optional boolean force);
+    stringifier;
+}
+    </file>
+  </editor>
 </div>

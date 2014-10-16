@@ -19,7 +19,8 @@ self.onmessage = function(e) {
     <file type="javascript" name="create.js">
 
 
-var testWorker= function(scriptContent){
+var testWorker= function(){
+    var scriptContent= $('#localScript').text()
     //console.log('scriptContent: ' + scriptContent);
     var blob = new Blob([scriptContent]);
     var url= window.URL.createObjectURL(blob); //could be /my/script.js as well...

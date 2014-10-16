@@ -9,7 +9,8 @@
 		</ul>
 	</ul>
 
-	<pre style="max-height: 200px; overflow: scroll">
+	<editor>
+		<file type="text" name="interface">
 partial interface HTMLDocument {
 	Element  getElementById(in DOMString elementId);
 	NodeList getElementsByTagName(in DOMString name);
@@ -27,7 +28,8 @@ partial interface HTMLElement {
 //Sample
 var el = document.getElementById("elementId");
 var inputs = el.getElementsByTagName("input");
-	</pre>	
+		</file>
+	</editor>	
 
 	But thoses selectors are limited, we can do better
 

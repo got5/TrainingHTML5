@@ -11,19 +11,13 @@
 			<li>
 				So the object returned contains both jQuery methods and results from the previous function
 			</li>
-			<li>$(selector) -> {0:elt0, 1:elt1, fn:{func1:function(){}, ...} } </li>
+			<li>$(selector) -> <code>{0:elt0, 1:elt1, func1:function(){}, ... }</code> </li>
 			<li>So, we can do <code>$(selector).func1()</code> and if func1 return also jQuery  <code>$(selector).func1().func2()</code></li>
 		</ul>
 	</li>
 </ul>
 
 	<editor editor-options="{showTabs:true, showPreview:true}">
-
-	<file type="css" name="content.css">
-#myList li{
-	display: none;
-}
-	</file>
 
 	<file type="html" name="content.html">
 &lt;ul id="myList" class="line"&gt;
@@ -46,6 +40,12 @@ moduleUtils.beSureScriptNodeExistBeforeRun('#myList',[
 		$('#myButton').on('click', testChaining);
 	}
 ]);
-		</file>	
+	</file>	
+	<file type="css" name="content.css">
+#myList li{
+	display: none;
+}
+	</file>
+
 	</editor>	
 </div>
