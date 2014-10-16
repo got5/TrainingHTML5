@@ -39,16 +39,16 @@
         "content": "jquery/jquery_stack"
     },
     {
-        "title": "Display a hidden field compareason",
-        "content": "jquery/display_hidden_field_compareason"
-    },
-    {
         "title": "History",
         "content": "jquery/history"
     },
     {
         "title": "Who's using jQuery",
         "content": "jquery/who"
+    },
+    {
+        "title": "Hidden field compareason",
+        "content": "jquery/display_hidden_field_compareason"
     },
     {
         "title": "Functionalities",
@@ -370,6 +370,10 @@
         "title": "ContentEditable",
         "content": "html5/contenteditable/content"
     },
+    {
+        "title": "PW4",
+        "content": "html5/pw4"
+    },     
     {
         "title": "FormData - Intro",
         "content": "html5/formdata/1"

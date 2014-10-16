@@ -11,25 +11,11 @@
         <li>Use the <span class="text-red">manifest</span> attribute makes this html page to be automatically cached</li>
     </ul>
 
-    <editor editor-options="{showPreview:false,showTabs:true,height:100,compileCode:false,angular:false}">
+    <editor editor-options="{showPreview:false,showTabs:true,height:250,compileCode:false,angular:false}">
 
         <file type="html" name="index.html">&lt;!doctype html&gt;
-            &lt;html lang="en" manifest="/offline.appcache"&gt;
-            ...
-        <file type="cpp" name="offline.appcache">CACHE MANIFEST
-
-            #Version 00
-
-            CACHE:
-            /js/jquery.min.js
-            /js/app.min.js
-
-            /styles/main.css
-
-            /images/logo.png
-
-            NETWORK
-            *
+&lt;html lang="en" manifest="/offline.appcache"&gt;
+...
         </file>
     </editor>
 </div>
