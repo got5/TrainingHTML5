@@ -32,9 +32,9 @@ var testOnlyChild= function(){
      }
 };
 
-moduleUtils.beSureScriptNodeExistBeforeRun('#myBloc', [
+moduleUtils.beSureScriptNodeExistBeforeRun('#myButton', [
     function(){
-    	$('#myButton').on('click', testOnlyChild);
+    	$('#myButton').off('click').on('click', testOnlyChild);
     }
 ]);
 		</file>	

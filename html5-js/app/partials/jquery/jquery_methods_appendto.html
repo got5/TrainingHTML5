@@ -38,14 +38,14 @@
 
 		<file type="javascript" name="myscript.js">
 var testAppendPrependTo= function(){   
-     jQuery('&lt;p&gt;Block CX&lt;/p&gt;')
-     .appendTo('#myDivEven div')
-     .prependTo('#myDivEven div');
+	var newBloc= '&lt;p&gt;Block CX&lt;/p&gt;';
+	jQuery(newBloc).appendTo('#myDivEven #div1');
+	jQuery(newBloc).prependTo('#myDivEven #div2');
 }
 
-moduleUtils.beSureScriptNodeExistBeforeRun('#myDivEven',[
+moduleUtils.beSureScriptNodeExistBeforeRun('#myButtonEven',[
 	function(){
-		$('#myButtonEven').on('click', testAppendPrependTo);
+		$('#myButtonEven').off('click').on('click', testAppendPrependTo);
 	}
 ]);
 		</file>	

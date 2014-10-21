@@ -45,17 +45,23 @@ var moduleUtils=
                         }
                     );
 
-                    var scriptNode= $(theId);
-                    if (scriptNode[0]){
-                        runCallbacks(callbacks);
-                    }else{
-                        observer.observe(document.body, {
-                            childList: true
-                          , subtree: true
-                          , attributes: true
-                          , characterData: false
-                        });
-                    }            
+                    var startChecking= function(){
+                        var scriptNode= $(theId);
+                        if (scriptNode[0]){
+                            runCallbacks(callbacks);
+                        }else{
+                            observer.observe(document.body, {
+                                childList: true
+                              , subtree: true
+                              , attributes: true
+                              , characterData: false
+                            });
+                        }                         
+                    }
+
+                    //We have to wait before observe
+                    setTimeout(startChecking, 1000);
+           
                 }
             };
         }
