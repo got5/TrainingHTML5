@@ -27,7 +27,7 @@ openRequest.onsuccess = function(e){
 <file type="javascript" name="destruction.js">
 function _deleteDatabase(){
 console.log("check if the database exists");
-if(typeof initDB !== 'undefined'){
+if(initDB){
     console.log('Closing the database...');
     initDB.close(); //db have to be closed to be deleted
     //This call is async !

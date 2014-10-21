@@ -37,13 +37,10 @@ var openDatabase = function(){
 
             //generate some data with mockJSON
             //http://experiments.mennovanslooten.nl/2010/mockjson/
-            var people = $.mockJSON.generateFromTemplate({
-            	'people|200-200':[{
-            		'firstName':'@MALE_FIRST_NAME',
-            		'lastName': '@LAST_NAME',
-            		'age|18-95': 0
-            	}]
-            }).people;
+            var people = [
+                {firstName:'john', lastName:'doe'},
+                {firstName:'bob', lastName:'sponge'}
+            ];
 			
 			people.forEach(function (person){
 				store.add(person);
