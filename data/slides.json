@@ -347,26 +347,6 @@
         "content": "html5/scriptLoader/scriptLoaders"
     },
     {
-        "title": "require.js",
-        "content": "html5/scriptLoader/requireJs"
-    },
-    {
-        "title": "main.js : require function",
-        "content": "html5/scriptLoader/requireJs2"
-    },
-    {
-        "title": "main.js : define function",
-        "content": "html5/scriptLoader/requireJs3"
-    },
-    {
-        "title": "configure modules",
-        "content": "html5/scriptLoader/requireJs4"
-    },
-    {
-        "title": "require.js & Modernizr",
-        "content": "html5/scriptLoader/require_modernizr"
-    },
-    {
         "title": "ContentEditable",
         "content": "html5/contenteditable/content"
     },
@@ -617,6 +597,9 @@
     {
         "title": "onLine API - PW",
         "content": "html5/online/pw"
+    },
+    {
+        "title": "onLine API - PW",
+        "content": "html5/online/pw"
     }
-
 ]
