@@ -30,9 +30,9 @@ var testAppendPrepend= function(){
      .prepend('&lt;p&gt;Block 0&lt;/p&gt;');
 }
 
-moduleUtils.beSureScriptNodeExistBeforeRun('#myDiv',[
+moduleUtils.beSureScriptNodeExistBeforeRun('#myButton',[
 	function(){
-		$('#myButton').on('click', testAppendPrepend);
+		$('#myButton').off('click').on('click', testAppendPrepend);
 	}
 ]);
 		</file>	

@@ -30,9 +30,9 @@ var testEvenAnOdd= function(){
 }
 
 //don't consider the code below
-moduleUtils.beSureScriptNodeExistBeforeRun('#myListEven', [
+moduleUtils.beSureScriptNodeExistBeforeRun('#myButtonEven', [
 	function(){
-		$('#myButtonEven').on('click', testEvenAnOdd);
+		$('#myButtonEven').off('click').on('click', testEvenAnOdd);
 	}
 ]);
 		</file>

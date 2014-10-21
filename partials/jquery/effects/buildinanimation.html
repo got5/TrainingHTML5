@@ -5,6 +5,7 @@
 			<code>hide()</code> or <code>toggle()</code>
 			on an element
 		</li>
+		<li> They also accept a duration and a callback
 	</ul>
 
 	
@@ -24,7 +25,7 @@ jQuery(document).ready(function(){
 	  });
 
 	  jQuery("#toggle").off("click").on("click", function(event){
-     		jQuery("pre#editor").toggle();
+     		jQuery("pre#editor").toggle("slow", function(){alert('I am done')});
 	  });
 });
 		</file>	
