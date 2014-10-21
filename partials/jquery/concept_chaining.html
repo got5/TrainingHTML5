@@ -35,9 +35,9 @@ var testChaining= function(){
 	jQuery('#myList li').fadeIn('slow').css('float', 'right');
 }
 
-moduleUtils.beSureScriptNodeExistBeforeRun('#myList',[
+moduleUtils.beSureScriptNodeExistBeforeRun('#myButton',[
 	function(){
-		$('#myButton').on('click', testChaining);
+		$('#myButton').off('click').on('click', testChaining);
 	}
 ]);
 	</file>	

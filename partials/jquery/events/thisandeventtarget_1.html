@@ -14,7 +14,7 @@
 		<file type="javascript" name="script.js">
 jQuery(document).ready(function(){
 		jQuery(".d1, .d2, .d3").on("click", function(event){
-     	var target = event.target || event.srcElement;
+     	var target = event.target;
 			alert("target = "+target.className+", this="+this.className);
      });
 });

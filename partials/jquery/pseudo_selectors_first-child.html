@@ -29,9 +29,9 @@
     	console.log(nth[0]);
     }
      
-    moduleUtils.beSureScriptNodeExistBeforeRun('#myList', [
+    moduleUtils.beSureScriptNodeExistBeforeRun('#myButton', [
 	    function(){
-	    	$('#myButton').on('click', testChilds);
+	    	$('#myButton').off('click').on('click', testChilds);
 	    }
     ]);
 		</file>	

@@ -3,7 +3,8 @@
 	<ul>
 		<li>The deepest element which triggered the event is called the target or the originating element</li>
 		<li>The target element is stored in the <span class="text-red">event.target</span> property (or <span class="text-red">event.srcElement</span> for IE)</li>
-		<li>var target = event.target || event.srcElement</li>
+		<li>without jQuery: <code>var target = event.target || event.srcElement</code></li>
+		<li>with jQuery: <code>var target = event.target</code></li>
 		<li><span class="text-red">this</span> is the current element, the one which runs the handlers</li>
 	</ul>
 	<div class="image-content">
