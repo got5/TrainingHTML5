@@ -8,6 +8,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<!-- STYLESHEET -->
 		<link href="css/styles.css" rel="stylesheet" media="all" />
+		<link href="vendor/jquery-ui/themes/ui-lightness/jquery-ui.css" rel="stylesheet" media="all" />
 	</head>
 
 	<body>
@@ -48,6 +49,7 @@
 					<ul class="k-actions">
 						<li class="dnd-zone">Drop in here a pin to delete</li>
 						<li><a href="add-pin.html">Add new pin</a></li>
+						<li><a href="" class="to-hide">transform</a></li>
 					</ul>
 				</div>
 			</aside>
@@ -70,7 +72,10 @@
 			<p class="k-copyright">&copy; We are the champions, 2014</p>
 		</footer>
 
+		<p id="dialog" class="to-hide">Which transformation?</p>
+
         <script src="vendor/jquery/dist/jquery.js"></script>
+        <script src="vendor/jquery-ui/jquery-ui.js"></script>
 
 		<script src="js/includePolyfills.js"></script>
         <script src="js/dateUtils.js"></script>
@@ -78,6 +83,7 @@
         <script src="js/indexedDB.js"></script>
         <script src="js/main.js"></script>
         <script src="js/localStorage.js"></script>
+        <script src="js/webWorkers.js"></script>
         <script src="js/modernizr.custom.18437.js"></script>
 	</body>
 </html>
