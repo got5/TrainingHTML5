@@ -1,0 +1,28 @@
+Lien vers le jeu css3
+Rajouter l'outil de synthèse vocale
+
+#############################################
+
+
+Découpage du TP css en 3 parties : min : 1.5.j , max : 3 jours
+                (SLIDE 26) 1 partie « simple » couleurs / polices  /titres 
+                -> Ok ( peut être ajouter les polices sur les autres éléments par la suite, à voir )
+                1 partie layout + positionnement « à l’ancienne » (float/display) -> aligner les pins
+                [SLIDE 45, ajouter le screenshot]
+                1 partie flexbox
+
+#############################################
+
+En ce qui concerne le positionnement float / display : min : 1.5j, max : 3j
+                Rajouter un exo du type « appliquer les css nécessaires pour que ça fonctionne », avec un screenshot du résultat attendu
+                Ajouter des infos dans les slides à ce sujet
+                -> puis 2ème partie du TP css
+
+
+#############################################
+
+En ce qui concerne le positionnement flexbox : min 1.5j, max : 3j
+                Préparer une démo en live
+                Rajouter du contenu dans les slides
+                Lien vers le site pour un exo « simple »
+                -> puis 3ème partie du TP css
