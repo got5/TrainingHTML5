@@ -1,0 +1,67 @@
+/*----------------------------------------------------------------------------- 
+ 
+ 	PinIt
+ 	Main style-sheet
+ 	April, 2014
+ 	 
+ ------------------------------------------------------------------------------ */
+
+/* ----------------------------- RESET --------------------------------------- */
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center, main,
+dl, dt, dd, ol, ul, li,
+fieldset, figure, figcaption, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+html {overflow-y: scroll;}
+
+body {
+	-webkit-text-size-adjust: 100%;
+	-webkit-font-smoothing: antialiased;
+}
+
+header, footer, main, nav, aside, article, section, figure {display: block;}
+
+
+/* ----------------------------- DEFAULTS --------------------------------------- */
+
+/* TODO: Define your fonts definitions here */
+
+
+
+body {
+	/* TODO: use your fonts here */
+	/* font: */
+	color: #444;
+	background: #FFF;
+}
+
+h1 {float: left; width: 25%;}
+h2 {
+	/* TODO: use your fonts here */
+	/* font: */	
+}
+
+a, a:link {color: #444; background: transparent;}
+a:visited {opactiy: .8;}
+a:hover {text-decoration: none;}
+
+p, li, dt, dd {font-size: 0.8em;}
+
+img {max-width: 100%;}
+
+hr {display: none;}
+
+strong {font-family: open_sansbold, "Helvetica Neue", Helvetica, Arial, sans-serif; font-weight: 600;}
+
+
+/* ----------------------------- PAGE STRUCTURE --------------------------------------- */

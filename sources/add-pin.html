@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+		<title>PinIt: Add a Pin</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<!-- STYLESHEET -->
+		<link href="css/styles.css" rel="stylesheet" media="all" />
+	</head>
+
+	<body>
+		<header role="banner">
+			<h1><a href="index.html"><img src="imgs/logo.png" alt="PinIt" /></a></h1>
+			<p class="connection-status online">Online</p>
+			<div class="k-tools">
+				<ul>
+					<li><a href="signup.html">Sign Up</a></li>
+					<li><a href="signin.html">Sign In</a></li>
+				</ul>
+			</div>
+		</header>
+		
+		<nav class="k-main-nav" role="navigation">
+			<p class="control"><a href="#" role="button"><img src="./nav-control.svg" alt="Menu" /></a></p>
+			<h2 class="k-skip"><a href="#wrapper">Main navigation (Skip it)</a></h2>
+			<ul class="k-navbar" role="menubar">
+				<li class="home"><a href="index.html">Everything</a></li>
+				<li><a href="#">Travel</a></li>
+				<li><a href="#">Arts &amp; Crafts</a></li>
+				<li><a href="#">Interior Design</a></li>
+				<li><a href="#">Garden</a></li>
+			</ul>
+		</nav>
+		
+		<div id="wrapper">
+			<main role="main">
+				<h2>Add New Pin</h2>
+				
+				<form id="add-pin-form" method="post" action="#">
+					
+					<p class="main-field"><label for="uploaded-file">Pin image</label> <input type="file" id="uploaded-file" name="uploaded-file" /></p>
+					<div class="image-zone"></div>
+					
+					<div class="pin-options">
+						<fieldset>
+							<legend>Pin's Data</legend>
+							<p><label for="pin-title">Title</label> <input type="text" id="pin-title" name="pin-title" /></p>
+							<p><label for="pin-cat">Cathegory</label> 
+								<select id="pin-cat" name="pin-cat">
+									<option value="null">None</option>
+									<option value="travel">Travel</option>
+									<option value="crafts">Arts &amp; Crafts</option>
+									<option value="design">Interior Design</option>
+									<option value="garden">Garden</option>
+								</select>
+							</p>
+							<p><label for="pin-desc">Description</label> <textarea id="pin-desc" name="pin-desc" cols="50" rows="3"></textarea></p>
+							<p><label for="pin-date">Original date</label> <input type="date" id="pin-date" name="pin-date" /></p>
+							<p><label for="pin-rate">Rate</label> <input type="range" id="pin-rate" name="pin-rate" min="0" max="5" step="1" /> <span class="rate">5</span></p>
+						</fieldset>
+						<fieldset class="k-check">
+							<legend>Share with</legend>
+							<p><input type="radio" id="t1" value="t1" name="comms" /> <label for="t1">Facebook</label> 
+								<input type="radio" id="t2" value="t2" name="comms" /> <label for="t2">Twitter</label></p>
+						</fieldset>
+						<p><label class="k-check"><input type="checkbox" value="yes" name="allow" checked /> Allow others to pin this photo</label></p>
+					</div>
+					
+					<div class="k-buttons-bar">
+						<p><input type="submit" value="Confirm" /> 
+							<input type="reset" value="Cancel" /></p>
+					</div>
+				</form>
+			</main>
+		</div>
+		
+		<hr />
+		<footer role="contentinfo">
+			<ul class="k-tools-list">
+				<li><a href="#">About us</a></li>
+				<li><a href="#">Terms and Conditions</a></li>
+			</ul>
+			<p class="k-copyright">&copy; We are the champions, 2014</p>
+		</footer>
+	</body>
+</html>
