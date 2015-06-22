@@ -1,0 +1,57 @@
+<div class="larger">
+
+
+	<h1>HTML5 - More Semantic - Header &amp; Footer</h1>
+
+	<ul class="horizontal-split">
+		<li>
+
+			<ul>
+				<li>
+					<strong>header</strong>:
+					<ul>
+						<li>specifies a header for a document or <strong>section</strong></li>
+						<li>should be used as a container for introductory content</li>
+						<li>So it's possible to have several <strong>header</strong> tags in one document</li>
+					</ul>
+				</li>
+				<li>
+					<strong>footer</strong>: 
+					<ul>
+						<li>specifies a footer for a document or <strong>section</strong></li>
+						<li>should contain information about its containing element, typically the author, copyright ...</li>
+					</ul>
+				</li>
+			</ul>
+		</li>
+		<li>
+
+			<sdco-editor compile="true" js-fiddle="true" height="180">
+				<sdco-editor-tab type="html" heading="header.html">
+&lt;article class="small"&gt;
+  &lt;header&gt;
+    &lt;h1&gt;My article title&lt;/h1&gt;
+    &lt;p&gt;&lt;time datetime="2014-09-01"&gt;&lt;/time&gt;&lt;/p&gt;
+  &lt;/header&gt;
+  &lt;p&gt;My article is so fine, just read it!&lt;/p&gt;
+	&lt;footer&gt;
+	  &lt;p&gt;author: john doe&lt;/p&gt;
+	&lt;/footer&gt;
+&lt;/article&gt;
+				</sdco-editor-tab>
+				<sdco-editor-tab type="css" heading="css">
+article{
+	border: 1px solid black;
+	padding: 0.5em;
+}
+article h1{
+	font-size: smaller;
+	text-decoration: underline;
+}
+				</sdco-editor-tab>
+			</sdco-editor>
+
+		</li>
+	</ul>
+
+</div>

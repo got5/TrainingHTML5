@@ -1,0 +1,58 @@
+<div>
+
+	<h1>HTML5 - Outline</h1>
+
+	<ul>
+		<li>
+			The <strong>outline</strong> represent the document structure
+		</li>
+		<li>
+			Previously, the <strong>outline algorithm</strong> was 
+			only based on the <strong>heading</strong> elements (h1, ..., h6)
+		</li>
+		<li>
+			With HTML5, it also takes in consideration sectioning content tags:
+				section, article, aside, footer, header et nav)
+		</li>
+	</ul>
+
+	<sdco-editor hide-menu="true">
+
+		<sdco-editor-tab type="html" heading="example.html">
+&lt;h1&gt;Welcome&lt;/h1&gt;
+&lt;section&gt;
+  &lt;h1&gt;About HTML5&lt;/h1&gt;
+  &lt;p&gt;So fine...&lt;/p&gt;
+  &lt;section&gt;
+    &lt;h1&gt;Better that HTML4?&lt;/h1&gt;
+    &lt;p&gt;Yes sure...&lt;/p&gt;
+  &lt;/section&gt;
+&lt;/section&gt;
+&lt;footer&gt;
+	&lt;section&gt;
+	  &lt;h1&gt;Contact&lt;/h1&gt;
+	  &lt;p&gt;Feel free to ask your questions&lt;/p&gt;
+	&lt;/section&gt;
+	&lt;section&gt;
+		&lt;h1&gt;About us&lt;/h1&gt;
+		&lt;p&gt;worldline&lt;/p&gt;
+	&lt;/section&gt;
+&lt;/footer&gt;
+		</sdco-editor-tab>
+		<sdco-editor-tab type="text" heading="result.txt">
+1. Welcome
+	1. About HTML5
+		1. Better that HTML4?
+	2. Contact
+	3. About us
+		</sdco-editor-tab>
+	
+	</sdco-editor>
+
+	<p> 
+		Use <a href="https://gsnedders.html5.org/outliner/" target="_blank">this</a> or 
+		browsers extensions to test it.
+	</p>
+
+
+</div>

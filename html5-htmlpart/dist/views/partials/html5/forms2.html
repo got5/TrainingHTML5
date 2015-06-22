@@ -1,0 +1,52 @@
+<div>
+
+	<h1>HTML5 - Forms - About Inputs</h1>
+
+	<ul>
+		<li>
+			New functionalities have appeared concerning <strong>input</strong> elements
+			in the HTML5 forms
+		</li>
+		<li>
+			Note: supported by most browsers, and when not supported, 
+			default behavior is used (no error)
+		</li>
+			<ul>
+				<li>
+					the <strong>placeholder</strong> attribute: 
+					a value to display in an <strong>input</strong> before the user starts typing
+				</li>
+				<li>
+					the <strong>autofocus</strong> attribute: 
+					place the focus on the concerned <strong>input</strong> when the page is loaded
+				</li>				
+			</ul>
+		</li>
+	</ul>
+
+	<sdco-editor compile="true" js-fiddle="true">
+
+		<sdco-editor-tab type="html" heading="samples.html">
+
+&lt;div id="formSamples"&gt;
+
+	&lt;form&gt;
+		&lt;input name="nextUrl" placeholder="go to website..." /&gt;
+	&lt;/form&gt;
+
+	&lt;form&gt;
+		&lt;input name="userName" autofocus /&gt;
+	&lt;/form&gt;	
+
+&lt;/div&gt;
+		</sdco-editor-tab>	
+
+		<sdco-editor-tab type="css" heading="tmp.css">
+#formSamples form{
+	display:inline-block;
+}
+		</sdco-editor-tab>
+
+	</sdco-editor>
+
+</div>

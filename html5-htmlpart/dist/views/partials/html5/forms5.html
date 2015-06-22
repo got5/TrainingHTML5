@@ -1,0 +1,37 @@
+<div>
+
+	<h1>HTML5 - Forms - About Inputs - Number &amp; Range</h1>
+
+	<ul>
+		<li>
+			<strong>number</strong>
+			<ul>
+				<li>Special keys for virtual keyboards</li>
+				<li>The <strong>min</strong> and <strong>max</strong> attributes to define a range</li>
+				<li>The <strong>step</strong> attribute to limit values</li>
+			</ul>
+		</li>
+		<li>
+			<strong>range</strong>: exactly the same than number but the user interface which is a slider
+		</li>
+	</ul>
+
+	<sdco-editor compile="true" js-fiddle="true">
+		<sdco-editor-tab type="css" heading="tmp.css">
+input[type=range]{
+	display: inline;
+	width: 5em;
+}
+		</sdco-editor-tab>
+		<sdco-editor-tab type="html" heading="sample.html">
+
+&lt;form&gt;
+	&lt;input type="number" min="1" max="5" step="2" value="1"  /&gt;
+	&lt;input type="number" min="1" max="5" step="0.1" value="1.1" /&gt;
+	&lt;input id="rangeInput" type="range" min="0" max="10" step="1" /&gt;
+&lt;/form&gt;
+
+		</sdco-editor-tab>
+	</sdco-editor>
+
+</div>
