@@ -1,0 +1,57 @@
+<div>
+	<h1>HTML5 - Forms - New Features</h1>
+
+	<p>
+		HTML5 comes with new <b> form </b> features, such as
+	</p>
+
+	<ul>
+		<li>
+			<strong>datalist</strong>: 
+			specifies a list of pre-defined options for 
+			a <strong>input</strong> element which is 
+			used with auto completion
+		</li>
+		<li>
+			<strong>output</strong>: Used to display/submit a value which is obtained by calculation
+			<ul>
+				<li>
+					<strong>form</strong>: the form id, if the output is not in the form
+				</li>
+				<li>
+					<strong>for</strong>: ids on input concerned for the calculation
+
+				</li>
+			</ul>
+		</li>				
+	</ul>
+
+
+
+	<sdco-editor js-fiddle="true" hide-menu="true">
+
+		<sdco-editor-tab type="html" heading="datalist.html">
+
+&lt;input list="htmlTags"&gt;
+
+&lt;datalist id="htmlTags"&gt;
+  &lt;option value="aside"&gt;
+  &lt;option value="footer"&gt;
+  &lt;option value="header"&gt;
+&lt;/datalist&gt;
+
+		</sdco-editor-tab>
+
+		<sdco-editor-tab type="html" heading="output.html">
+
+&lt;form oninput="x.value=parseInt(a.value)+parseInt(b.value)"&gt;0
+	&lt;input type="range" id="a" value="50"&gt;+
+	&lt;input type="number" id="b" value="50"&gt;=
+	&lt;output name="x" for="a b"&gt;&lt;/output&gt;
+&lt;/form&gt;
+
+		</sdco-editor-tab>
+
+	</sdco-editor>
+
+</div>

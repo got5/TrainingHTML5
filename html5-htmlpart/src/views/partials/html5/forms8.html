@@ -1,0 +1,35 @@
+<div>
+
+	<h1>HTML5 - Forms - About Validation</h1>
+
+	<ul>
+		<li>
+			To disable the default validation behavior, use the <strong>novalidate</strong> attribute
+			on the <strong>form</strong> element
+		</li>
+		<li>
+			Specify a mandatory field by using the <strong>required</strong>
+		</li>
+	</ul>
+
+	<sdco-editor compile="true">
+		<sdco-editor-tab type="html" heading="sample.html">
+
+&lt;ul class="horizontal-split"&gt;
+	&lt;li&gt;
+		&lt;form novalidate&gt;
+			&lt;input type="url" /&gt; 
+			&lt;input type="submit" /&gt;
+		&lt;/form&gt;
+	&lt;/li&gt;
+	&lt;li&gt;
+		&lt;form&gt;
+			&lt;input type="url" required /&gt; 
+			&lt;input type="submit" /&gt;
+		&lt;/form&gt;
+	&lt;/li&gt;
+&lt;/ul&gt;
+		</sdco-editor-tab>
+	</sdco-editor>
+
+</div>

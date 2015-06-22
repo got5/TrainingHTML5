@@ -9,7 +9,7 @@
 <editor editor-options="{showTabs:true,height:650}">
 
     <file type="html" name="workerTask.js">
-&lt;script type="javascript/worker" id="localScript"&gt;
+&lt;script type="javascript/worker" id="localScript2"&gt;
 	
 	self.onmessage = function(e) {
 	
@@ -33,7 +33,8 @@
     <file type="javascript" name="manage.js">
 
 
-var testWorker= function(scriptContent){
+var testWorker= function(){
+	var scriptContent= $('#localScript2').text()
     var blob = new Blob([scriptContent]);
     var url= window.URL.createObjectURL(blob); //could be /my/script.js as well...
 
@@ -61,7 +62,7 @@ var testWorker= function(scriptContent){
 }
 
 $(document).ready(function(){
-    moduleUtils.beSureScriptNodeExistBeforeRun('#localScript', [testWorker]);
+    moduleUtils.beSureScriptNodeExistBeforeRun('#localScript2', [testWorker]);
 });
     </file> 
 

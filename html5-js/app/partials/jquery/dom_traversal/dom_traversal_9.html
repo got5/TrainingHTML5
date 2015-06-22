@@ -23,7 +23,7 @@ show find
 		<file type="javascript" name="script.js">
 jQuery('#showFind').off('click').on('click', function(){
 	jQuery("#contenu").find("li").each(function(index, element){
-		console.log(element.innerText);
+		console.log(element.textContent);
 	});
 });
 		</file>	

@@ -8,7 +8,8 @@
         Below are some examples.
     </p>
     <ul>
-        <li><span class="text-red">success</span> and <span class="text-red">error</span>: can be handled when you open the database, read object stores or create object stores and more generally each time a request is used</li>
+        <li><span class="text-red">success</span> and <span class="text-red">error</span>: 
+        can be handled when you open the database, read object stores or create object stores and more generally each time a request is used</li>
         <li>
             <span class="text-red">upgradeneeded</span> : you try to open a database which doesn't exist or with a version id higher than its current version id
         </li>
@@ -16,7 +17,8 @@
             <span class="text-red">blocked</span> : you try to open a DB which is already opened
         </li>
         <li>
-            <span class="text-red">abort</span>,<span class="text-red">complete</span>,<span class="text-red">error</span>: Can be handled at the transaction level to know its state
+            <span class="text-red">abort</span>,<span class="text-red">complete</span>,<span class="text-red">error</span>: Can be handled at the transaction level to know its state.
+            <em>complete</em> is particularly usefull because you are sure that the transaction is commit at this time.
         </li>
     </ul>
 

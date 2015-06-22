@@ -1,0 +1,36 @@
+<div class="bloc-content text-content">
+
+	<ul>
+		<li>JS functions can be anonymous</li>
+		<li>Use opening and closing parentheses tell to execute the function: <code>()</code></li>
+		<li>With the 2 previous points, you can easily create a self invoking function</li>
+		<li>Create modules this way is interesting to limit the scope variables</li>
+	</ul>
+
+	<editor editor-options="{showPreview: false, compileCode: false, showTabs: true, height: 350}">
+		<file type="javascript" name="anonymous.js">
+//This code is not correct		
+function(){
+	console.log("Hello");
+}
+
+//But this one is
+(function(){
+	console.log("Hello");
+})
+
+		</file>
+		<file type="javascript" name="anonymous.js">
+//This function is self invoked
+//And it returns a module for our app
+var module=(
+	function($){
+		return {
+			func1: function(){}
+		}
+	}
+)(jQuery)
+		</file>	
+	</editor>
+</div>
+

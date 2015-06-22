@@ -47,8 +47,8 @@
         "content": "jquery/who"
     },
     {
-        "title": "Hidden field compareason",
-        "content": "jquery/display_hidden_field_compareason"
+        "title": "Hidden field comparison",
+        "content": "jquery/display_hidden_field_comparison"
     },
     {
         "title": "Functionalities",
@@ -154,6 +154,10 @@
         "title": "AJAX Requests : jQuery.getJSON",
         "content": "jquery/ajax/ajax_6"
     },
+    {
+        "title": "Reminder - Self Invoking Functions",
+        "content": "reminders/selfinvoke1"
+    },    
     {
         "title": "PW1, Part 1",
         "content": "jquery/pw1_a"
@@ -477,7 +481,14 @@
         "title": "IndexedDB - Abstraction layer",
         "content": "html5/indexedDB/abstraction"
     },
-
+    {
+        "title": "Reminder - Promises",
+        "content": "reminders/promises1"
+    },
+    {
+        "title": "Reminder - Promises (...)",
+        "content": "reminders/promises2"
+    },    
     {
         "title": "IndexedDB - Practical Works",
         "content": "html5/indexedDB/pw"

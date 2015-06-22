@@ -1,0 +1,73 @@
+<div class="bloc-content text-content">
+
+	<ul>
+		<li>Use promises is never mandatory</li>
+		<li>Usually, callbacks are in parameter of the function which want to use them</li>
+		<li>Promises allows to defer the use of callbacks</li>
+		<li>More elegant, easier to read, chain calls </li>
+	</ul>
+
+	<editor editor-options="{showPreview: false, compileCode: false, showTabs: true, height: 350}">
+		<file type="javascript" name="nopromises.js">
+var alertUser= function(message){
+	console.log(message);
+}
+
+var failure= function(){
+	console.log('Nothing to do');
+}
+
+var doTaskAndNotify= function(notifier, failure){
+	var nbDivs= jQuery('div').length;
+	if (nbDivs &amp;&amp; nbDivs>0){
+		notifier('This document contains ' + nbDivs + ' divs');
+	}else{
+		failure();
+	}
+}
+
+doTaskAndNotify(alertUser);
+		</file>
+		<file type="javascript" name="promises.js">
+var alertUser= function(message){
+	console.log(message);
+}
+
+var failure= function(){
+	console.log('Nothing to do');
+}
+
+var doTaskAndNotify= function(){
+	return new Promise(function(resolve, reject){
+		var nbDivs= jQuery('div').length;
+		if (nbDivs &amp;&amp; nbDivs>0){
+			resolve('This document contains ' + nbDivs + ' divs');
+		}else{
+			reject();
+		}
+	});
+}
+
+doTaskAndNotify()
+.then(alertUser, failure);
+		</file>
+		<file type="javascript" name="chainCalls.js">
+new Promise(function(resolve, reject){
+	resolve(['val1', 'val2', 'val3']);})
+.then(function(theTab){
+	return new Promise(function(resolve, reject){
+		resolve(theTab.length);
+	});})
+.then(function(theLength){
+	return new Promise(function(resolve, reject){
+		if (theLength > 0){
+			resolve('Array lengt: ' + theLength);
+		}else reject('empty array');
+	});})
+.then(function(message){ console.log(message); })
+.catch(function(error){	console.log(error); });
+		</file>		
+	</editor>
+
+</div>
+

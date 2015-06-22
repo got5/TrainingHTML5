@@ -13,6 +13,8 @@
 jQuery(document).ready(function(){
      
      jQuery("a").on("click", function(e){
+     	//best practice: store the current jquery object into
+     	// a local variable
      	var element = jQuery(this);
      });
      

@@ -45,8 +45,6 @@ var openDatabase = function(){
 			people.forEach(function (person){
 				store.add(person);
 			});
-            store.add({'firstName': 'dream', 'lastName':'team', 'age':30});
-            store.add({'firstName': 'nightmare', 'lastName':'team', 'age':30});
         }
     };
     db.setDefaultErrorHandler(openRequest);
@@ -62,7 +60,7 @@ var openDatabase = function(){
         store = transaction.objectStore(db.storeNames.people),
         cursorRequest = store.openCursor();
     
-    db.setDefaultErrorHandler(getRequest);
+    db.setDefaultErrorHandler(cursorRequest);
 
     //for each element from the store
     

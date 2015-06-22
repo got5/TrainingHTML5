@@ -7,28 +7,28 @@
 		<li><a href="http://caniuse.com/#feat=dragndrop" target="_blank">caniuse.com</a></li>
 	</ul>
 
-	<editor editor-options="{compileCode:false, height: 400, showTabs:true}">
+	<editor editor-options="{compileCode:true, showPreview: true, height: 400, showTabs:true}">
 		<file type="html" name="index.html">
-&lt;body&gt;
-&lt;div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"&gt;&lt;/div&gt;
-&lt;img id="drag1" src="img_logo.gif" draggable="true"
-ondragstart="drag(event)" width="336" height="69"&gt;
-&lt;/body&gt;
+&lt;div id="div1" style="border: solid 1px black" ondrop="drop(event)" ondragover="allowDrop(event)"&gt;target&lt;/div&gt;
+&lt;div id="drag1" draggable="true" style="border: solid 1px black"
+ondragstart="drag(event)"&gt;source&lt;/div&gt;
 		</file>
 		<file type="javascript" name="script.js">
-function allowDrop(ev) {
+allowDrop= function(ev) {
     ev.preventDefault();
 }
 
-function drag(ev) {
+drag= function(ev) {
     ev.dataTransfer.setData("Text", ev.target.id);
 }
 
-function drop(ev) {
+drop= function(ev) {
     ev.preventDefault();
     var data = ev.dataTransfer.getData("Text");
-    ev.target.appendChild(document.getElementById(data));
+    console.log(data);
 }
+
+console.log('loaded');
 		</file>	
 	</editor>	
 
