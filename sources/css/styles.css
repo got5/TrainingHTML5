@@ -35,12 +35,34 @@ header, footer, main, nav, aside, article, section, figure {display: block;}
 /* ----------------------------- DEFAULTS --------------------------------------- */
 
 /* TODO: Define your fonts definitions here */
+@font-face {
+    font-family: 'open_sansbold';
+    src: url('opensans-bold-webfont.eot');
+    src: url('opensans-bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('opensans-bold-webfont.woff') format('woff'),
+         url('opensans-bold-webfont.ttf') format('truetype'),
+         url('opensans-bold-webfont.svg#open_sansbold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'open_sansregular';
+    src: url('opensans-regular-webfont.eot');
+    src: url('opensans-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('opensans-regular-webfont.woff') format('woff'),
+         url('opensans-regular-webfont.ttf') format('truetype'),
+         url('opensans-regular-webfont.svg#open_sansregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
 
 
 
 body {
 	/* TODO: use your fonts here */
 	/* font: */
+	font: 100%/1.2 open_sansregular, "Helvetica Neue", Helvetica, Arial, sans-serif;
 	color: #444;
 	background: #FFF;
 }
@@ -49,6 +71,7 @@ h1 {float: left; width: 25%;}
 h2 {
 	/* TODO: use your fonts here */
 	/* font: */	
+	font-family: open_sansbold, "Helvetica Neue", Helvetica, Arial, sans-serif; font-weight: 600;
 }
 
 a, a:link {color: #444; background: transparent;}
