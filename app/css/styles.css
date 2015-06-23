@@ -571,15 +571,28 @@ ul.k-actions {text-align: center; padding: 0; margin: 2rem auto;}
 		border: 1px #000 solid;
 	}
 	
-/* --- ADD PIN --- */
+/* --- ADD PIN AND TRANSORM--- */
 
-ul.k-actions li:last-child a {
+.to-hide{
+	display: none !important;
+}
+
+/* 2 last elements of the list */
+ul.k-actions li:nth-child(n+2) a {
 	width: 121px;
 	font-family: open_sansbold, "Helvetica Neue", Helvetica, Arial, sans-serif;
 	text-align: center;
 	color: #333;
-	background: #FEAF04 url(../imgs/addpin.svg) top left no-repeat;
 	padding-top: 134px;
+}
+
+ul.k-actions li:nth-child(2) a {
+	background: #FEAF04 url(../imgs/addpin.svg) top left no-repeat;
+}
+
+ul.k-actions li:nth-child(3) a {
+	background: #FEAF04 url(../imgs/rotate.svg) top left no-repeat;
+	background-size: 100% 100%;
 }
 	
 /* --- DRAG N DROP ZONE --- */
