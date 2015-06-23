@@ -574,7 +574,7 @@ ul.k-actions {text-align: center; padding: 0; margin: 2rem auto;}
 /* --- ADD PIN AND TRANSORM--- */
 
 .to-hide{
-	display: none;
+	display: none !important;
 }
 
 /* 2 last elements of the list */
