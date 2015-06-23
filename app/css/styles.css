@@ -571,7 +571,11 @@ ul.k-actions {text-align: center; padding: 0; margin: 2rem auto;}
 		border: 1px #000 solid;
 	}
 	
-/* --- ADD PIN --- */
+/* --- ADD PIN AND TRANSORM--- */
+
+.to-hide{
+	display: none !important;
+}
 
 ul.k-actions li:last-child a {
 	width: 121px;
